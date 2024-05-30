@@ -49,7 +49,6 @@ const Berita = () => {
             <ListBerita
               title={post.title}
               url={post.thumbnail}
-              desc={post.description}
             />
           </Link>
         ))}
