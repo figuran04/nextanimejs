@@ -12,7 +12,24 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        quickBold: ["QuickBold"],
+        quickLight: ["QuickLight"],
+        quickMedium: ["QuickMedium"],
+        quickRegular: ["QuickRegular"],
+        quickSemibold: ["QuickSemiBold"],
+        montBold: ["MontserratBold"],
+        montLight: ["MontserratLight"],
+        montMedium: ["MontserratMedium"],
+        montRegular: ["MontserratMedium"],
+        montSemibold: ["MontserratSemiBold"],
+        montExtraLight: ["MontserratExtraLight"],
+        montExtraBold: ["MontserratExtraBold"],
+        montItalic: ["MontserratItalic"],
+        montBlack: ["MontserratBlack"],
+        montThin: ["MontserratThin"],
+      },
     },
   },
   plugins: [],
-};
+}
