@@ -33,7 +33,6 @@ const Beranda = async () => {
             <ListBerita
               title={post.title}
               url={post.thumbnail}
-              desc={post.description}
             />
           </Link>
         ))}
