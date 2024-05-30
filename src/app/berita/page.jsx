@@ -11,7 +11,7 @@ const Berita = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getBeritaResponse("cnn", "terbaru")
+      const data = await getBeritaResponse("cnbc", "terbaru")
       setPosts(data.data.posts)
       setFilteredPosts(data.data.posts)
     }
