@@ -14,7 +14,7 @@ const Splash = () => {
   }, [router])
 
   return (
-    <div className="w-screen h-screen bg-blue-600 text-white">
+    <div className="w-screen h-screen bg-blue-600 text-white z-20">
       <div className="flex w-full justify-center items-center h-5/6">
         <div className="flex justify-center flex-wrap">
           {/* <img src="/hero.png" alt="logo" className="w-52 rounded-2xl" /> */}

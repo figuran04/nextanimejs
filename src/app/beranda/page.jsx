@@ -1,4 +1,3 @@
-"use client"
 import Fitur from "@/components/Fitur"
 import Hero from "@/components/Hero"
 import ListBerita from "@/components/ListBerita"
@@ -33,6 +32,7 @@ const Beranda = async () => {
             <ListBerita
               title={post.title}
               url={post.thumbnail}
+              date={post.pubDate}
             />
           </Link>
         ))}

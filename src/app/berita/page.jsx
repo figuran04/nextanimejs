@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react"
 import ListBerita from "@/components/ListBerita"
 import Link from "next/link"
 import { getBeritaResponse } from "../libs/api-libs"
+import HeroBerita from "@/components/HeroBerita"
 
 const Berita = () => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -43,12 +44,27 @@ const Berita = () => {
         value={searchTerm}
         onChange={handleSearch}
       />
+      <div className="overflow-x-scroll">
+        <div className="flex flex-nowrap w-max gap-2">
+          {filteredPosts.map((post, index) => (
+            <Link href={post.link} key={index}>
+              <HeroBerita
+                title={post.title}
+                url={post.thumbnail}
+                date={post.pubDate}
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
+      <h3 className="text-2xl font-semibold pt-6">Berita</h3>
       <div>
         {filteredPosts.map((post, index) => (
           <Link href={post.link} key={index}>
             <ListBerita
               title={post.title}
               url={post.thumbnail}
+              date={post.pubDate}
             />
           </Link>
         ))}
