@@ -5,6 +5,9 @@ const nextConfig = {
       {
         hostname: "img.antaranews.com",
       },
+      {
+        hostname: "akcdn.detik.net.id",
+      },
     ],
   },
 }
