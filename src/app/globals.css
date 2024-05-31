@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.primaryColorClassName {
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+
+/* Add these variables to your global CSS file */
+:root {
+  --primary-color: #0f0f0f;
+  --primary-text-color: #212121;
+}
+
+.skeleton {
+  background-image: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 *,
 *:before,
 *:after {
@@ -102,4 +133,33 @@ img {
   font-family: "MontserratThin";
   src: local("Montserrat-Thin"),
     url("../assets/static/Montserrat-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Georgia Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Georgia Regular"), url("../assets/georgia.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Georgia Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Georgia Italic"), url("../assets/georgiai.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Georgia Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Georgia Bold"), url("../assets/georgiab.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Georgia Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Georgia Bold Italic"),
+    url("../assets/georgiaz.woff") format("woff");
 }

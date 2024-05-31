@@ -36,7 +36,7 @@ const Berita = () => {
   }
 
   return (
-    <div className="min-h-screen p-6">
+    <div className="min-h-screen p-5">
       <Link href="/beranda" className="my-2">
         Kembali
       </Link>
