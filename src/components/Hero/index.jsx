@@ -1,8 +1,21 @@
 import Link from "next/link"
 
+const primaryColor = "primaryColorClassName"
+
 const Hero = () => {
+  const time = new Date().getHours()
+  let greeting
+
+  if (time < 12) {
+    greeting = "Selamat Pagi"
+  } else if (time < 18) {
+    greeting = "Selamat Siang"
+  } else {
+    greeting = "Selamat Malam"
+  }
+
   return (
-    <div className="flex flex-wrap items-center h-48 text-white p-4 pt-8">
+    <div className={`flex flex-wrap items-center px-4 pt-8 ${primaryColor}`}>
       <Link
         href="/search"
         className="bg-gray-700 rounded-full p-1 font-normal text-gray-400 hover:scale-110 transition-all"
@@ -22,7 +35,9 @@ const Hero = () => {
           />
         </svg>
       </Link>
-      <h1 className="text-4xl font-bold mr-28 mt-4">Selamat Datang, User</h1>
+      <h1 className="text-4xl font-bold w-full py-4 text-gray-50">
+        {greeting}
+      </h1>
     </div>
   )
 }

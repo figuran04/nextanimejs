@@ -5,6 +5,7 @@ import ListBerita from "@/components/ListBerita"
 import { getBeritaResponse } from "../libs/api-libs"
 import Link from "next/link"
 import Navigasi from "@/components/Navigasi"
+import HeroBerita from "@/components/HeroBerita"
 
 const fitur = [
   { title: "Kursus", url: "/kursus" },
@@ -14,13 +15,29 @@ const fitur = [
 const primaryColor = "primaryColorClassName"
 
 const Beranda = async () => {
-  const data = await getBeritaResponse("antara", "terbaru")
+  const antara = await getBeritaResponse("antara", "terbaru")
+  const cnn = await getBeritaResponse("cnn", "terbaru")
+  const antaraPosts = antara.data.posts
+  const cnnPosts = cnn.data.posts
 
   return (
-    <div className={`min-h-screen ${primaryColor} bg-gray-800`}>
+    <div className={`min-h-screen`}>
       <Hero />
+      <div className={`overflow-x-scroll overflow-y-hidden ${primaryColor}`}>
+        <div className="flex flex-nowrap w-max gap-2 ml-2">
+          {cnnPosts.map((post, index) => (
+            <Link href={post.link} key={index}>
+              <HeroBerita
+                title={post.title}
+                url={post.thumbnail}
+                date={post.pubDate}
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
       <div
-        className={`grid grid-cols-2 gap-2 ${primaryColor} p-4 sticky top-0`}
+        className={`grid grid-cols-2 gap-2 ${primaryColor} px-4 py-6  sticky top-0 rounded-bl-3xl rounded-br-3xl text-gray-950`}
       >
         <Link
           href="/kursus"
@@ -55,19 +72,18 @@ const Beranda = async () => {
             />
             <path d="M18.75 6.75h1.875c.621 0 1.125.504 1.125 1.125V18a1.5 1.5 0 0 1-3 0V6.75Z" />
           </svg>
-
           <Fitur title="Berita" />
         </Link>
       </div>
-      <div className={`rounded-tl-3xl rounded-tr-3xl pt-4 bg-white`}>
+      <div className={`pt-4 bg-white`}>
         <div className="flex flex-wrap mx-4 gap-3 justify-center mb-4 text-lg">
-          <div className="w-full rounded-md px-2 py-2 flex justify-center bg-gray-200 hover:scale-105 hover:shadow-sm transition-all">
+          <div className="w-full rounded-md px-2 py-2 flex justify-center bg-gray-200">
             Cara mengikuti kursus
           </div>
-          <div className="w-full rounded-md px-2 py-2 flex justify-center bg-gray-200 hover:scale-105 hover:shadow-sm transition-all">
+          <div className="w-full rounded-md px-2 py-2 flex justify-center bg-gray-200">
             Cara mengikuti kursus
           </div>
-          <div className="w-full rounded-md px-2 py-2 flex justify-center bg-gray-200 hover:scale-105 hover:shadow-sm transition-all">
+          <div className="w-full rounded-md px-2 py-2 flex justify-center bg-gray-200">
             Cara mengikuti kursus
           </div>
         </div>
@@ -81,7 +97,7 @@ const Beranda = async () => {
           </Link>
         </div>
         <div className="px-4 mb-28">
-          {data.data.posts.map((post, index) => (
+          {antaraPosts.map((post, index) => (
             <Link href={post.link} key={index}>
               <ListBerita
                 title={post.title}

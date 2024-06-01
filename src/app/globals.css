@@ -27,7 +27,7 @@
 /* Add these variables to your global CSS file */
 :root {
   --primary-color: #0f0f0f;
-  --primary-text-color: #212121;
+  /* --primary-text-color: #f1f1f1; */
 }
 
 .skeleton {

@@ -7,7 +7,7 @@ const HeroBerita = ({ title, url, date }) => {
 
   return (
     <div className="border-b-2 border-gray-100 relative text-white">
-      <div className="skeleton h-48 rounded-lg">
+      <div className="skeleton h-40 rounded-lg">
         <Image width={285} height={200} src={url} alt={url} />
       </div>
       <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 rounded-es-lg rounded-ee-lg">

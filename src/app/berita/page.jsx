@@ -48,40 +48,30 @@ const Berita = () => {
           className="text-lg w-full bg-gray-100 rounded-md py-2 px-4 my-2"
         />
       </Link>
-      <div className="overflow-x-scroll">
+      <div className="overflow-x-scroll overflow-y-hidden">
         <div className="flex flex-nowrap w-max gap-2">
-          {antaraPosts.map(
-            (
-              post,
-              index // Gunakan data dari CNN untuk HeroBerita
-            ) => (
-              <Link href={post.link} key={index}>
-                <HeroBerita
-                  title={post.title}
-                  url={post.thumbnail}
-                  date={post.pubDate}
-                />
-              </Link>
-            )
-          )}
-        </div>
-      </div>
-      <h3 className="text-2xl font-semibold pt-6">Berita</h3>
-      <div>
-        {cnnPosts.map(
-          (
-            post,
-            index // Gunakan data dari Antara untuk ListBerita
-          ) => (
+          {cnnPosts.map((post, index) => (
             <Link href={post.link} key={index}>
-              <ListBerita
+              <HeroBerita
                 title={post.title}
                 url={post.thumbnail}
                 date={post.pubDate}
               />
             </Link>
-          )
-        )}
+          ))}
+        </div>
+      </div>
+      <h3 className="text-2xl font-semibold pt-6">Berita</h3>
+      <div>
+        {antaraPosts.map((post, index) => (
+          <Link href={post.link} key={index}>
+            <ListBerita
+              title={post.title}
+              url={post.thumbnail}
+              date={post.pubDate}
+            />
+          </Link>
+        ))}
       </div>
       <Navigasi />
     </div>
