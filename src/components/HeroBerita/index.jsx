@@ -6,7 +6,7 @@ const HeroBerita = ({ title, url, date }) => {
   const dates = format(new Date(date), "dd MMMM yyyy", { locale: id })
 
   return (
-    <div className="border-b-2 border-gray-100 relative text-white">
+    <div className="border-gray-100 relative text-white">
       <div className="skeleton h-40 rounded-lg">
         <Image width={285} height={200} src={url} alt={url} />
       </div>
