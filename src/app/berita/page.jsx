@@ -24,7 +24,7 @@ const Berita = () => {
   }, [])
 
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen p-4 mb-80">
       <button onClick={() => router.back()} className="my-2 flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

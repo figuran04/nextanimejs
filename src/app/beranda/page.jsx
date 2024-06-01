@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import Fitur from "@/components/Fitur"
 import Hero from "@/components/Hero"
 import ListBerita from "@/components/ListBerita"

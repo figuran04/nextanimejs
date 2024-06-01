@@ -1,5 +1,9 @@
 "use client"
+
+import { useRouter } from "next/navigation"
+
 const Pengaturan = () => {
+  const router = useRouter()
   return (
     <div>
       <div className="p-4">

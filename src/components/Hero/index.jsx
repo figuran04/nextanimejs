@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="flex flex-wrap items-center h-48 text-white p-4 pt-8">
       <Link
         href="/search"
-        className="bg-gray-800 rounded-full p-1 font-normal text-gray-500 hover:scale-110 transition-all"
+        className="bg-gray-700 rounded-full p-1 font-normal text-gray-400 hover:scale-110 transition-all"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ const Hero = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-6"
+          className="size-7"
         >
           <path
             strokeLinecap="round"
