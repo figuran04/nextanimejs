@@ -1,4 +1,3 @@
-"use client"
 import Fitur from "@/components/Fitur"
 import Hero from "@/components/Hero"
 import ListBerita from "@/components/ListBerita"
@@ -17,7 +16,7 @@ const Beranda = async () => {
   const data = await getBeritaResponse("antara", "terbaru")
 
   return (
-    <div className={`min-h-screen ${primaryColor} font-georgiaReguler`}>
+    <div className={`min-h-screen ${primaryColor}`}>
       <Hero />
       <div className={`grid grid-cols-2 gap-2 ${primaryColor} p-4`}>
         {fitur.map((item, index) => (

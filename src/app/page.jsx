@@ -20,15 +20,13 @@ const Splash = () => {
       <div className="flex w-full justify-center items-center h-5/6 text-white">
         <div className="flex justify-center flex-wrap">
           {/* <img src="/hero.png" alt="logo" className="w-52 rounded-2xl" /> */}
-          <h1 className="w-full text-center text-4xl p-3 font-georgiaBold">
+          <h1 className="w-full text-center text-4xl p-3 font-bold">
             Digitech
           </h1>
         </div>
       </div>
       <div className="flex flex-wrap w-full justify-center items-center h-1/6">
-        <p className="text-lg text-white font-georgiaReguler">
-          Already a member?
-        </p>
+        <p className="text-lg text-white">Already a member?</p>
       </div>
     </div>
   )
