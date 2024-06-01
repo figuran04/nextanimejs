@@ -1,11 +1,9 @@
-import Image from "next/image"
-
 const Hero = () => {
   return (
     <div className="flex flex-wrap items-center h-48 text-white p-4 mt-5">
       <a
         href="/"
-        className="bg-gray-800 rounded-full mt-6 p-1 font-normal text-gray-500"
+        className="bg-gray-800 rounded-full mt-6 p-1 font-normal text-gray-500 hover:scale-110 transition-all"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

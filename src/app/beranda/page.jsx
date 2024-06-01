@@ -19,7 +19,9 @@ const Beranda = async () => {
   return (
     <div className={`min-h-screen ${primaryColor}`}>
       <Hero />
-      <div className={`grid grid-cols-2 gap-2 ${primaryColor} p-4`}>
+      <div
+        className={`grid grid-cols-2 gap-2 ${primaryColor} p-4 sticky top-0`}
+      >
         {fitur.map((item, index) => (
           <Link key={index} href={item.url}>
             <Fitur title={item.title} />
@@ -47,7 +49,7 @@ const Beranda = async () => {
             Lihat semua
           </Link>
         </div>
-        <div className="px-4">
+        <div className="px-4 mb-28">
           {data.data.posts.map((post, index) => (
             <Link href={post.link} key={index}>
               <ListBerita
