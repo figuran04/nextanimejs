@@ -8,9 +8,6 @@ import { useRouter } from "next/navigation"
 import Navigasi from "@/components/Navigasi"
 
 const Berita = () => {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [posts, setPosts] = useState([])
-  const [filteredPosts, setFilteredPosts] = useState([])
   const [cnnPosts, setCnnPosts] = useState([]) // Tambahkan state untuk data dari CNN
   const [antaraPosts, setAntaraPosts] = useState([]) // Tambahkan state untuk data dari Antara
   const router = useRouter()
@@ -26,32 +23,31 @@ const Berita = () => {
     fetchData()
   }, [])
 
-  const handleSearch = (event) => {
-    const term = event.target.value.toLowerCase()
-    setSearchTerm(term)
-    const filtered = antaraPosts.filter(
-      // Gunakan data dari Antara untuk filtering
-      (post) =>
-        post.title.toLowerCase().includes(term) ||
-        post.description.toLowerCase().includes(term)
-    )
-    setFilteredPosts(filtered)
-  }
-
   return (
-    <div className="min-h-screen p-5">
-      <button onClick={() => router.back()} className="my-2">
+    <div className="min-h-screen p-4">
+      <button onClick={() => router.back()} className="my-2 flex items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="size-9"
+        >
+          <path
+            fillRule="evenodd"
+            d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+            clipRule="evenodd"
+          />
+        </svg>
         Kembali
       </button>
       <h1 className="text-4xl font-semibold pt-4 pb-2">Berita</h1>
-      <input
-        type="search"
-        placeholder="Cari"
-        className="text-lg w-full bg-gray-100 rounded-md py-2 px-4 my-2"
-        value={searchTerm}
-        onChange={handleSearch}
-        disabled="disabled"
-      />
+      <Link href="/search">
+        <input
+          type="search"
+          placeholder="Cari"
+          className="text-lg w-full bg-gray-100 rounded-md py-2 px-4 my-2"
+        />
+      </Link>
       <div className="overflow-x-scroll">
         <div className="flex flex-nowrap w-max gap-2">
           {antaraPosts.map(

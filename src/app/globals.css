@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.dropup {
+  position: relative;
+}
+
+.dropup .dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 110%;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+}
+
+.dropup:hover .dropdown-content {
+  display: block;
+}
+
 .primaryColorClassName {
   background-color: var(--primary-color);
   color: var(--primary-text-color);

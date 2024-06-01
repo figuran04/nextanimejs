@@ -26,7 +26,7 @@ const Splash = () => {
         </div>
       </div>
       <div className="flex flex-wrap w-full justify-center items-center h-1/6">
-        <p className="text-lg text-white">Already a member?</p>
+        <p className="text-lg text-white">Hak cipta 2024</p>
       </div>
     </div>
   )

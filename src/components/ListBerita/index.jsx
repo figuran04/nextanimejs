@@ -12,10 +12,10 @@ const ListBerita = ({ title, url, date }) => {
         <div className="w-4/12 py-2">
           <Image
             width={100}
-            height={50}
+            height={65}
             src={url}
             alt={url}
-            className="transition-all hover:scale-105"
+            className="transition-all hover:scale-105 skeleton"
           />
         </div>
         <div className="w-8/12 pl-1">
