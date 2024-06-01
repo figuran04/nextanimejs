@@ -4,6 +4,8 @@ import ListBerita from "@/components/ListBerita"
 import Link from "next/link"
 import { getBeritaResponse } from "../libs/api-libs"
 import HeroBerita from "@/components/HeroBerita"
+import { useRouter } from "next/navigation"
+import Navigasi from "@/components/Navigasi"
 
 const Berita = () => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -11,6 +13,7 @@ const Berita = () => {
   const [filteredPosts, setFilteredPosts] = useState([])
   const [cnnPosts, setCnnPosts] = useState([]) // Tambahkan state untuk data dari CNN
   const [antaraPosts, setAntaraPosts] = useState([]) // Tambahkan state untuk data dari Antara
+  const router = useRouter()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,9 +40,9 @@ const Berita = () => {
 
   return (
     <div className="min-h-screen p-5">
-      <Link href="/beranda" className="my-2">
+      <button onClick={() => router.back()} className="my-2">
         Kembali
-      </Link>
+      </button>
       <h1 className="text-4xl font-semibold pt-4 pb-2">Berita</h1>
       <input
         type="search"
@@ -84,6 +87,7 @@ const Berita = () => {
           )
         )}
       </div>
+      <Navigasi />
     </div>
   )
 }
