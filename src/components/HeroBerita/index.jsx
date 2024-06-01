@@ -11,8 +11,8 @@ const HeroBerita = ({ title, url, date }) => {
         <Image width={285} height={200} src={url} alt={url} />
       </div>
       <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 rounded-es-lg rounded-ee-lg">
-        <h3 className="text-lg px-4 line-clamp-2">{title}</h3>
-        <h3 className="px-2">{dates}</h3>
+        <h2 className="text-lg px-4 line-clamp-2">{title}</h2>
+        <p className="px-2">{dates}</p>
       </div>
     </div>
   )

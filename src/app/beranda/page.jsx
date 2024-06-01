@@ -91,7 +91,7 @@ const Beranda = async () => {
           <h2 className="text-2xl font-semibold py-2">Berita Terkini</h2>
           <Link
             href="/berita"
-            className="bg-gray-200 rounded-full text-gray-500 px-4 py-1"
+            className="bg-gray-200 rounded-full text-gray-700 px-4 py-1"
           >
             Lihat semua
           </Link>
