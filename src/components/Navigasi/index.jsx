@@ -11,7 +11,7 @@ const Navigasi = () => {
         <div className="w-full py-2 pl-2 border-t-2 bg-white">
           <Link
             href="/beranda"
-            className="flex justify-around flex-wrap cursor-pointer hover:scale-110 transition-all"
+            className="flex justify-around flex-wrap cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const Navigasi = () => {
         </div>
         <div className="w-full py-2 pl-2 border-t-2 bg-white">
           <div
-            className="flex justify-around flex-wrap cursor-pointer hover:scale-110 transition-all dropup"
+            className="flex justify-around flex-wrap cursor-pointer dropup"
             onClick={() => setShowDropup(!showDropup)}
           >
             <svg

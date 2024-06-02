@@ -18,7 +18,7 @@ const Hero = () => {
     <div className={`flex flex-wrap items-center px-4 pt-8 ${primaryColor}`}>
       <Link
         href="/search"
-        className="bg-gray-700 rounded-full py-1 px-2 font-normal text-gray-100 hover:scale-110 transition-all flex items-center"
+        className="bg-gray-700 rounded-full py-1 pl-2 pr-3 font-normal text-gray-100 hover:scale-110 transition-all flex items-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

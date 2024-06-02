@@ -53,6 +53,7 @@
 *,
 *:before,
 *:after {
+  user-select: none;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -180,3 +181,19 @@ img {
   src: local("Georgia Bold Italic"),
     url("../assets/georgiaz.woff") format("woff");
 }
+
+/* styles/globals.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} */

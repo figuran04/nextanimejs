@@ -15,7 +15,7 @@ const ListBerita = ({ title, url, date }) => {
             height={65}
             src={url}
             alt={url}
-            className="transition-all hover:scale-105 skeleton"
+            className="skeleton"
           />
         </div>
         <div className="w-8/12 pl-1">

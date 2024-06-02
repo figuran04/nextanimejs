@@ -37,11 +37,11 @@ const Beranda = async () => {
         </div>
       </div>
       <div
-        className={`grid grid-cols-2 gap-2 ${primaryColor} px-4 py-6  sticky top-0 rounded-bl-3xl rounded-br-3xl text-gray-950`}
+        className={`grid grid-cols-2 gap-2 ${primaryColor} px-4 pb-6 pt-2  sticky top-0 border-2 border-gray-950 rounded-bl-3xl rounded-br-3xl text-gray-950`}
       >
         <Link
           href="/kursus"
-          className="bg-gray-300 hover:scale-105 transition-all rounded-md flex flex-wrap justify-center py-1"
+          className="bg-gray-300 hover:bg-gray-400 transition-all rounded-md flex flex-wrap justify-center py-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const Beranda = async () => {
         </Link>
         <Link
           href="/berita"
-          className="bg-gray-300 hover:scale-105 transition-all rounded-md flex flex-wrap justify-center py-1"
+          className="bg-gray-300 hover:bg-gray-400 transition-all rounded-md flex flex-wrap justify-center py-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
