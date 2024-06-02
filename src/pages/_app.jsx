@@ -1,7 +1,7 @@
 // src/pages/_app.js
 import { useEffect } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import "../globals.css"
+import "../app/globals.css"
 import { useRouter } from "next/navigation"
 
 function MyApp({ Component, pageProps }) {
