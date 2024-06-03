@@ -8,11 +8,11 @@ const arial = localFont({
       weight: "400",
       style: "normal",
     },
-    {
-      path: "../assets/arial-font/G_ari_i.ttf",
-      weight: "400",
-      style: "italic",
-    },
+    // {
+    //   path: "../assets/arial-font/G_ari_i.ttf",
+    //   weight: "400",
+    //   style: "italic",
+    // },
     {
       path: "../assets/arial-font/G_ari_bd.ttf",
       weight: "400",

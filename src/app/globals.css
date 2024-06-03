@@ -152,7 +152,7 @@ img {
   src: local("Montserrat-Thin"),
     url("../assets/static/Montserrat-Thin.ttf") format("truetype");
 }
-
+/* 
 @font-face {
   font-family: "Georgia Regular";
   font-style: normal;
@@ -182,7 +182,7 @@ img {
   font-weight: normal;
   src: local("Georgia Bold Italic"),
     url("../assets/arial-font/G_ari_i.TTF") format("woff");
-}
+} */
 
 /* styles/globals.css */
 body {
