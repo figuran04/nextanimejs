@@ -1,12 +1,29 @@
-import { Roboto } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-
-const roboto = Roboto({
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
+const arial = localFont({
+  src: [
+    {
+      path: "../assets/arial-font/arial.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/arial-font/G_ari_i.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../assets/arial-font/G_ari_bd.ttf",
+      weight: "400",
+      style: "bold",
+    },
+    {
+      path: "../assets/arial-font/arial.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 })
 
 export const metadata = {
@@ -16,8 +33,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang="en" className={arial.className}>
+      <body>
         {children}
         <SpeedInsights />
       </body>

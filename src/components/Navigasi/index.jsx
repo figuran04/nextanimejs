@@ -6,7 +6,7 @@ const Navigasi = () => {
   const [showDropup, setShowDropup] = useState(false)
 
   return (
-    <div className="flex font-semibold justify-between text-lg fixed bottom-0 left-0 w-screen navigasi">
+    <div className="flex font-semibold justify-between text-base fixed bottom-0 left-0 w-screen navigasi">
       <div className="grid grid-cols-3 justify-around items-end w-full h-28">
         <div className="w-full py-2 pl-2 border-t-2 bg-white">
           <Link

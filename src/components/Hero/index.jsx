@@ -8,8 +8,10 @@ const Hero = () => {
 
   if (time < 12) {
     greeting = "Selamat Pagi"
-  } else if (time < 18) {
+  } else if (time < 13) {
     greeting = "Selamat Siang"
+  } else if (time < 18) {
+    greeting = "Selamat Sore"
   } else {
     greeting = "Selamat Malam"
   }
@@ -18,7 +20,7 @@ const Hero = () => {
     <div className={`flex flex-wrap items-center px-4 pt-8 ${primaryColor}`}>
       <Link
         href="/search"
-        className="bg-gray-700 rounded-full py-1 pl-2 pr-3 font-normal text-gray-100 hover:scale-110 transition-all flex items-center"
+        className="bg-lime-700 rounded-full py-1 pl-2 pr-3 font-normal text-lime-100 hover:scale-110 transition-all flex items-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +38,7 @@ const Hero = () => {
         </svg>
         Search
       </Link>
-      <h1 className="text-4xl font-bold w-full py-4 text-gray-50">
-        {greeting}
-      </h1>
+      <h1 className="text-4xl font-bold w-full py-4">{greeting}</h1>
     </div>
   )
 }
