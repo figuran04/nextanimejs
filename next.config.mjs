@@ -3,10 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "img.antaranews.com",
-      },
-      {
-        hostname: "akcdn.detik.net.id",
+        hostname: "cdn.myanimelist.net",
       },
     ],
   },
