@@ -104,8 +104,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sfProDisplay.className}`}>
-      <body suppressHydrationWarning={true} className="bg-color-dark">
+    <html lang="en">
+      <body
+        suppressHydrationWarning={true}
+        className={`${sfProDisplay.className} bg-color-dark`}
+      >
         <Navbar />
         {children}
         <SpeedInsights />

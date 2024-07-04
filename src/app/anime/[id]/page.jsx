@@ -1,4 +1,5 @@
-import { getAnimeResponse } from "@/app/libs/api-libs"
+import { getAnimeResponse } from "@/libs/api-libs"
+import VideoPlayer from "@/components/Utilities/VideoPlayer"
 import Image from "next/image"
 
 const AnimePage = async ({ params: { id } }) => {
@@ -11,20 +12,20 @@ const AnimePage = async ({ params: { id } }) => {
         </h3>
       </div>
       <div className="pt-4 px-4 flex gap-2 text-color-primary overflow-x-auto">
-        <div className="w-36 flex fles-col justify-center items-center border-2 border-color-primary p-2">
+        <div className="flex fles-col justify-center items-center border-2 border-color-primary py-2 px-3 gap-2">
           <h3>PERINGKAT</h3>
           <p>{data.rank}</p>
         </div>
-        <div className="w-36 flex fles-col justify-center items-center border-2 border-color-primary p-2">
+        <div className="flex fles-col justify-center items-center border-2 border-color-primary py-2 px-3 gap-2">
           <h3>SKOR</h3>
           <p>{data.score}</p>
         </div>
-        <div className="w-36 flex fles-col justify-center items-center border-2 border-color-primary p-2">
-          <h3>ANGGOTA</h3>
+        <div className="flex fles-col justify-center items-center border-2 border-color-primary py-2 px-3 gap-2">
+          <h3>ANGGOTA </h3>
           <p>{data.members}</p>
         </div>
-        <div className="w-36 flex fles-col justify-center items-center border-2 border-color-primary p-2">
-          <h3>EPISODE</h3>
+        <div className="flex fles-col justify-center items-center border-2 border-color-primary py-2 px-3 gap-2">
+          <h3>EPISODE </h3>
           <p>{data.episodes}</p>
         </div>
       </div>
@@ -37,6 +38,9 @@ const AnimePage = async ({ params: { id } }) => {
           className="w-full rounded object-cover"
         />
         <p className="text-justify text-xl">{data.synopsis}</p>
+      </div>
+      <div>
+        <VideoPlayer youtubeId={data.trailer.youtube_id} />
       </div>
     </>
   )
