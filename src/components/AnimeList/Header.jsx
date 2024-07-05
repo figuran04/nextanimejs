@@ -7,7 +7,7 @@ const Header = ({ title, linkHref, linkTitle }) => {
       {linkHref && linkTitle ? (
         <Link
           href={linkHref}
-          className="md:text-xl text-sm underline hover:text-color-accent transition-all text-color-primary"
+          className="lg:text-xl md:text-lg text-base underline hover:text-color-accent transition-all text-color-primary"
         >
           {linkTitle}
         </Link>

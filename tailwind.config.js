@@ -12,9 +12,10 @@ module.exports = {
       colors: {
         color: {
           primary: "#eeeeee",
-          accent: "#ffc639",
-          secondary: "#393e46",
-          dark: "#222831",
+          accent: "#9944FF",
+          secondary: "#14F194",
+          // dark: "#222831",
+          dark: "#1f1f1f",
         },
       },
       backgroundImage: {

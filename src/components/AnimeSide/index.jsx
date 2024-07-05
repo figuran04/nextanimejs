@@ -1,23 +1,26 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const AnimeList = ({ api }) => {
+const AnimeSide = ({ api }) => {
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 px-4">
+    <div className="flex flex-col gap-4 px-4">
       {api.data?.map((anime, index) => {
         return (
           <Link
             href={`/anime/${anime.mal_id}`}
-            className="group cursor-pointer text-color-primary transition-all relative rounded overflow-hidden hover:scale-105"
+            className="group cursor-pointer text-color-primary transition-all relative rounded overflow-hidden hover:scale-105 flex flex-row"
             key={index}
           >
+            <div className="absolute top-0 left-0 bg-color-accent rounded-ee font-bold px-2 text-base py-0.5 flex items-center gap-1">
+              <p>{anime.rank}</p>
+            </div>
             {anime.score ? (
-              <div className="absolute top-0 right-0 bg-color-accent rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1">
+              <div className="absolute bottom-0 right-0 bg-color-accent rounded-s font-bold px-2 text-base py-1 mt-2 flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
                   fill="currentColor"
-                  className="size-4"
+                  className="size-3"
                 >
                   <path
                     fillRule="evenodd"
@@ -31,14 +34,15 @@ const AnimeList = ({ api }) => {
             <Image
               src={anime.images.webp.image_url}
               alt={anime.images.jpg.image_url}
-              width={350}
+              width={200}
               height={350}
-              className="w-full max-h-64 object-cover transition-all"
+              className="lg:h-28 h-24 lg:w-28 w-24 object-cover transition-all"
             />
-            <div className="px-4 bg-gradient-to-t from-color-dark to-transparent w-full md:h-20 sm:h-16 h-14 flex absolute bottom-0 items-center transition-all">
+            <div className="px-4 w-full flex flex-col transition-all">
               <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
                 {anime.title}
               </p>
+              <p className="line-clamp-2">{anime.title_synonyms}</p>
             </div>
           </Link>
         )
@@ -47,4 +51,4 @@ const AnimeList = ({ api }) => {
   )
 }
 
-export default AnimeList
+export default AnimeSide

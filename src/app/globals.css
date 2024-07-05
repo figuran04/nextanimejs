@@ -10,8 +10,8 @@
 /* Add these variables to your global CSS file */
 :root {
   /* --primary-color: #005838; */
-  --primary-color: #e8faf4;
-  --primary-text-color: #005838;
+  --primary-color: #eeeeee;
+  --primary-text-color: #9944ff;
 }
 
 @font-face {
@@ -252,26 +252,16 @@
   box-sizing: border-box;
 }
 
-img {
-  transition: 0.3s ease all;
-}
-
-img:hover {
-  scale: 102%;
-}
-
 .loading {
-  height: 100px;
-  width: 100px;
+  width: 50px;
+  aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(farthest-side, #ffc639, 95%, #0000) 50% 1px/24px
-      24px no-repeat,
-    radial-gradient(farthest-side, #0000 calc(100% - 20px), #eeeeee 0);
-  animation: s9 1s infinite linear;
+  border: 8px solid;
+  border-color: transparent #9944ff;
+  animation: l1 1s infinite;
 }
-
-@keyframes s9 {
+@keyframes l1 {
   to {
-    transform: rotate(1turn);
+    transform: rotate(0.5turn);
   }
 }
