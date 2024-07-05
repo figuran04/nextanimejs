@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const AnimeSide = ({ api }) => {
   return (
-    <div className="flex flex-col gap-4 px-4">
+    <div className="flex flex-col gap-4">
       {api.data?.map((anime, index) => {
         return (
           <Link
@@ -42,7 +42,8 @@ const AnimeSide = ({ api }) => {
               <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
                 {anime.title}
               </p>
-              <p className="line-clamp-2">{anime.title_synonyms}</p>
+              <p className="">{`${anime.type}, ${anime.episodes} eps,`}</p>
+              <p className="">{`${anime.members} anggota`}</p>
             </div>
           </Link>
         )
