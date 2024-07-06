@@ -1,10 +1,5 @@
-"use client"
-import AnimeList from "@/components/AnimeList"
 import HeaderMenu from "@/components/Utilities/HeaderMenu"
-import Pagination from "@/components/Utilities/Pagination"
-import { useEffect, useState } from "react"
 import { getAnimeResponse } from "@/libs/api-libs"
-import Header from "@/components/AnimeList/Header"
 import Recommended from "@/components/Recommended"
 
 const RekomendasiPage = async () => {

@@ -4,7 +4,6 @@ import HeaderMenu from "@/components/Utilities/HeaderMenu"
 import Pagination from "@/components/Utilities/Pagination"
 import { useEffect, useState } from "react"
 import { getAnimeResponse } from "@/libs/api-libs"
-import Header from "@/components/AnimeList/Header"
 
 const MusimSekarangPage = () => {
   const [page, setPage] = useState(1)
@@ -16,7 +15,6 @@ const MusimSekarangPage = () => {
   useEffect(() => {
     fetchData()
   }, [page])
-  console.log(topAnime)
 
   return (
     <div className="w-full flex flex-col items-center">

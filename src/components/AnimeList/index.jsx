@@ -10,7 +10,7 @@ const AnimeList = ({ api }) => {
           return (
             <Link
               href={`/anime/${anime.mal_id}`}
-              className="group cursor-pointer text-color-primary transition-all relative rounded overflow-hidden hover:scale-105"
+              className="group cursor-pointer text-white transition-all relative rounded overflow-hidden hover:scale-105"
               key={index}
             >
               {anime.score ? (

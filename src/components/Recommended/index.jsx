@@ -1,13 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
+import FormattedDate from "../FormattedDate"
 
 const Recommended = ({ api }) => {
-  console.log(api)
   return (
     <div className="text-color-primary">
-      <ul className="flex flex-col gap-4">
-        {api.data.map((item) => (
-          <li key={item.mal_id}>
+      <div className="flex flex-col gap-4">
+        {api.data.map((item, index) => (
+          <div key={index}>
             <div className="flex justify-between gap-2">
               {item.entry.map((entry, index) => (
                 <Link
@@ -33,11 +33,11 @@ const Recommended = ({ api }) => {
                     </div>
                   ) : null}
                   <Image
-                    src={entry.images.jpg.image_url}
-                    alt={entry.title}
+                    src={entry.images.webp.small_image_url}
+                    alt={entry.images.jpg.small_image_url}
                     width={100}
                     height={100}
-                    className="lg:h-28 h-24 lg:w-28 w-24 object-cover transition-all"
+                    className="lg:h-24 h-20 lg:w-20 w-16 object-cover transition-all"
                   />
                   <div className="text-sm">
                     {index == 0 ? (
@@ -45,7 +45,7 @@ const Recommended = ({ api }) => {
                     ) : (
                       <p>...maka mungkin Anda suka</p>
                     )}
-                    <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
+                    <p className="text-base md:text-lg sm:text-lg font-bold line-clamp-2">
                       {entry.title}
                     </p>
                   </div>
@@ -53,13 +53,13 @@ const Recommended = ({ api }) => {
               ))}
             </div>
             <div className="my-2">
-              <p>{item.content}</p>
-              <p>{item.date}</p>
+              <p className="mx-2">{item.content}</p>
+              <FormattedDate dateString={item.date} />
             </div>
-            <hr />
-          </li>
+            <hr className="custom-hr" />
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

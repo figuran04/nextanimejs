@@ -1,10 +1,6 @@
 import AnimeList from "@/components/AnimeList"
 import Header from "@/components/AnimeList/Header"
-import {
-  getAnimeResponse,
-  getNestedAnimeResponse,
-  reproduce,
-} from "../libs/api-libs"
+import { getAnimeResponse, reproduce } from "@/libs/api-libs"
 import AnimeSide from "@/components/AnimeSide"
 import Recommended from "@/components/Recommended"
 
@@ -15,10 +11,8 @@ const HomePage = async () => {
     "seasons/upcoming",
     "limit=5"
   )
-  // console.log(seasonUpcomingAnime)
-  // let recommendedAnime = await getAnimeResponse("recommendations/anime")
+  // let recommendedAnime = await getNestedAnimeResponse("recommendations/anime")
   let recommendedAnime = await getAnimeResponse("recommendations/anime")
-  // console.log(topAnime.data)
 
   recommendedAnime = reproduce(recommendedAnime.data, 4)
   return (

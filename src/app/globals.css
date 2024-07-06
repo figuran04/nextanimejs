@@ -2,18 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.primaryColorClassName {
-  background-color: var(--primary-color);
-  color: var(--primary-text-color);
-}
-
-/* Add these variables to your global CSS file */
-:root {
-  /* --primary-color: #005838; */
-  --primary-color: #eeeeee;
-  --primary-text-color: #9944ff;
-}
-
 @font-face {
   font-family: "SF Pro Display";
   src: url("../assets/SFProDisplay-Medium.eot");
@@ -264,4 +252,10 @@
   to {
     transform: rotate(0.5turn);
   }
+}
+.custom-hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 16px 0; /* Ubah margin sesuai kebutuhan */
 }

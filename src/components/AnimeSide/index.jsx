@@ -8,7 +8,7 @@ const AnimeSide = ({ api }) => {
         return (
           <Link
             href={`/anime/${anime.mal_id}`}
-            className="group cursor-pointer text-color-primary transition-all relative rounded overflow-hidden hover:scale-105 flex flex-row"
+            className="group cursor-pointer text-white transition-all relative rounded overflow-hidden hover:scale-105 flex flex-row"
             key={index}
           >
             <div className="absolute top-0 left-0 bg-color-accent rounded-ee font-bold px-2 text-base py-0.5 flex items-center gap-1">
@@ -32,8 +32,8 @@ const AnimeSide = ({ api }) => {
               </div>
             ) : null}
             <Image
-              src={anime.images.webp.image_url}
-              alt={anime.images.jpg.image_url}
+              src={anime.images.webp.small_image_url}
+              alt={anime.images.jpg.small_image_url}
               width={200}
               height={350}
               className="lg:h-28 h-24 lg:w-28 w-24 object-cover transition-all"

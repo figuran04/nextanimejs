@@ -23,7 +23,11 @@ const InputSearch = () => {
         ref={searchRef}
         onKeyDown={handleSearch}
       />
-      <button className="absolute top-0 end-0 p-2" onClick={handleSearch}>
+      <button
+        className="absolute top-0 end-0 p-2"
+        onClick={handleSearch}
+        aria-label="search"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
