@@ -1,3 +1,4 @@
+"use client"
 import HeaderMenu from "@/components/Utilities/HeaderMenu"
 import { getAnimeResponse } from "@/libs/api-libs"
 import Recommended from "@/components/Recommended"
