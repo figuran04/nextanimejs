@@ -35,7 +35,7 @@ const AnimePage = async ({ params: { id } }) => {
             </ul>
           </div> */}
           <div className="flex text-color-primary flex-row w-full gap-2 flex-nowrap">
-            <div className="flex flex-col w-full items-center border-2 px-2 py-1">
+            <div className="flex flex-col items-center border-2 px-2 py-1">
               <p className="text-3xl font-bold">{data.score}</p>
               <p>{`Favorit #${data.favorites}`}</p>
             </div>
