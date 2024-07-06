@@ -12,14 +12,12 @@ export const getNestedAnimeResponse = async (resource, objectProperty) => {
 }
 
 export const reproduce = (data, gap) => {
-  const first = ~~(
-    Math.random() * (data.pagination.last_visible_page - gap) +
-    1
-  )
+  const anime = data.data
+  const first = ~~(Math.random() * (anime.length - gap) + 1)
   const last = first + gap
 
   const response = {
-    data: data.data.slice(first, last),
+    data: anime.slice(first, last),
   }
   return response
 }
