@@ -34,12 +34,12 @@ const AnimePage = async ({ params: { id } }) => {
               <li>Video</li>
             </ul>
           </div> */}
-          <div className="flex text-color-primary flex-row w-full gap-2">
-            <div className="flex flex-col w-1/4 items-center border-2 px-2 py-1">
-              <p className="text-5xl font-bold">{data.score}</p>
+          <div className="flex text-color-primary flex-row w-full gap-2 flex-nowrap">
+            <div className="flex flex-col w-full items-center border-2 px-2 py-1">
+              <p className="text-3xl font-bold">{data.score}</p>
               <p>{`Favorit #${data.favorites}`}</p>
             </div>
-            <div className="flex flex-nowrap justify-around flex-row w-3/4 overflow-x-auto gap-2 items-center">
+            <div className="flex flex-nowrap justify-around flex-row w-full overflow-x-auto gap-2 items-center">
               <p className=" text-xl ">{`Peringkat #${data.rank}`}</p>
               <p className=" text-xl ">{`Penggemar #${data.popularity}`}</p>
               <p className=" text-xl ">{`Anggota #${data.members}`}</p>
