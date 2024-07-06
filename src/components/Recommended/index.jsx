@@ -6,10 +6,10 @@ const Recommended = ({ api }) => {
   return (
     <div className="text-color-primary">
       <div className="flex flex-col gap-4">
-        {api.data.map((item, index) => (
+        {api.data?.map((item, index) => (
           <div key={index}>
             <div className="flex justify-between gap-2">
-              {item.entry.map((entry, index) => (
+              {item.entry?.map((entry, index) => (
                 <Link
                   key={entry.mal_id}
                   href={`/anime/${entry.mal_id}`}
