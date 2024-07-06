@@ -27,14 +27,15 @@ const HomePage = async () => {
             />
             <AnimeList api={seasonNowAnime} />
           </section>
-          <section>
+          {/* <section>
             <Header
               title="Anime Rekomendasi"
               linkHref="/rekomendasi"
               linkTitle="Lihat Semua"
             />
             <Recommended api={recommendedAnime} />
-          </section>
+          </section> */}
+
           {/* <section className="">
             <Header title="Rekomendasi" />
             <AnimeList api={recommendedAnime} />
