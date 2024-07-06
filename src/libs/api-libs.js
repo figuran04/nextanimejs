@@ -3,10 +3,12 @@ export const getAnimeResponse = async (resource, query) => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?${query}`
     )
+    console.log("Respons API:", response)
     if (!response.ok) {
       throw new Error("Respons jaringan tidak oke")
     }
     const anime = await response.json()
+    console.log("Data anime:", anime)
     return anime
   } catch (error) {
     console.error("Error mengambil data anime:", error)
@@ -33,7 +35,7 @@ export const reproduce = (data, gap) => {
     const response = {
       data: anime.slice(first, last),
     }
-    // console.log(response)
+    console.log(response)
     return response
   } else {
     console.error("Error: Struktur data tidak valid di fungsi reproduce")
