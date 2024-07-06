@@ -14,7 +14,7 @@ const HomePage = async () => {
   // let recommendedAnime = await getNestedAnimeResponse("recommendations/anime")
   let recommendedAnime = await getAnimeResponse("recommendations/anime")
 
-  recommendedAnime = reproduce(recommendedAnime.data, 4)
+  recommendedAnime = reproduce(recommendedAnime, 4)
   return (
     <div className="w-full flex flex-col items-center">
       <div className="w-11/12 flex md:flex-row flex-col gap-6">
