@@ -1,8 +1,8 @@
 import AnimeList from "@/components/AnimeList"
-import Header from "@/components/AnimeList/Header"
-import { getAnimeResponse, reproduce } from "@/libs/api-libs"
 import AnimeSide from "@/components/AnimeSide"
 import Recommended from "@/components/Recommended"
+import Header from "@/components/AnimeList/Header"
+import { getAnimeResponse, reproduce } from "@/libs/api-libs"
 
 const HomePage = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=5")
@@ -18,7 +18,7 @@ const HomePage = async () => {
     <div className="w-full flex flex-col items-center">
       <div className="w-11/12 flex md:flex-row flex-col gap-6">
         <div className="lg:w-8/12 md:w-7/12 w-full flex flex-col gap-4">
-          <section className="">
+          <section>
             <Header
               title="Mendatang Teratas"
               linkHref="/musim/sekarang"
@@ -42,7 +42,7 @@ const HomePage = async () => {
           </section> */}
         </div>
         <div className="lg:w-4/12 md:w-5/12 w-full flex flex-col gap-6">
-          <section className="">
+          <section>
             <Header
               title="Anime Teratas"
               linkHref="/topanime"

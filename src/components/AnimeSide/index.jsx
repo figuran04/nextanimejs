@@ -11,9 +11,11 @@ const AnimeSide = ({ api }) => {
             className="group cursor-pointer text-white transition-all relative rounded overflow-hidden hover:scale-105 flex flex-row"
             key={index}
           >
-            <div className="absolute top-0 left-0 bg-color-accent rounded-ee font-bold px-2 text-base py-0.5 flex items-center gap-1">
-              <p>{anime.rank}</p>
-            </div>
+            {anime.rank ? (
+              <div className="absolute top-0 left-0 bg-color-accent rounded-ee font-bold px-2 text-base py-0.5 flex items-center gap-1">
+                <p>{anime.rank}</p>
+              </div>
+            ) : null}
             {anime.score ? (
               <div className="absolute bottom-0 right-0 bg-color-accent rounded-s font-bold px-2 text-base py-1 mt-2 flex items-center gap-1">
                 <svg
@@ -42,8 +44,11 @@ const AnimeSide = ({ api }) => {
               <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
                 {anime.title}
               </p>
-              <p className="">{`${anime.type}, ${anime.episodes} eps,`}</p>
-              <p className="">{`${anime.members} anggota`}</p>
+              <div className="flex gap-2 flex-wrap">
+                {anime.type ? <p>{`${anime.type},`}</p> : null}
+                {anime.episodes ? <p>{`${anime.episodes} eps,`}</p> : null}
+                {anime.members ? <p>{`${anime.members} anggota`}</p> : null}
+              </div>
             </div>
           </Link>
         )

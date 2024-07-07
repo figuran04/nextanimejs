@@ -1,7 +1,7 @@
 const HeaderMenu = ({ title }) => {
   return (
     <div>
-      <div className="p-8">
+      <div className="p-4">
         <h3 className="text-center text-2xl text-color-primary font-bold uppercase">
           {title}
         </h3>
