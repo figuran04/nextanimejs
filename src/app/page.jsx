@@ -11,8 +11,8 @@ const HomePage = async () => {
     "seasons/upcoming",
     "limit=5"
   )
-  // let recommendedAnime = await getNestedAnimeResponse("recommendations/anime")
   let recommendedAnime = await getAnimeResponse("recommendations/anime")
+  // let recommendedAnime = await getNestedAnimeResponse("recommendations/anime")
   recommendedAnime = reproduce(recommendedAnime, 4)
   return (
     <div className="w-full flex flex-col items-center">
