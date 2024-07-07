@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Karakter = ({ karakter }) => {
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex flex-col justify-center">
       <p className="text-justify text-2xl font-bold">Karakter</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-5/6">
         {karakter.data?.map((item, index) => {
