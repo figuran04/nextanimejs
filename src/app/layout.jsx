@@ -98,7 +98,7 @@ const sfProDisplay = localFont({
 })
 
 export const metadata = {
-  title: "NextAnime",
+  title: "nextanimejs",
   description: "Website Animelist Generate Use Next js",
 }
 
