@@ -1,7 +1,6 @@
 import { getAnimeResponse } from "@/libs/api-libs"
 import VideoPlayer from "@/components/Utilities/VideoPlayer"
 import Image from "next/image"
-import Link from "next/link"
 import Recommendations from "@/components/Recommendations"
 import Title from "./components/Title"
 import Skor from "./components/Skor"
@@ -36,10 +35,13 @@ const AnimeIdPage = async ({ params: { id } }) => {
             <p className="text-justify text-xl">{data.synopsis}</p>
           </div>
           <div>
+            <p className="text-justify text-2xl font-bold">Karakter</p>
+            <Karakter karakter={karakter} />
+          </div>
+          <div>
             <p className="text-justify text-2xl font-bold">Rekomendasi</p>
             <Recommendations animeId={id} />
           </div>
-          <Karakter karakter={karakter} />
         </div>
       </div>
       <div>
