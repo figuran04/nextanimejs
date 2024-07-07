@@ -38,8 +38,8 @@ const Recommendations = ({ animeId }) => {
             className="flex relative"
           >
             <Image
-              src={entry.images.webp.small_image_url}
-              alt={entry.title}
+              src={entry.images.webp.image_url}
+              alt={entry.images.jpg.image_url}
               width={50}
               height={50}
               className="min-w-32 h-44 object-cover"

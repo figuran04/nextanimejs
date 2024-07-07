@@ -7,10 +7,7 @@ import { getAnimeResponse, reproduce } from "@/libs/api-libs"
 const HomePage = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=5")
   const seasonNowAnime = await getAnimeResponse("seasons/now", "limit=8")
-  const seasonUpcomingAnime = await getAnimeResponse(
-    "seasons/upcoming",
-    "limit=4"
-  )
+  const seasonUpcomingAnime = await getAnimeResponse("seasons/upcoming")
   let recommendedAnime = await getAnimeResponse("recommendations/anime")
   // let recommendedAnime = await getNestedAnimeResponse("recommendations/anime")
   recommendedAnime = reproduce(recommendedAnime, 4)
@@ -20,21 +17,14 @@ const HomePage = async () => {
         <div className="lg:w-8/12 md:w-7/12 w-full flex flex-col gap-4">
           <section>
             <Header
-              title="Mendatang Teratas"
+              title="Musim Sekarang"
               linkHref="/musim/sekarang"
               linkTitle="Lihat Semua"
               api={seasonNowAnime}
             />
             <AnimeList api={seasonNowAnime} />
           </section>
-          <section className="">
-            <Header
-              title="Mendatang Teratas"
-              linkHref="/musim/mendatang"
-              linkTitle="Lihat Semua"
-            />
-            <AnimeList api={seasonUpcomingAnime} />
-          </section>
+
           {/* <section>
             <Header
               title="Anime Rekomendasi"
@@ -57,6 +47,14 @@ const HomePage = async () => {
               linkTitle="Lihat Semua"
             />
             <AnimeSide api={topAnime} />
+          </section>
+          <section>
+            <Header
+              title="Mendatang Teratas"
+              linkHref="/musim/mendatang"
+              linkTitle="Lihat Semua"
+            />
+            <AnimeSide api={seasonUpcomingAnime} />
           </section>
         </div>
       </div>
