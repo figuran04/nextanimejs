@@ -33,7 +33,7 @@ const Recommendations = ({ animeId }) => {
       ) : (
         entries.map((entry, index) => (
           <Link
-            href={`anime/${entry.mal_id}`}
+            href={`/anime/${entry.mal_id}`}
             key={index}
             className="flex relative"
           >
