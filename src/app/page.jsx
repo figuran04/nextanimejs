@@ -9,7 +9,7 @@ const HomePage = async () => {
   const seasonNowAnime = await getAnimeResponse("seasons/now", "limit=8")
   const seasonUpcomingAnime = await getAnimeResponse(
     "seasons/upcoming",
-    "limit=5"
+    "limit=4"
   )
   let recommendedAnime = await getAnimeResponse("recommendations/anime")
   // let recommendedAnime = await getNestedAnimeResponse("recommendations/anime")
@@ -26,6 +26,14 @@ const HomePage = async () => {
               api={seasonNowAnime}
             />
             <AnimeList api={seasonNowAnime} />
+          </section>
+          <section className="">
+            <Header
+              title="Mendatang Teratas"
+              linkHref="/musim/mendatang"
+              linkTitle="Lihat Semua"
+            />
+            <AnimeList api={seasonUpcomingAnime} />
           </section>
           {/* <section>
             <Header
@@ -49,14 +57,6 @@ const HomePage = async () => {
               linkTitle="Lihat Semua"
             />
             <AnimeSide api={topAnime} />
-          </section>
-          <section className="">
-            <Header
-              title="Mendatang Teratas"
-              linkHref="/musim/mendatang"
-              linkTitle="Lihat Semua"
-            />
-            <AnimeSide api={seasonUpcomingAnime} />
           </section>
         </div>
       </div>
