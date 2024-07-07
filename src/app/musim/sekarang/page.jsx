@@ -6,20 +6,16 @@ import { useEffect, useState } from "react"
 import { getAnimeResponse } from "@/libs/api-libs"
 
 const MusimSekarangPage = () => {
-  const [page, setPage] = useState(() => {
-    // Ambil nilai page dari localStorage jika ada, jika tidak, gunakan 1
-    const savedPage = localStorage.getItem("currentPage")
-    return savedPage ? parseInt(savedPage, 10) : 1
-  })
+  const [page, setPage] = useState(1)
   const [topAnime, setTopAnime] = useState([])
+
   const fetchData = async () => {
     const populerAnime = await getAnimeResponse("seasons/now", `page=${page}`)
     setTopAnime(populerAnime)
   }
+
   useEffect(() => {
     fetchData()
-    // Simpan nilai page ke localStorage setiap kali page berubah
-    localStorage.setItem("currentPage", page)
   }, [page])
 
   return (
