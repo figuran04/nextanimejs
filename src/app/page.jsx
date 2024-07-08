@@ -16,8 +16,8 @@ const HomePage = async () => {
   const recommendedAnimeResponse = await getAnimeResponse(
     "recommendations/anime"
   )
-  const recommendedAnimeArray = recommendedAnimeResponse.data // asumsi data berisi array
-  const recommendedAnime = recommendedAnimeArray.slice(0, 4)
+  // const recommendedAnimeArray = recommendedAnimeResponse.data // asumsi data berisi array
+  // const recommendedAnime = recommendedAnimeArray.slice(0, 4)
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -39,7 +39,7 @@ const HomePage = async () => {
               linkTitle="Lihat Semua"
             />
             {/* <Recommended api={recommendedAnime} /> */}
-            <LoadMore topAnime={recommendedAnime} />
+            {/* <LoadMore topAnime={recommendedAnime} /> */}
           </section>
 
           {/* <section className="">
