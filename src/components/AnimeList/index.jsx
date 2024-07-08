@@ -3,6 +3,9 @@ import Link from "next/link"
 import Header from "./Header"
 
 const AnimeList = ({ api }) => {
+  if (!api || !api.data) {
+    return <div>Data tidak tersedia animelist</div>
+  }
   return (
     <div>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">

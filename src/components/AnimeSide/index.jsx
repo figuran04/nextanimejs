@@ -2,6 +2,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 const AnimeSide = ({ api }) => {
+  if (!api || !api.data) {
+    return <div>Data tidak tersedia animeside</div>
+  }
   return (
     <div className="flex flex-col gap-4">
       {api.data?.map((anime, index) => {
