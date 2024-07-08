@@ -13,9 +13,9 @@ const HomePage = async () => {
     "seasons/upcoming",
     "limit=5"
   )
-  const recommendedAnimeResponse = await getAnimeResponse(
-    "recommendations/anime"
-  )
+  // const recommendedAnimeResponse = await getAnimeResponse(
+  //   "recommendations/anime"
+  // )
   // const recommendedAnimeArray = recommendedAnimeResponse.data // asumsi data berisi array
   // const recommendedAnime = recommendedAnimeArray.slice(0, 4)
 
@@ -32,15 +32,14 @@ const HomePage = async () => {
             />
             <AnimeList api={seasonNowAnime} />
           </section>
-          <section>
+          {/* <section>
             <Header
               title="Anime Rekomendasi"
               linkHref="/rekomendasi"
               linkTitle="Lihat Semua"
             />
-            {/* <Recommended api={recommendedAnime} /> */}
-            {/* <LoadMore topAnime={recommendedAnime} /> */}
-          </section>
+            <LoadMore topAnime={recommendedAnime} />
+          </section> */}
         </div>
         <div className="lg:w-4/12 md:w-5/12 w-full flex flex-col gap-6">
           <section>
