@@ -1,10 +1,8 @@
 import AnimeList from "@/components/AnimeList"
 import AnimeSide from "@/components/AnimeSide"
-import Recommended from "@/components/Recommended"
 import Header from "@/components/AnimeList/Header"
-import { getAnimeResponse, reproduce } from "@/libs/api-libs"
+import { getAnimeResponse } from "@/libs/api-libs"
 import MyComponent from "@/components/AnimeSide/Loadmore"
-import LoadMore from "@/components/Recommended/Loadmore"
 
 const HomePage = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=5")
@@ -56,8 +54,8 @@ const HomePage = async () => {
               linkHref="/musim/mendatang"
               linkTitle="Lihat Semua"
             />
-            <AnimeSide api={seasonUpcomingAnime} />
-            {/* <MyComponent topAnime={seasonUpcomingAnime} /> */}
+            {/* <AnimeSide api={seasonUpcomingAnime} /> */}
+            <MyComponent topAnime={seasonUpcomingAnime} />
           </section>
         </div>
       </div>
