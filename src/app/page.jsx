@@ -41,11 +41,6 @@ const HomePage = async () => {
             {/* <Recommended api={recommendedAnime} /> */}
             {/* <LoadMore topAnime={recommendedAnime} /> */}
           </section>
-
-          {/* <section className="">
-            <Header title="Rekomendasi" />
-            <AnimeList api={recommendedAnime} />
-          </section> */}
         </div>
         <div className="lg:w-4/12 md:w-5/12 w-full flex flex-col gap-6">
           <section>
