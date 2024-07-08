@@ -5,7 +5,7 @@ import AnimeGen from "@/components/AnimeGen"
 import Pagination from "@/components/Utilities/Pagination"
 import { useEffect, useState } from "react"
 
-const GenreIdPage = async ({ params: { id } }) => {
+const GenreIdPage = ({ params: { id } }) => {
   const keyword = decodeURI(id)
   const [page, setPage] = useState(1)
   const [topAnime, setTopAnime] = useState([])
