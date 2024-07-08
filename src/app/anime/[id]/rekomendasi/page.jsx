@@ -1,11 +1,13 @@
 import Recommendations from "@/components/Recommendations"
+import Navbar from "../components/Navbar"
 
-const RekomendasiPage = ({ params: { id } }) => {
+const RekomendasiPage = async ({ params: { id } }) => {
   return (
-    <div>
+    <>
+      <Navbar id={id} rekomendasi="text-color-accent" />
       <p className="text-justify text-2xl font-bold">Rekomendasi</p>
       <Recommendations animeId={id} />
-    </div>
+    </>
   )
 }
 

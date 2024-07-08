@@ -1,13 +1,15 @@
-import Karakter from "../components/Karakter"
 import { getAnimeResponse } from "@/libs/api-libs"
+import Karakter from "../components/Karakter"
+import Navbar from "../components/Navbar"
 
 const KarakterPage = async ({ params: { id } }) => {
   const karakter = await getAnimeResponse(`anime/${id}/characters`)
   return (
-    <div>
+    <>
+      <Navbar id={id} karakter="text-color-accent" />
       <p className="text-justify text-2xl font-bold">Karakter</p>
       <Karakter karakter={karakter} />
-    </div>
+    </>
   )
 }
 

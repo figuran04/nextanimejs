@@ -1,46 +1,18 @@
-"use client"
-import { useState } from "react"
 import Link from "next/link"
 
-const Navbar = ({ id }) => {
-  const [activeTab, setActiveTab] = useState("detail")
-
+const Navbar = ({ id, detail, gambar, karakter, rekomendasi }) => {
   return (
     <nav className="flex flex-nowrap gap-4 overflow-x-auto flex-row text-color-primary text-lg">
-      <Link
-        href={`/anime/${id}`}
-        className={`underline hover:text-color-accent ${
-          activeTab === "detail" ? "text-color-accent" : ""
-        }`}
-        onClick={() => setActiveTab("detail")}
-      >
+      <Link href={`/anime/${id}`} className={`${detail}`}>
         Detail
       </Link>
-      <Link
-        href={`/anime/${id}/gambar`}
-        className={`underline hover:text-color-accent ${
-          activeTab === "gambar" ? "text-color-accent" : ""
-        }`}
-        onClick={() => setActiveTab("gambar")}
-      >
+      <Link href={`/anime/${id}/gambar`} className={`${gambar}`}>
         Gambar
       </Link>
-      <Link
-        href={`/anime/${id}/karakter`}
-        className={`underline hover:text-color-accent ${
-          activeTab === "karakter" ? "text-color-accent" : ""
-        }`}
-        onClick={() => setActiveTab("karakter")}
-      >
+      <Link href={`/anime/${id}/karakter`} className={`${karakter}`}>
         Karakter
       </Link>
-      <Link
-        href={`/anime/${id}/rekomendasi`}
-        className={`underline hover:text-color-accent ${
-          activeTab === "rekomendasi" ? "text-color-accent" : ""
-        }`}
-        onClick={() => setActiveTab("rekomendasi")}
-      >
+      <Link href={`/anime/${id}/rekomendasi`} className={`${rekomendasi}`}>
         Rekomendasi
       </Link>
     </nav>

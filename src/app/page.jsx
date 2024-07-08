@@ -3,6 +3,8 @@ import AnimeSide from "@/components/AnimeSide"
 import Recommended from "@/components/Recommended"
 import Header from "@/components/AnimeList/Header"
 import { getAnimeResponse, reproduce } from "@/libs/api-libs"
+import MyComponent from "@/components/AnimeSide/Loadmore"
+import LoadMore from "@/components/Recommended/Loadmore"
 
 const HomePage = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=5")
@@ -13,8 +15,8 @@ const HomePage = async () => {
   )
   // let recommendedAnime = await getNestedAnimeResponse("recommendations/anime")
 
-  // let recommendedAnime = await getAnimeResponse("recommendations/anime")
-  // recommendedAnime = reproduce(recommendedAnime, 4)
+  let recommendedAnime = await getAnimeResponse("recommendations/anime")
+  recommendedAnime = reproduce(recommendedAnime, 4)
   return (
     <div className="w-full flex flex-col items-center">
       <div className="w-11/12 flex md:flex-row flex-col gap-6">
@@ -28,15 +30,15 @@ const HomePage = async () => {
             />
             <AnimeList api={seasonNowAnime} />
           </section>
-
-          {/* <section>
+          <section>
             <Header
               title="Anime Rekomendasi"
               linkHref="/rekomendasi"
               linkTitle="Lihat Semua"
             />
-            <Recommended api={recommendedAnime} />
-          </section> */}
+            {/* <Recommended api={recommendedAnime} /> */}
+            <LoadMore topAnime={recommendedAnime} />
+          </section>
 
           {/* <section className="">
             <Header title="Rekomendasi" />
@@ -58,7 +60,8 @@ const HomePage = async () => {
               linkHref="/musim/mendatang"
               linkTitle="Lihat Semua"
             />
-            <AnimeSide api={seasonUpcomingAnime} />
+            {/* <AnimeSide api={seasonUpcomingAnime} /> */}
+            <MyComponent topAnime={seasonUpcomingAnime} />
           </section>
         </div>
       </div>
