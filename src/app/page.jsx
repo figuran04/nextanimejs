@@ -56,8 +56,8 @@ const HomePage = async () => {
               linkHref="/musim/mendatang"
               linkTitle="Lihat Semua"
             />
-            {/* <AnimeSide api={seasonUpcomingAnime} /> */}
-            <MyComponent topAnime={seasonUpcomingAnime} />
+            <AnimeSide api={seasonUpcomingAnime} />
+            {/* <MyComponent topAnime={seasonUpcomingAnime} /> */}
           </section>
         </div>
       </div>
