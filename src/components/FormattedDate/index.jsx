@@ -2,7 +2,7 @@
 import { format, formatDistanceToNow } from "date-fns"
 import { id } from "date-fns/locale"
 
-const FormattedDate = ({ dateString }) => {
+const FormattedDate = ({ dateString, style }) => {
   const date = new Date(dateString)
   const now = new Date()
 
@@ -20,7 +20,7 @@ const FormattedDate = ({ dateString }) => {
     formattedDate = format(date, "dd MMMM yyyy", { locale: id })
   }
 
-  return <p className="font-bold">{formattedDate}</p>
+  return <p className={style}>{formattedDate}</p>
 }
 
 export default FormattedDate

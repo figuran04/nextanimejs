@@ -12,7 +12,7 @@ const AnimeSide = ({ api }) => {
         return (
           <Link
             href={`/anime/${anime.mal_id}`}
-            className="group cursor-pointer text-white transition-all relative rounded overflow-hidden hover:scale-105 flex flex-row"
+            className="group cursor-pointer text-white transition-all relative rounded overflow-hidden hover:scale-105 flex flex-row shadow-md hover:shadow-lg"
             key={index}
           >
             {anime.rank ? (
@@ -42,7 +42,7 @@ const AnimeSide = ({ api }) => {
               alt={anime.images.jpg.small_image_url}
               width={200}
               height={350}
-              className="lg:h-28 h-24 lg:w-28 w-24 object-cover transition-all"
+              className="lg:h-28 h-24 lg:w-28 w-24 object-cover transition-all rounded"
             />
             <div className="px-4 w-full flex flex-col transition-all">
               <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">

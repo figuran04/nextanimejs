@@ -9,7 +9,7 @@ const Gambar = ({ gambar }) => {
           <Image
             src={item.webp.image_url}
             alt={item.jpg.image_url}
-            width={100}
+            width={70}
             height={100}
             className="w-auto h-36 object-cover"
             key={index}

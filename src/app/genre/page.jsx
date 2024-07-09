@@ -1,11 +1,10 @@
 import Header from "@/components/AnimeList/Header"
+import { getAnimeResponse } from "@/libs/api-libs"
 import Link from "next/link"
 
 const GenrePage = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/genres/anime`
-  )
-  const { data } = await response.json()
+  const genreAnime = await getAnimeResponse("genres/anime")
+  const { data } = genreAnime
 
   return (
     <div className="w-full">

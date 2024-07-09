@@ -7,10 +7,10 @@ import { getAnimeResponse } from "@/libs/api-libs"
 
 const AnimePage = () => {
   const [page, setPage] = useState(1)
-  const [topAnime, setTopAnime] = useState([])
+  const [anime, setAnime] = useState([])
   const fetchData = async () => {
-    const populerAnime = await getAnimeResponse("anime", `page=${page}`)
-    setTopAnime(populerAnime)
+    const semuaAnime = await getAnimeResponse("anime", `page=${page}`)
+    setAnime(semuaAnime)
   }
   useEffect(() => {
     fetchData()
@@ -20,10 +20,10 @@ const AnimePage = () => {
     <div className="w-full flex flex-col items-center">
       <section className="lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
         <HeaderMenu title={`Anime #${page}`} />
-        <AnimeList api={topAnime} />
+        <AnimeList api={anime} />
         <Pagination
           page={page}
-          lastPage={topAnime.pagination?.last_visible_page}
+          lastPage={anime.pagination?.last_visible_page}
           setPage={setPage}
         />
       </section>

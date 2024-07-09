@@ -3,15 +3,15 @@ import AnimeList from "@/components/AnimeList"
 import AnimeSide from "@/components/AnimeSide"
 import Header from "@/components/AnimeList/Header"
 import { getAnimeResponse } from "@/libs/api-libs"
-import MyComponent from "@/components/AnimeSide/Loadmore"
 import { useState, useEffect } from "react"
-import LoadMore from "@/components/Recommended/Loadmore"
+import LoadMoreRecommend from "@/components/Recommended/Loadmore"
+import LoadMoreSide from "@/components/AnimeSide/LoadMore"
 
 const HomePage = () => {
   const [topAnime, setTopAnime] = useState([])
   const [seasonNowAnime, setSeasonNowAnime] = useState([])
   const [seasonUpcomingAnime, setSeasonUpcomingAnime] = useState([])
-  // const [recommendedAnime, setRecommendedAnime] = useState([])
+  const [recommendedAnime, setRecommendedAnime] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,17 +23,19 @@ const HomePage = () => {
       )
       setSeasonNowAnime(seasonNowAnimeResponse)
       await delay(1000) // Add a 1 second delay
-      const topAnimeResponse = await getAnimeResponse("top/anime", "limit=5")
+      const topAnimeResponse = await getAnimeResponse("top/anime", "limit=4")
       setTopAnime(topAnimeResponse)
       await delay(1000) // Add a 1 second delay
       const seasonUpcomingAnimeResponse = await getAnimeResponse(
         "seasons/upcoming",
-        "limit=5"
+        "limit=4"
       )
       setSeasonUpcomingAnime(seasonUpcomingAnimeResponse)
-      // await delay(1000); // Add a 1 second delay
-      // const recommendedAnimeResponse = await getAnimeResponse("recommendations/anime");
-      // setRecommendedAnime(recommendedAnimeResponse);
+      await delay(1000) // Add a 1 second delay
+      const recommendedAnimeResponse = await getAnimeResponse(
+        "recommendations/anime"
+      )
+      setRecommendedAnime(recommendedAnimeResponse)
     }
 
     fetchData()
@@ -57,7 +59,7 @@ const HomePage = () => {
               linkHref="/rekomendasi"
               linkTitle="Lihat Semua"
             />
-            {/* <LoadMore topAnime={recommendedAnime} /> */}
+            <LoadMoreRecommend api={recommendedAnime} />
           </section>
         </div>
         <div className="lg:w-4/12 md:w-5/12 w-full flex flex-col gap-6">
@@ -67,7 +69,7 @@ const HomePage = () => {
               linkHref="/topanime"
               linkTitle="Lihat Semua"
             />
-            <AnimeSide api={topAnime} />
+            <LoadMoreSide api={topAnime} />
           </section>
           <section>
             <Header
@@ -76,7 +78,7 @@ const HomePage = () => {
               linkTitle="Lihat Semua"
             />
             {/* <AnimeSide api={seasonUpcomingAnime} /> */}
-            <MyComponent topAnime={seasonUpcomingAnime} />
+            <LoadMoreSide api={seasonUpcomingAnime} />
           </section>
         </div>
       </div>

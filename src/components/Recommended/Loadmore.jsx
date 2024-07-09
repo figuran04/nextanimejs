@@ -2,35 +2,29 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useInView } from "react-intersection-observer"
-import FormattedDate from "../FormattedDate"
-const LoadMore = ({ topAnime }) => {
+import FormattedDate from "@/components/FormattedDate"
+const LoadMore = ({ api }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   })
-  if (!topAnime || !topAnime.data) {
-    return (
-      <p className="font-medium text-lg text-color-primary">
-        Halaman tidak tersedia
-      </p>
-    )
+  if (!api || !api.data) {
+    return <p className="font-medium text-lg text-color-primary">Memuat...</p>
   }
   return (
     <div ref={ref}>
       {inView ? (
         <div className="text-color-primary">
           <div className="flex flex-col gap-4">
-            {topAnime?.slice(0, 4).map(
-              (
-                item,
-                index // Batasi map data hingga 4 saja
-              ) => (
-                <div key={index}>
+            {api.data
+              ?.filter((item, index) => index < 3)
+              .map((item, index) => (
+                <div key={index} className="rounded-md shadow-md p-2">
                   <div className="flex justify-between gap-2">
                     {item.entry?.map((entry, index) => (
                       <Link
                         key={entry.mal_id}
                         href={`/anime/${entry.mal_id}`}
-                        className="w-1/2 flex gap-2 group hover:scale-105 transition-all relative rounded overflow-hidden cursor-pointer text-color-primary"
+                        className="w-1/2 flex gap-2 group hover:scale-105 transition-all relative rounded overflow-hidden cursor-pointer text-color-primary hover:shadow"
                       >
                         {entry.score ? (
                           <div className="absolute top-0 left-0 bg-color-accent rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1">
@@ -54,15 +48,15 @@ const LoadMore = ({ topAnime }) => {
                           alt={entry.images.jpg.small_image_url}
                           width={100}
                           height={100}
-                          className="lg:h-24 h-20 lg:w-20 w-16 object-cover transition-all"
+                          className="lg:h-full h-full lg:w-16 w-14 object-cover transition-all rounded"
                         />
                         <div className="text-sm">
                           {index == 0 ? (
-                            <p>Jika Anda suka</p>
+                            <p>Jika suka</p>
                           ) : (
-                            <p>...maka mungkin Anda suka</p>
+                            <p className="line-clamp-1">...maka mungkin suka</p>
                           )}
-                          <p className="text-base md:text-lg sm:text-lg font-bold line-clamp-2">
+                          <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
                             {entry.title}
                           </p>
                         </div>
@@ -70,13 +64,14 @@ const LoadMore = ({ topAnime }) => {
                     ))}
                   </div>
                   <div className="my-2">
-                    <p className="mx-2">{item.content}</p>
-                    <FormattedDate dateString={item.date} />
+                    <p className="line-clamp-4 text-justify">{item.content}</p>
+                    <FormattedDate
+                      dateString={item.date}
+                      style="font-bold opacity-50 text-right"
+                    />
                   </div>
-                  <hr className="custom-hr" />
                 </div>
-              )
-            )}
+              ))}
           </div>
         </div>
       ) : (

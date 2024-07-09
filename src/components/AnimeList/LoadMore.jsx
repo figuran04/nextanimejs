@@ -1,6 +1,6 @@
 "use client"
 import { useInView } from "react-intersection-observer"
-import AnimeSide from "."
+import AnimeList from "."
 const LoadMore = ({ api }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -8,7 +8,7 @@ const LoadMore = ({ api }) => {
   return (
     <div ref={ref}>
       {inView ? (
-        <AnimeSide api={api} />
+        <AnimeList api={api} />
       ) : (
         <p className="text-lg font-medium text-color-primary">Memuat...</p>
       )}

@@ -9,7 +9,7 @@ const Navbar = () => {
           <Link href="/" className="font-bold text-2xl">
             NEXTANIME
           </Link>
-          <div className="flex flex-nowrap gap-4 mx-4">
+          <div className="flex flex-nowrap gap-3 mx-2">
             <Link
               href={`/anime`}
               className="font-semibold text-xl underline cursor-pointer"
@@ -21,6 +21,12 @@ const Navbar = () => {
               className="font-semibold text-xl underline cursor-pointer"
             >
               Genre
+            </Link>
+            <Link
+              href={`/reviews`}
+              className="font-semibold text-xl underline cursor-pointer"
+            >
+              Review
             </Link>
           </div>
         </div>
