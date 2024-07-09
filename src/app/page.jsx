@@ -1,21 +1,43 @@
+"use client"
 import AnimeList from "@/components/AnimeList"
 import AnimeSide from "@/components/AnimeSide"
 import Header from "@/components/AnimeList/Header"
 import { getAnimeResponse } from "@/libs/api-libs"
 import MyComponent from "@/components/AnimeSide/Loadmore"
+import { useState, useEffect } from "react"
+import LoadMore from "@/components/Recommended/Loadmore"
 
-const HomePage = async () => {
-  const topAnime = await getAnimeResponse("top/anime", "limit=5")
-  const seasonNowAnime = await getAnimeResponse("seasons/now", "limit=8")
-  const seasonUpcomingAnime = await getAnimeResponse(
-    "seasons/upcoming",
-    "limit=5"
-  )
-  // const recommendedAnimeResponse = await getAnimeResponse(
-  //   "recommendations/anime"
-  // )
-  // const recommendedAnimeArray = recommendedAnimeResponse.data // asumsi data berisi array
-  // const recommendedAnime = recommendedAnimeArray.slice(0, 4)
+const HomePage = () => {
+  const [topAnime, setTopAnime] = useState([])
+  const [seasonNowAnime, setSeasonNowAnime] = useState([])
+  const [seasonUpcomingAnime, setSeasonUpcomingAnime] = useState([])
+  // const [recommendedAnime, setRecommendedAnime] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+      const seasonNowAnimeResponse = await getAnimeResponse(
+        "seasons/now",
+        "limit=8"
+      )
+      setSeasonNowAnime(seasonNowAnimeResponse)
+      await delay(1000) // Add a 1 second delay
+      const topAnimeResponse = await getAnimeResponse("top/anime", "limit=5")
+      setTopAnime(topAnimeResponse)
+      await delay(1000) // Add a 1 second delay
+      const seasonUpcomingAnimeResponse = await getAnimeResponse(
+        "seasons/upcoming",
+        "limit=5"
+      )
+      setSeasonUpcomingAnime(seasonUpcomingAnimeResponse)
+      // await delay(1000); // Add a 1 second delay
+      // const recommendedAnimeResponse = await getAnimeResponse("recommendations/anime");
+      // setRecommendedAnime(recommendedAnimeResponse);
+    }
+
+    fetchData()
+  }, [])
 
   return (
     <div className="w-full flex flex-col items-center">

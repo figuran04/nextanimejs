@@ -7,13 +7,23 @@ const LoadMore = ({ topAnime }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   })
+  if (!topAnime || !topAnime.data) {
+    return (
+      <p className="font-medium text-lg text-color-primary">
+        Halaman tidak tersedia
+      </p>
+    )
+  }
   return (
     <div ref={ref}>
       {inView ? (
         <div className="text-color-primary">
-          {topAnime ? (
-            <div className="flex flex-col gap-4">
-              {topAnime?.map((item, index) => (
+          <div className="flex flex-col gap-4">
+            {topAnime?.slice(0, 4).map(
+              (
+                item,
+                index // Batasi map data hingga 4 saja
+              ) => (
                 <div key={index}>
                   <div className="flex justify-between gap-2">
                     {item.entry?.map((entry, index) => (
@@ -65,13 +75,9 @@ const LoadMore = ({ topAnime }) => {
                   </div>
                   <hr className="custom-hr" />
                 </div>
-              ))}
-            </div>
-          ) : (
-            <p className="font-bold text-lg">
-              Halaman tidak tersedia untuk sekarang
-            </p>
-          )}
+              )
+            )}
+          </div>
         </div>
       ) : (
         <p className="text-lg font-medium text-color-primary">Memuat...</p>

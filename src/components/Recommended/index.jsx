@@ -42,9 +42,9 @@ const Recommended = ({ api }) => {
                     />
                     <div className="text-sm">
                       {index == 0 ? (
-                        <p>Jika Anda suka</p>
+                        <p>Jika suka</p>
                       ) : (
-                        <p>...maka mungkin Anda suka</p>
+                        <p>...maka mungkin suka</p>
                       )}
                       <p className="text-base md:text-lg sm:text-lg font-bold line-clamp-2">
                         {entry.title}

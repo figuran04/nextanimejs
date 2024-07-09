@@ -34,8 +34,8 @@ const Pagination = ({ page, lastPage, setPage }) => {
       </button>
     )
 
-    const startPage = Math.max(2, page - 2)
-    const endPage = Math.min(lastPage, page + 2)
+    const startPage = Math.max(2, page - 1)
+    const endPage = Math.min(lastPage, page + 1)
 
     for (let i = startPage; i <= endPage; i++) {
       pageNumbers.push(

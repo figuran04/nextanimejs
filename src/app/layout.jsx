@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${sfProDisplay.className} bg-color-dark`}
+        className={`${sfProDisplay.className} bg-color-dark pb-16`}
       >
         <Navbar />
         {children}

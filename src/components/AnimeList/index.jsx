@@ -3,6 +3,10 @@ import Link from "next/link"
 import Header from "./Header"
 
 const AnimeList = ({ api }) => {
+  if (!api.data) {
+    return <p className="font-medium text-lg text-color-primary">Memuat...</p>
+  }
+
   return (
     <div>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">

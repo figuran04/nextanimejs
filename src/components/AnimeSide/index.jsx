@@ -2,6 +2,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 const AnimeSide = ({ api }) => {
+  if (!api.data) {
+    return <p className="font-medium text-lg text-color-primary">Memuat...</p>
+  }
+
   return (
     <div className="flex flex-col gap-4">
       {api.data?.map((anime, index) => {
