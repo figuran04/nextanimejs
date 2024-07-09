@@ -5,7 +5,7 @@ import Header from "@/components/AnimeList/Header"
 import { getAnimeResponse } from "@/libs/api-libs"
 import { useState, useEffect } from "react"
 import LoadMoreRecommend from "@/components/Recommended/Loadmore"
-import LoadMoreSide from "@/components/AnimeSide/LoadMore"
+import LoadMoreSide from "@/components/AnimeSide/LoadMoreSide"
 
 const HomePage = () => {
   const [topAnime, setTopAnime] = useState([])

@@ -1,7 +1,7 @@
 "use client"
 import { useInView } from "react-intersection-observer"
 import AnimeSide from "."
-const LoadMore = ({ api }) => {
+const LoadMoreSide = ({ api }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
   })
@@ -15,4 +15,4 @@ const LoadMore = ({ api }) => {
     </div>
   )
 }
-export default LoadMore
+export default LoadMoreSide
