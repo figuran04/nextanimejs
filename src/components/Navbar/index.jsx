@@ -28,6 +28,7 @@ const Navbar = () => {
           <button
             onClick={toggleNav}
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm hover:bg-color-primary hover:dark:bg-color-dark bg-color-accent dark:bg-color-secondary rounded-lg md:hidden hover:text-color-accent dark:hover:text-color-secondary focus:outline-none focus:ring-2 focus:ring-color-primary dark:focus:ring-color-dark"
+            aria-label="menu"
           >
             <svg
               className="w-5 h-5"
