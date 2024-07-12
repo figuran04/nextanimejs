@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const Navbar = ({ id, detail, gambar, karakter, rekomendasi }) => {
   return (
-    <nav className="flex flex-nowrap gap-3 overflow-x-auto flex-row text-color-primary text-lg font-semibold">
+    <nav className="flex flex-nowrap gap-3 overflow-x-auto flex-row text-color-dark dark:text-color-primary text-lg font-semibold">
       <Link href={`/anime/${id}`} className={`rounded px-3 py-1 ${detail}`}>
         Detail
       </Link>

@@ -7,7 +7,10 @@ const GambarPage = async ({ params: { id } }) => {
 
   return (
     <>
-      <Navbar id={id} gambar="bg-color-accent shadow-md" />
+      <Navbar
+        id={id}
+        gambar="bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
+      />
       <Gambar gambar={gambar} />
     </>
   )

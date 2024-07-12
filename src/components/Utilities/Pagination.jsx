@@ -25,8 +25,10 @@ const Pagination = ({ page, lastPage, setPage }) => {
     pageNumbers.push(
       <button
         key={1}
-        className={`transition-all hover:text-color-accent ${
-          page === 1 ? "font-bold text-color-accent" : ""
+        className={`transition-all hover:text-color-accent hover:dark:text-color-secondary ${
+          page === 1
+            ? "font-bold text-color-accent dark:text-color-secondary"
+            : ""
         }`}
         onClick={() => handlePageClick(1)}
       >
@@ -41,8 +43,10 @@ const Pagination = ({ page, lastPage, setPage }) => {
       pageNumbers.push(
         <button
           key={i}
-          className={`transition-all hover:text-color-accent ${
-            i === page ? "font-bold text-color-accent" : ""
+          className={`transition-all hover:text-color-accent hover:dark:text-color-secondary ${
+            i === page
+              ? "font-bold text-color-accent dark:text-color-secondary"
+              : ""
           }`}
           onClick={() => handlePageClick(i)}
         >
@@ -56,8 +60,10 @@ const Pagination = ({ page, lastPage, setPage }) => {
       pageNumbers.push(
         <button
           key={lastPage}
-          className={`transition-all hover:text-color-accent ${
-            lastPage === page ? "font-bold text-color-accent" : ""
+          className={`transition-all hover:text-color-accent hover:dark:text-color-secondary ${
+            lastPage === page
+              ? "font-bold text-color-accent dark:text-color-secondary"
+              : ""
           }`}
           onClick={() => handlePageClick(lastPage)}
         >
@@ -70,10 +76,10 @@ const Pagination = ({ page, lastPage, setPage }) => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 flex justify-center items-center py-4 px-2 gap-4 text-color-primary text-xl font-bold bg-color-dark shadow-md">
+    <div className="fixed bottom-0 left-0 right-0 flex justify-center items-center py-4 px-2 gap-4 dark:text-color-primary text-color-dark text-xl font-bold dark:bg-color-dark bg-color-primary shadow-md">
       {page > 1 && (
         <button
-          className="transition-all hover:text-color-accent"
+          className="transition-all hover:text-color-accent hover:dark:text-color-secondary"
           onClick={handlePrevPage}
         >
           Prev
@@ -82,7 +88,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
       {renderPageNumbers()}
       {page < lastPage && (
         <button
-          className="transition-all hover:text-color-accent"
+          className="transition-all hover:text-color-accent hover:dark:text-color-secondary"
           onClick={handleNextPage}
         >
           Next

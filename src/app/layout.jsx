@@ -1,7 +1,7 @@
 import localFont from "next/font/local"
 import "./globals.css"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import Navbar from "@/components/Navbar"
+import { Providers } from "./providers"
 const sfProDisplay = localFont({
   src: [
     {
@@ -107,11 +107,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${sfProDisplay.className} bg-color-dark pb-16`}
+        className={`${sfProDisplay.className} dark:bg-color-dark bg-color-primary pb-16`}
       >
-        <Navbar />
-        {children}
-        <SpeedInsights />
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   )

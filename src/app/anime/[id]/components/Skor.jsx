@@ -1,6 +1,6 @@
 const Skor = ({ data }) => {
   return (
-    <div className="flex text-color-primary flex-row w-full gap-4 flex-nowrap">
+    <div className="flex dark:text-color-primary text-color-dark flex-row w-full gap-4 flex-nowrap">
       {data.score ? (
         <div className="flex flex-col items-center shadow-md px-3 py-1 rounded">
           <p className="text-lg font-medium">SKOR</p>

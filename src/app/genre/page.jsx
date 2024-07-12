@@ -1,4 +1,4 @@
-import Header from "@/components/AnimeList/Header"
+import HeaderMenu from "@/components/Utilities/HeaderMenu"
 import { getAnimeResponse } from "@/libs/api-libs"
 import Link from "next/link"
 
@@ -8,14 +8,18 @@ const GenrePage = async () => {
 
   return (
     <div className="w-full">
-      <div className="mx-auto w-11/12">
-        <Header title="Genre" />
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6 text-color-primary">
+      <div className="mx-auto lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
+        <HeaderMenu title="Genre" />
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 dark:text-color-primary text-color-dark">
           {data.map((item, index) => {
             const genre = item.name.toLowerCase()
             return (
-              <Link href={`/genre/${genre}`} key={index}>
-                <p className="cursor-pointer underline text-base md:text-xl sm:text-lg font-semibold line-clamp-2 hover:text-color-accent">
+              <Link
+                href={`/genre/${genre}`}
+                key={index}
+                className="group shadow p-2 hover:scale-105 transition-all dark:hover:bg-color-secondary hover:bg-color-accent rounded-lg"
+              >
+                <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-dark group-hover:text-color-primary">
                   {item.name}
                 </p>
               </Link>

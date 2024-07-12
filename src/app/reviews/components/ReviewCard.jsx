@@ -12,9 +12,9 @@ const ReviewCard = ({ review }) => {
   }
 
   return (
-    <div className="text-color-primary p-4 rounded-md shadow-md mb-4">
+    <div className="dark:text-color-primary text-color-dark p-2 rounded-md shadow-md mb-4">
       <div className="flex gap-2">
-        <div className="xl:w-10/12 ld:w-9/12 w-full flex flex-col gap-3">
+        <div className="xl:w-11/12 lg:w-10/12 w-full flex flex-col gap-3">
           <div className="flex items-center mb-2">
             <Image
               className="w-12 h-12 object-cover rounded-full mr-4"
@@ -29,13 +29,15 @@ const ReviewCard = ({ review }) => {
               </h2>
               <div className="flex gap-1">
                 <span>oleh</span>
-                <span className="text-color-accent">{user.username}</span>
-                <FormattedDate dateString={date} style="opacity-50" />
+                <span className="text-color-accent dark:text-color-secondary">
+                  {user.username}
+                </span>
+                <FormattedDate dateString={date} styles="opacity-50" />
               </div>
             </div>
           </div>
         </div>
-        <div className="xl:w-2/12 lg:w-3/12 flex items-center justify-center">
+        <div className="xl:w-1/12 lg:w-2/12 w-auto flex items-center justify-center">
           <Link
             href={`/anime/${entry.mal_id}`}
             className="rounded overflow-hidden hover:scale-105 transition-all cursor-pointer"

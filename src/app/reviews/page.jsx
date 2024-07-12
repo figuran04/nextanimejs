@@ -6,19 +6,19 @@ import HeaderMenu from "@/components/Utilities/HeaderMenu"
 
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([])
-  const [loading, setLoading] = useState(true)
+  // const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchReviews = async () => {
       const data = await getAnimeResponse("reviews/anime", "page=1")
       setReviews(data.data)
-      setLoading(false)
+      // setLoading(false)
     }
 
     fetchReviews()
   }, [])
 
-  if (loading) {
+  if (!reviews) {
     return (
       <div className="w-full flex flex-col items-center">
         <section className="lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">

@@ -10,7 +10,7 @@ import LoadMoreSide from "@/components/AnimeSide/LoadMoreSide"
 const HomePage = () => {
   const [topAnime, setTopAnime] = useState([])
   const [seasonNowAnime, setSeasonNowAnime] = useState([])
-  const [seasonUpcomingAnime, setSeasonUpcomingAnime] = useState([])
+  // const [seasonUpcomingAnime, setSeasonUpcomingAnime] = useState([])
   const [recommendedAnime, setRecommendedAnime] = useState([])
 
   useEffect(() => {
@@ -22,16 +22,16 @@ const HomePage = () => {
         "limit=8"
       )
       setSeasonNowAnime(seasonNowAnimeResponse)
-      await delay(1000) // Add a 1 second delay
-      const topAnimeResponse = await getAnimeResponse("top/anime", "limit=4")
+      await delay(750) // Add a 1 second delay
+      const topAnimeResponse = await getAnimeResponse("top/anime", "limit=5")
       setTopAnime(topAnimeResponse)
-      await delay(1000) // Add a 1 second delay
-      const seasonUpcomingAnimeResponse = await getAnimeResponse(
-        "seasons/upcoming",
-        "limit=4"
-      )
-      setSeasonUpcomingAnime(seasonUpcomingAnimeResponse)
-      await delay(1000) // Add a 1 second delay
+      await delay(750) // Add a 1 second delay
+      // const seasonUpcomingAnimeResponse = await getAnimeResponse(
+      //   "seasons/upcoming",
+      //   "limit=4"
+      // )
+      // setSeasonUpcomingAnime(seasonUpcomingAnimeResponse)
+      // await delay(750) // Add a 1 second delay
       const recommendedAnimeResponse = await getAnimeResponse(
         "recommendations/anime"
       )
@@ -71,15 +71,14 @@ const HomePage = () => {
             />
             <LoadMoreSide api={topAnime} />
           </section>
-          <section>
+          {/* <section>
             <Header
               title="Mendatang Teratas"
               linkHref="/musim/mendatang"
               linkTitle="Lihat Semua"
             />
-            {/* <AnimeSide api={seasonUpcomingAnime} /> */}
             <LoadMoreSide api={seasonUpcomingAnime} />
-          </section>
+          </section> */}
         </div>
       </div>
     </div>

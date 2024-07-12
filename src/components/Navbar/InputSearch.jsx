@@ -19,12 +19,12 @@ const InputSearch = () => {
       <input
         type="text"
         placeholder="Cari anime..."
-        className="py-2 px-3 rounded w-full text-color-dark"
+        className="py-2 px-3 rounded-lg w-full text-color-dark bg-color-primary dark:bg-color-dark dark:text-color-primary outline-color-accent dark:outline-color-secondary"
         ref={searchRef}
         onKeyDown={handleSearch}
       />
       <button
-        className="absolute top-0 end-0 p-2 text-black"
+        className="absolute top-0 end-0 p-2 text-color-dark dark:text-color-primary"
         onClick={handleSearch}
         aria-label="search"
       >
