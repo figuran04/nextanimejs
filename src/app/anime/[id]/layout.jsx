@@ -1,9 +1,15 @@
+"use client"
 import { getAnimeResponse } from "@/libs/api-libs"
 import Title from "./components/Title"
 import Image from "next/image"
 import VideoPlayer from "@/components/Utilities/VideoPlayer"
+import { useRouter } from "next/navigation"
 
 const AnimeIdPage = async ({ children, params: { id } }) => {
+  const router = useRouter()
+  if (isNaN(id)) {
+    router.push("/tidakditemukan")
+  }
   const { data } = await getAnimeResponse(`anime/${id}`)
 
   return (

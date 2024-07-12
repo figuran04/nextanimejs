@@ -22,10 +22,10 @@ const HomePage = () => {
         "limit=8"
       )
       setSeasonNowAnime(seasonNowAnimeResponse)
-      await delay(550) // Add a 1 second delay
+      await delay(510) // Add a 1 second delay
       const topAnimeResponse = await getAnimeResponse("top/anime", "limit=5")
       setTopAnime(topAnimeResponse)
-      await delay(550) // Add a 1 second delay
+      await delay(510) // Add a 1 second delay
       // const seasonUpcomingAnimeResponse = await getAnimeResponse(
       //   "seasons/upcoming",
       //   "limit=4"

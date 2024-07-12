@@ -23,7 +23,7 @@ const AnimePage = () => {
         <HeaderMenu title={`Anime #${page}`} />
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 dark:text-color-primary text-color-dark mb-4">
           <Link
-            href={`/anime/topanime`}
+            href={`/topanime`}
             className="group shadow p-2 hover:scale-105 transition-all dark:hover:bg-color-secondary hover:bg-color-accent rounded-lg"
           >
             <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-dark group-hover:text-color-primary">
@@ -31,7 +31,7 @@ const AnimePage = () => {
             </p>
           </Link>
           <Link
-            href={`/anime/rekomendasi`}
+            href={`/rekomendasi`}
             className="group shadow p-2 hover:scale-105 transition-all dark:hover:bg-color-secondary hover:bg-color-accent rounded-lg"
           >
             <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-dark group-hover:text-color-primary">
