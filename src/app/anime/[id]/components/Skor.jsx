@@ -17,7 +17,7 @@ const Skor = ({ data }) => {
         </div>
       )}
       <div
-        className={`flex flex-nowrap justify-center md:justify-around md:flex-row w-full overflow-x-auto md:items-center ${
+        className={`flex flex-nowrap justify-center md:justify-around md:flex-row gap-2 md:gap-0 ml-4 md:ml-0 w-full overflow-x-auto md:items-center ${
           data.score ? `flex-col` : `flex-row`
         }`}
       >
