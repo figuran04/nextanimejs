@@ -32,12 +32,12 @@ const AnimeSide = ({ api }) => {
           >
             <Link href={`/anime/${anime.mal_id}`} className="flex flex-row">
               {anime.rank ? (
-                <div className="absolute top-0 left-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-color-primary rounded-ee font-bold px-2 text-base py-0.5 flex items-center gap-1">
+                <div className="absolute top-0 left-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-white rounded-ee font-bold px-2 text-base py-0.5 flex items-center gap-1">
                   <p>{anime.rank}</p>
                 </div>
               ) : null}
               {anime.score ? (
-                <div className="absolute bottom-0 right-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-color-primary rounded-s font-bold px-2 text-base py-1 mt-2 flex items-center gap-1">
+                <div className="absolute bottom-0 right-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-white rounded-s font-bold px-2 text-base py-1 mt-2 flex items-center gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"

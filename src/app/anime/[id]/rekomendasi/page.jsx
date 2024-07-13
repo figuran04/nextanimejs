@@ -1,7 +1,7 @@
 import Recommendations from "@/components/Recommendations"
 import Navbar from "../components/Navbar"
 
-const RekomendasiPage = async ({ params: { id } }) => {
+const RekomendasiPage = ({ params: { id } }) => {
   return (
     <>
       <Navbar

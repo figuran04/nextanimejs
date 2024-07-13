@@ -1,45 +1,42 @@
-"use client"
+// "use client"
 import AnimeList from "@/components/AnimeList"
-import AnimeSide from "@/components/AnimeSide"
 import Header from "@/components/AnimeList/Header"
 import { getAnimeResponse } from "@/libs/api-libs"
-import { useState, useEffect } from "react"
+// import { useState, useEffect } from "react"
 import LoadMoreRecommend from "@/components/Recommended/Loadmore"
 import LoadMoreSide from "@/components/AnimeSide/LoadMoreSide"
 
-const HomePage = () => {
-  const [topAnime, setTopAnime] = useState([])
-  const [seasonNowAnime, setSeasonNowAnime] = useState([])
-  // const [seasonUpcomingAnime, setSeasonUpcomingAnime] = useState([])
-  const [recommendedAnime, setRecommendedAnime] = useState([])
+const HomePage = async () => {
+  // const [topAnime, setTopAnime] = useState([])
+  // const [seasonNowAnime, setSeasonNowAnime] = useState([])
+  // const [recommendedAnime, setRecommendedAnime] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-      const seasonNowAnimeResponse = await getAnimeResponse(
-        "seasons/now",
-        "limit=8"
-      )
-      setSeasonNowAnime(seasonNowAnimeResponse)
-      await delay(510) // Add a 1 second delay
-      const topAnimeResponse = await getAnimeResponse("top/anime", "limit=5")
-      setTopAnime(topAnimeResponse)
-      await delay(510) // Add a 1 second delay
-      // const seasonUpcomingAnimeResponse = await getAnimeResponse(
-      //   "seasons/upcoming",
-      //   "limit=4"
-      // )
-      // setSeasonUpcomingAnime(seasonUpcomingAnimeResponse)
-      // await delay(750) // Add a 1 second delay
-      const recommendedAnimeResponse = await getAnimeResponse(
-        "recommendations/anime"
-      )
-      setRecommendedAnime(recommendedAnimeResponse)
-    }
+  //     const seasonNowAnimeResponse = await getAnimeResponse(
+  //       "seasons/now",
+  //       "limit=8"
+  //     )
+  //     setSeasonNowAnime(seasonNowAnimeResponse)
+  //     await delay(510)
+  //     const topAnimeResponse = await getAnimeResponse("top/anime", "limit=5")
+  //     setTopAnime(topAnimeResponse)
+  //     await delay(510)
+  //     const recommendedAnimeResponse = await getAnimeResponse(
+  //       "recommendations/anime"
+  //     )
+  //     setRecommendedAnime(recommendedAnimeResponse)
+  //   }
 
-    fetchData()
-  }, [])
+  //   fetchData()
+  // }, [])
+  const seasonNowAnime = await getAnimeResponse("seasons/now", "limit=8")
+
+  const topAnime = await getAnimeResponse("top/anime", "limit=5")
+
+  const recommendedAnime = await getAnimeResponse("recommendations/anime")
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -71,14 +68,6 @@ const HomePage = () => {
             />
             <LoadMoreSide api={topAnime} />
           </section>
-          {/* <section>
-            <Header
-              title="Mendatang Teratas"
-              linkHref="/musim/mendatang"
-              linkTitle="Lihat Semua"
-            />
-            <LoadMoreSide api={seasonUpcomingAnime} />
-          </section> */}
         </div>
       </div>
     </div>

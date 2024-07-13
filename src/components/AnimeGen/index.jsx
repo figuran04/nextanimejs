@@ -17,11 +17,11 @@ const AnimeGen = ({ api, keyword }) => {
           .map((anime, index) => (
             <Link
               href={`/anime/${anime.mal_id}`}
-              className="group cursor-pointer text-white transition-all relative rounded overflow-hidden hover:scale-105"
+              className="group cursor-pointer text-white dark:text-color-dark transition-all relative rounded overflow-hidden hover:scale-105"
               key={index}
             >
               {anime.score ? (
-                <div className="absolute top-0 right-0 bg-color-accent rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1">
+                <div className="absolute top-0 right-0 bg-color-accent dark:bg-color-secondary rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
@@ -45,7 +45,7 @@ const AnimeGen = ({ api, keyword }) => {
                 className="w-full max-h-64 object-cover transition-all"
               />
               <div className="px-4 bg-gradient-to-t from-color-dark to-transparent w-full md:h-20 sm:h-16 h-14 flex absolute bottom-0 items-center transition-all">
-                <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
+                <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2 text-color-primary">
                   {anime.title}
                 </p>
               </div>

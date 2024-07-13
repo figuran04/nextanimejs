@@ -1,3 +1,4 @@
+"use client"
 import FormattedDate from "@/components/FormattedDate"
 import Image from "next/image"
 import Link from "next/link"
@@ -12,7 +13,7 @@ const ReviewCard = ({ review }) => {
   }
 
   return (
-    <div className="dark:text-color-primary text-color-dark p-2 rounded-md shadow-md mb-4">
+    <>
       <div className="flex gap-2">
         <div className="xl:w-11/12 lg:w-10/12 w-full flex flex-col gap-3">
           <div className="flex items-center mb-2">
@@ -67,7 +68,7 @@ const ReviewCard = ({ review }) => {
           {showFullText ? "Kembali semula" : "Baca selengkapnya"}
         </button>
       </div>
-    </div>
+    </>
   )
 }
 

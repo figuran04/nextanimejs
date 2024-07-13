@@ -11,14 +11,14 @@ const Skor = ({ data }) => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-nowrap gap-2 text-xl">
-          <p className="font-medium">Favorit</p>
+        <div className="flex flex-nowrap gap-2 lg:text-xl text-lg">
+          <p className="">Favorit</p>
           <p className="font-bold">{`${data.favorites}`}</p>
         </div>
       )}
       <div
-        className={`flex flex-nowrap justify-center md:justify-around md:flex-row gap-2 md:gap-0 ml-4 md:ml-0 w-full overflow-x-auto md:items-center ${
-          data.score ? `flex-col` : `flex-row`
+        className={`flex flex-nowrap justify-center md:justify-around md:flex-row w-full overflow-x-auto md:items-center no-scrollbar ${
+          data.score ? `flex-col` : `flex-row pl-20 gap-2`
         }`}
       >
         {data.rank ? (

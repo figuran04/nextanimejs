@@ -34,7 +34,7 @@ const AnimeList = ({ api }) => {
             >
               <Link href={`/anime/${anime.mal_id}`} className="">
                 {anime.score ? (
-                  <div className="absolute top-0 right-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-color-primary rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1">
+                  <div className="absolute top-0 right-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-white rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 16"

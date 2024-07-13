@@ -23,18 +23,26 @@ const AnimePage = () => {
         <HeaderMenu title={`Anime #${page}`} />
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 dark:text-color-primary text-color-dark mb-4">
           <Link
-            href={`/topanime`}
-            className="group shadow p-2 hover:scale-105 transition-all dark:hover:bg-color-secondary hover:bg-color-accent rounded-lg"
+            href={`/anime`}
+            className="group shadow p-2 transition-all dark:bg-color-secondary bg-color-accent rounded-lg"
           >
-            <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-dark group-hover:text-color-primary">
+            <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center dark:text-color-dark text-color-primary">
+              Anime
+            </p>
+          </Link>
+          <Link
+            href={`/topanime`}
+            className="group shadow p-2 transition-all rounded-lg"
+          >
+            <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-secondary group-hover:text-color-accent">
               Anime Teratas
             </p>
           </Link>
           <Link
             href={`/rekomendasi`}
-            className="group shadow p-2 hover:scale-105 transition-all dark:hover:bg-color-secondary hover:bg-color-accent rounded-lg"
+            className="group shadow p-2 transition-all rounded-lg"
           >
-            <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-dark group-hover:text-color-primary">
+            <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-secondary group-hover:text-color-accent">
               Anime Rekomendasi
             </p>
           </Link>

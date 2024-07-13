@@ -32,8 +32,13 @@ const ReviewsPage = () => {
     <div className="w-full flex flex-col items-center">
       <section className="lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
         <HeaderMenu title={`Review`} />
-        {reviews?.map((review) => (
-          <ReviewCard key={review.mal_id} review={review} />
+        {reviews?.map((review, index) => (
+          <div
+            key={index}
+            className="dark:text-color-primary text-color-dark p-2 rounded-md shadow-md mb-4"
+          >
+            <ReviewCard review={review} />
+          </div>
         ))}
       </section>
     </div>

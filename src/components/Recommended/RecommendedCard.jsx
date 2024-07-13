@@ -1,34 +1,17 @@
+"use client"
 import Image from "next/image"
 import FormattedDate from "../FormattedDate"
 import Link from "next/link"
 import { useState } from "react"
-import { MotionDiv } from "../MotionDiv"
 
-const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-}
-
-const RecommendedCard = ({ item, index }) => {
+const RecommendedCard = ({ item }) => {
   const [showFullText, setShowFullText] = useState(false)
 
   const toggleFullText = () => {
     setShowFullText(!showFullText)
   }
   return (
-    <MotionDiv
-      variants={variants}
-      initial="hidden"
-      animate="visible"
-      transition={{
-        delay: index * 0.25,
-        ease: "easeInOut",
-        duration: 0.5,
-      }}
-      viewport={{ amount: 0 }}
-      key={index}
-      className="rounded-md shadow p-2"
-    >
+    <>
       <div className="flex justify-between gap-2">
         {item.entry?.map((entry, index) => (
           <Link
@@ -91,7 +74,7 @@ const RecommendedCard = ({ item, index }) => {
           </button>
         </div>
       </div>
-    </MotionDiv>
+    </>
   )
 }
 
