@@ -33,7 +33,6 @@ const ReviewCard = ({ review }) => {
                 <span className="text-color-accent dark:text-color-secondary">
                   {user.username}
                 </span>
-                <FormattedDate dateString={date} styles="opacity-50" />
               </div>
             </div>
           </div>
@@ -60,7 +59,8 @@ const ReviewCard = ({ review }) => {
       >
         {reviewText}
       </p>
-      <div className="w-full text-right">
+      <div className="w-full flex justify-between">
+        <FormattedDate dateString={date} styles="opacity-50" />
         <button
           className="hover:underline opacity-50 mx-2 my-1"
           onClick={toggleFullText}
