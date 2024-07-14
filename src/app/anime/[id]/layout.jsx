@@ -7,7 +7,7 @@ const AnimeIdPage = async ({ children, params: { id } }) => {
   const { data } = await getAnimeResponse(`anime/${id}`)
 
   return (
-    <>
+    <div>
       <Title data={data} />
       <div className="pt-4 px-4 flex md:flex-row flex-col gap-4 dark:text-color-primary text-color-dark">
         <div className="md:w-1/4">
@@ -24,7 +24,7 @@ const AnimeIdPage = async ({ children, params: { id } }) => {
       <div>
         <VideoPlayer youtubeId={data.trailer.youtube_id} />
       </div>
-    </>
+    </div>
   )
 }
 

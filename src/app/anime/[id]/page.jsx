@@ -7,7 +7,7 @@ const AnimeIdPage = async ({ params: { id } }) => {
   const { data } = await getAnimeResponse(`anime/${id}`)
 
   return (
-    <>
+    <div>
       <Navbar
         id={id}
         detail="bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
@@ -18,7 +18,7 @@ const AnimeIdPage = async ({ params: { id } }) => {
         <p className="text-justify text-2xl font-bold">Sinopsis</p>
         <p className="text-justify text-lg">{data.synopsis}</p>
       </div>
-    </>
+    </div>
   )
 }
 

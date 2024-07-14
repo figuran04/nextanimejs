@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { MotionDiv } from "../MotionDiv"
-import SkeletonAnimeList from "../Skeleton/SkeletonAnimeList"
+import SkeletonAnimeList from "../SkeletonAnimeList"
 import AnimeListCard from "./AnimeListCard"
 import Image from "next/image"
 
@@ -55,8 +55,8 @@ const AnimeList = ({ api }) => {
                   alt={anime.images.jpg.image_url}
                   width={350}
                   height={400}
+                  loading="lazy"
                   className="w-full max-h-64 object-cover transition-all"
-                  priority={true}
                 />
                 <div className="px-4 bg-gradient-to-t from-color-dark to-transparent w-full md:h-20 sm:h-16 h-14 flex absolute bottom-0 items-center transition-all">
                   <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">

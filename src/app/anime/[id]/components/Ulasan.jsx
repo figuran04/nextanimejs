@@ -11,7 +11,7 @@ const Ulasan = ({ item }) => {
     setShowFullText(!showFullText)
   }
   return (
-    <>
+    <div>
       <div className="w-full flex flex-col gap-3">
         <div className="flex items-center mb-2">
           <Image
@@ -54,7 +54,7 @@ const Ulasan = ({ item }) => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

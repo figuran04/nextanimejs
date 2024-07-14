@@ -1,7 +1,7 @@
 "use client"
 import { useInView } from "react-intersection-observer"
 import RecommendedCard from "./RecommendedCard"
-import SkeletonAnimeRecommend from "../Skeleton/SkeletonAnimeRecommend"
+import SkeletonAnimeRecommend from "../SkeletonAnimeRecommend"
 import { MotionDiv } from "../MotionDiv"
 import Link from "next/link"
 import Image from "next/image"

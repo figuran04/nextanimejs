@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import SkeletonAnimeSide from "../Skeleton/SkeletonAnimeSide"
+import SkeletonAnimeSide from "../SkeletonAnimeSide"
 import { MotionDiv } from "../MotionDiv"
 
 const variants = {
