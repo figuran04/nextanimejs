@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useState } from "react"
 
 const ReviewCard = ({ review }) => {
-  const { review: reviewText, user, entry, date, tags } = review
+  const { review: reviewText, user, entry, date } = review
   const [showFullText, setShowFullText] = useState(false)
 
   const toggleFullText = () => {

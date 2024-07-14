@@ -1,6 +1,11 @@
 const Skor = ({ data }) => {
+  if (!data) {
+    return <p className="font-medium text-lg">Memuat...</p>
+  } else if (data == []) {
+    return <p className="font-medium text-lg">Tidak ditemukan</p>
+  }
   return (
-    <div className="flex dark:text-color-primary text-color-dark flex-row w-full gap-4 flex-nowrap">
+    <div className="flex dark:text-color-primary text-color-dark flex-row w-full gap-4 flex-nowrap my-2">
       {data.score ? (
         <div className="flex flex-col items-center shadow-md px-3 py-1 rounded">
           <p className="text-lg font-medium">SKOR</p>

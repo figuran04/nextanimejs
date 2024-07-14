@@ -3,8 +3,7 @@ import { getAnimeResponse } from "@/libs/api-libs"
 import Link from "next/link"
 
 const GenrePage = async () => {
-  const genreAnime = await getAnimeResponse("genres/anime")
-  const { data } = genreAnime
+  const { data } = await getAnimeResponse("genres/anime")
 
   return (
     <div className="w-full">
@@ -13,6 +12,11 @@ const GenrePage = async () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 dark:text-color-primary text-color-dark">
           {data.map((item, index) => {
             const genre = item.name.toLowerCase()
+            if (!item) {
+              return <p className="font-medium text-lg">Memuat...</p>
+            } else if (item == []) {
+              return <p className="font-medium text-lg">Tidak ditemukan</p>
+            }
             return (
               <Link
                 href={`/genre/${genre}`}

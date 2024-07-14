@@ -1,7 +1,7 @@
 import { getAnimeResponse } from "@/libs/api-libs"
-import Title from "./components/Title"
 import Image from "next/image"
 import VideoPlayer from "@/components/Utilities/VideoPlayer"
+import Title from "@/components/AnimeId/Title"
 
 const AnimeIdPage = async ({ children, params: { id } }) => {
   const { data } = await getAnimeResponse(`anime/${id}`)

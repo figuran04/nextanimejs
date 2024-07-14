@@ -1,6 +1,6 @@
 "use client"
 import AnimeList from "@/components/AnimeList"
-import Header from "@/components/AnimeList/Header"
+import Header from "@/components/Header"
 import { getAnimeResponse } from "@/libs/api-libs"
 import { useState, useEffect } from "react"
 import LoadMoreRecommend from "@/components/Recommended/Loadmore"

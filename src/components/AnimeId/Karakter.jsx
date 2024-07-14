@@ -1,6 +1,11 @@
 import Image from "next/image"
 
 const Karakter = ({ karakter }) => {
+  if (!karakter) {
+    return <p className="font-medium text-lg">Memuat...</p>
+  } else if (karakter == []) {
+    return <p className="font-medium text-lg">Tidak ditemukan</p>
+  }
   return (
     <div className="w-full flex justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-11/12">

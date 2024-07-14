@@ -7,9 +7,6 @@ const variants = {
 }
 
 const Recommended = ({ api }) => {
-  if (!api.data) {
-    return <p className="font-medium text-lg text-color-primary">Memuat...</p>
-  }
   return (
     <div className="dark:text-color-primary text-color-dark">
       <div className="flex flex-col gap-4">

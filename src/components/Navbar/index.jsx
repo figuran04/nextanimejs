@@ -70,7 +70,7 @@ const Navbar = () => {
           id="navbar"
           className={`w-full md:block md:w-auto ${isNavOpen ? "" : "hidden"}`}
         >
-          <div className="font-medium flex flex-col p-4 md:p-0 md:px-2 mt-4 border border-color-primary rounded-lg bg-color-primary md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-color-dark dark:border-color-dark md:bg-color-primary dark:md:bg-color-dark">
+          <div className="md:gap-2 font-medium flex flex-col p-4 md:p-0 md:px-2 border border-color-primary rounded-lg bg-color-primary md:flex-row rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-color-dark dark:border-color-dark md:bg-color-primary dark:md:bg-color-dark">
             <ButtonNav title="Beranda" link="" active="true" />
             <ButtonNav title="Anime" link="anime" />
             <ButtonNav title="Genre" link="genre" />

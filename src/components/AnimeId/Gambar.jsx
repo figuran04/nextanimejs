@@ -1,6 +1,11 @@
 import Image from "next/image"
 
 const Gambar = ({ gambar }) => {
+  if (!gambar) {
+    return <p className="font-medium text-lg">Memuat...</p>
+  } else if (gambar == []) {
+    return <p className="font-medium text-lg">Tidak ditemukan</p>
+  }
   return (
     <div className="flex flex-col gap-2">
       <p className="text-justify text-2xl font-bold">Gambar</p>
