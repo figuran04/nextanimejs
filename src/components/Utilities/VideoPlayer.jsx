@@ -23,11 +23,26 @@ const VideoPlayer = ({ youtubeId }) => {
         >
           ✖
         </button>
-        <YouTube
-          videoId={youtubeId}
-          onReady={(event) => event.target.pauseVideo()}
-          opts={option}
-        />
+        {!youtubeId ? (
+          <>
+            <p className="font-medium text-lg">Memuat...</p>
+            {youtubeId == [] ? (
+              <p className="font-medium text-lg">Tidak ditemukan</p>
+            ) : (
+              <YouTube
+                videoId={youtubeId}
+                onReady={(event) => event.target.pauseVideo()}
+                opts={option}
+              />
+            )}
+          </>
+        ) : (
+          <YouTube
+            videoId={youtubeId}
+            onReady={(event) => event.target.pauseVideo()}
+            opts={option}
+          />
+        )}
       </div>
     )
   }

@@ -4,7 +4,7 @@ const Header = ({ title, linkHref, linkTitle }) => {
   return (
     <div className="flex justify-between items-center py-4">
       <h1 className="text-2xl font-bold dark:text-color-primary text-color-dark capitalize">
-        <p>{title}</p>
+        {title}
       </h1>
       {linkHref && linkTitle ? (
         <Link

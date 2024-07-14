@@ -10,8 +10,13 @@ const Ulasan = ({ item }) => {
   const toggleFullText = () => {
     setShowFullText(!showFullText)
   }
+  if (!item) {
+    return <p className="font-medium text-lg">Memuat...</p>
+  } else if (item == []) {
+    return <p className="font-medium text-lg">Tidak ditemukan</p>
+  }
   return (
-    <div>
+    <>
       <div className="w-full flex flex-col gap-3">
         <div className="flex items-center mb-2">
           <Image
@@ -35,26 +40,26 @@ const Ulasan = ({ item }) => {
         </div>
       </div>
       <p
-        className={`${
+        className={`text-lg lg:text-xl transition-all text-justify ${
           showFullText ? "" : "line-clamp-5"
-        } text-lg lg:text-xl transition-all text-justify`}
+        }`}
       >
         {item.review}
       </p>
       <Emoji item={item} />
-
       <div className="flex justify-between items-center">
         <FormattedDate dateString={item.date} styles="opacity-50 w-full" />
         <div className="w-full text-right">
           <button
             className="hover:underline opacity-50 mx-2 my-1"
+            aria-label="more"
             onClick={toggleFullText}
           >
             {showFullText ? "Kembali semula" : "Baca selengkapnya"}
           </button>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

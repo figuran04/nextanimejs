@@ -11,23 +11,18 @@ const Recommendations = ({ animeId }) => {
 
   useEffect(() => {
     const fetchRecommendations = async () => {
-      try {
-        const anime = await getAnimeResponse(`anime/${animeId}/recommendations`)
-        const mappedEntries = anime.data.data.map((item) => item.entry)
-        setEntries(mappedEntries)
-        setLoading(false)
-      } catch (error) {
-        console.error("Error fetching recommendations:", error)
-      }
+      const anime = await getAnimeResponse(`anime/${animeId}/recommendations`)
+      const mappedEntries = anime.data.map((item) => item.entry)
+      setEntries(mappedEntries)
+      setLoading(false)
     }
-
     fetchRecommendations()
   }, [animeId])
 
   return (
     <div className="flex overflow-x-scroll gap-2 overflow-y-hidden">
       {loading ? (
-        <p className="font-medium text-lg">Memuat...</p>
+        <p className="font-medium text-lg h-32">Memuat...</p>
       ) : (
         entries.map((entry, index) => (
           <Link
@@ -42,8 +37,8 @@ const Recommendations = ({ animeId }) => {
               height={50}
               className="min-w-24 h-32 object-cover rounded"
             />
-            <div className="px-2 bg-gradient-to-t dark:from-color-dark from-color-primary to-transparent w-full md:h-20 sm:h-16 h-14 flex absolute bottom-0 items-center transition-all">
-              <p className="text-base md:text-lg font-bold line-clamp-2">
+            <div className="px-2 bg-gradient-to-t from-color-dark to-transparent w-full md:h-20 sm:h-16 h-14 flex absolute bottom-0 items-center transition-all">
+              <p className="text-base md:text-lg font-bold line-clamp-2 text-color-primary">
                 {entry.title}
               </p>
             </div>

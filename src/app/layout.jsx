@@ -106,9 +106,6 @@ export const metadata = {
       url: "https://nextanimejs.vercel.app",
     },
   ],
-  icons: {
-    icon: "/favicon.ico",
-  },
   openGraph: {
     title: "NextAnimeJS",
     description: "Website Animelist Generate Next JS Framework",

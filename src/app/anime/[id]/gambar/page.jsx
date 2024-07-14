@@ -1,16 +1,13 @@
+import Gambar from "@/components/AnimeId/Gambar"
+import Navbar from "@/components/AnimeId/Navbar"
 import { getAnimeResponse } from "@/libs/api-libs"
-import Navbar from "../components/Navbar"
-import Gambar from "../components/Gambar"
 
 const GambarPage = async ({ params: { id } }) => {
   const gambar = await getAnimeResponse(`anime/${id}/pictures`)
 
   return (
     <div>
-      <Navbar
-        id={id}
-        gambar="bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
-      />
+      <Navbar id={id} gambar={true} />
       <Gambar gambar={gambar} />
     </div>
   )

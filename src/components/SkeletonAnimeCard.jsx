@@ -1,4 +1,4 @@
-const SkeletonAnimeList = () => {
+const SkeletonAnimeCard = () => {
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 opacity-30">
       <div className="rounded-lg skeleton w-full min-h-60 max-h-64"></div>
@@ -13,4 +13,4 @@ const SkeletonAnimeList = () => {
   )
 }
 
-export default SkeletonAnimeList
+export default SkeletonAnimeCard
