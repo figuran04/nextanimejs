@@ -5,7 +5,7 @@ import Ulasan from "../components/Ulasan"
 const UlasanPage = async ({ params: { id } }) => {
   const { data } = await getAnimeResponse(`anime/${id}/reviews`)
   return (
-    <>
+    <div>
       <Navbar
         id={id}
         ulasan="bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
@@ -19,7 +19,7 @@ const UlasanPage = async ({ params: { id } }) => {
           <Ulasan item={item} index={index} />
         </div>
       ))}
-    </>
+    </div>
   )
 }
 

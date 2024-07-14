@@ -28,14 +28,14 @@ const Emoji = ({ item }) => {
     <div className="flex gap-4">
       {topReactions.map(([key, value], index) => {
         return (
-          <>
+          <div>
             {value == "0" ? null : (
               <div key={index} className="flex gap-1">
                 <span>{reactionEmojis[key]}</span>
                 <span className="opacity-50">{value}</span>
               </div>
             )}
-          </>
+          </div>
         )
       })}
     </div>

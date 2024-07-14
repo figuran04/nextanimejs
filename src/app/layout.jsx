@@ -98,8 +98,49 @@ const sfProDisplay = localFont({
 })
 
 export const metadata = {
-  title: "nextanimejs",
-  description: "Website Animelist Generate Use Next js",
+  title: "NextAnimeJS",
+  description: "Website Animelist Generate Next JS Framework",
+  authors: [
+    {
+      name: "myname",
+      url: "https://nextanimejs.vercel.app",
+    },
+  ],
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "NextAnimeJS",
+    description: "Website Animelist Generate Next JS Framework",
+    url: "https://nextanimejs.vercel.app",
+    images: [
+      {
+        url: "https://nextanimejs.vercel.app/next.svg",
+        width: 800,
+        height: 600,
+        alt: "NextAnimeJS",
+      },
+    ],
+    site_name: "NextAnimeJS",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@nextanimejs",
+    title: "NextAnimeJS",
+    description: "Website Animelist Generate Next JS Framework",
+    image: "https://nextanimejs.vercel.app/next.svg",
+  },
+  robots: "index, follow",
+  additionalMetaTags: [
+    {
+      name: "theme-color",
+      content: "#ffffff",
+    },
+    {
+      name: "msapplication-TileColor",
+      content: "#ffffff",
+    },
+  ],
 }
 
 export default function RootLayout({ children }) {

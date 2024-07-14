@@ -1,7 +1,7 @@
 "use client"
 import { useInView } from "react-intersection-observer"
 import AnimeList from "."
-import SkeletonAnimeList from "../Skeleton/SkeletonAnimeList"
+import SkeletonAnimeList from "../SkeletonAnimeList"
 const LoadMore = ({ api }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,

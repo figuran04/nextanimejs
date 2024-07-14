@@ -4,7 +4,6 @@ import HeaderMenu from "@/components/Utilities/HeaderMenu"
 import Pagination from "@/components/Utilities/Pagination"
 import { useEffect, useState } from "react"
 import { getAnimeResponse } from "../../libs/api-libs"
-import Header from "@/components/AnimeList/Header"
 import Link from "next/link"
 
 const TopAnimePage = () => {

@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import axios from "axios"
 import Image from "next/image"
 import Link from "next/link"
+import { getAnimeResponse } from "@/libs/api-libs"
 
 const Recommendations = ({ animeId }) => {
   const [entries, setEntries] = useState([])
@@ -12,10 +12,8 @@ const Recommendations = ({ animeId }) => {
   useEffect(() => {
     const fetchRecommendations = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime/${animeId}/recommendations`
-        )
-        const mappedEntries = response.data.data.map((item) => item.entry)
+        const anime = await getAnimeResponse(`anime/${animeId}/recommendations`)
+        const mappedEntries = anime.data.data.map((item) => item.entry)
         setEntries(mappedEntries)
         setLoading(false)
       } catch (error) {
