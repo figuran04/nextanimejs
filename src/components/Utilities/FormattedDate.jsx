@@ -4,7 +4,6 @@ import { id } from "date-fns/locale"
 
 const FormattedDate = ({ dateString, styles }) => {
   const date = new Date(dateString)
-  const now = new Date()
 
   let formattedDate
   const distanceToNow = formatDistanceToNow(date, {
@@ -12,9 +11,9 @@ const FormattedDate = ({ dateString, styles }) => {
     locale: id,
   })
 
-  if (distanceToNow.includes("kurang dari sehari")) {
+  if (distanceToNow.includes("less than a day")) {
     formattedDate = "Hari ini"
-  } else if (distanceToNow.includes("1 hari")) {
+  } else if (distanceToNow.includes("1 day")) {
     formattedDate = "Kemarin"
   } else {
     formattedDate = format(date, "dd MMMM yyyy", { locale: id })

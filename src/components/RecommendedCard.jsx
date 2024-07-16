@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import FormattedDate from "../FormattedDate"
+import FormattedDate from "./Utilities/FormattedDate"
 import Link from "next/link"
 import { useState } from "react"
 

@@ -1,16 +1,17 @@
+import React from "react"
 import { MotionDiv, transition, variants } from "../Utilities/MotionDiv"
 import AnimeCard from "../AnimeCard"
-import SkeletonAnimeCard from "../Utilities/SkeletonAnimeCard"
 
-const AnimeList = ({ api }) => {
-  if (!api.data) {
-    return <SkeletonAnimeCard />
-  }
-
+const GenreId = ({ api, keyword }) => {
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
-      {api.data?.map((anime, index) => {
-        return (
+      {api.data
+        ?.filter((anime) =>
+          anime.genres?.some(
+            (genre) => genre.name.toLowerCase() === keyword.toLowerCase()
+          )
+        )
+        .map((anime, index) => (
           <MotionDiv
             key={index}
             variants={variants}
@@ -22,10 +23,9 @@ const AnimeList = ({ api }) => {
           >
             <AnimeCard api={anime} />
           </MotionDiv>
-        )
-      })}
+        ))}
     </div>
   )
 }
 
-export default AnimeList
+export default GenreId

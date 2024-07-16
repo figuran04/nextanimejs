@@ -1,4 +1,4 @@
-import HeaderMenu from "@/components/Utilities/HeaderMenu"
+import HeaderMenu from "@/components/Utilities/HeaderCenter"
 import { getAnimeResponse } from "@/libs/api-libs"
 import Link from "next/link"
 

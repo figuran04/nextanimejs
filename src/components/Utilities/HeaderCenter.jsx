@@ -1,4 +1,4 @@
-const HeaderMenu = ({ title }) => {
+const HeaderCenter = ({ title }) => {
   return (
     <div>
       <div className="p-4">
@@ -10,4 +10,4 @@ const HeaderMenu = ({ title }) => {
   )
 }
 
-export default HeaderMenu
+export default HeaderCenter

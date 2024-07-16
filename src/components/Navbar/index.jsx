@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import InputSearch from "./InputSearch"
-import ThemeSwitcher from "../ThemeSwitcher"
+import ThemeSwitcher from "./ThemeSwitcher"
 import ButtonNav from "./ButtonNav"
 import { useEffect, useState } from "react"
 const Navbar = () => {
