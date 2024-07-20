@@ -4,7 +4,7 @@ import { StarIcon } from "./Icons/StarIcon"
 
 const AnimeCard = ({ api }) => {
   return (
-    <Link href={`/anime/${api.mal_id}`} className="">
+    <Link href={`/anime/${api.mal_id}`}>
       {api.score ? (
         <div className="absolute top-0 right-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-color-primary rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1">
           <StarIcon />
