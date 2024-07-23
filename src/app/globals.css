@@ -22,10 +22,10 @@
     @apply text-xl font-bold md:text-2xl;
   }
   .h4 {
-    @apply text-lg font-bold md:text-xl;
+    @apply text-base;
   }
   .textActive {
-    @apply text-color-dark dark:text-color-whiteDark;
+    @apply text-color-dark dark:text-color-whiteDark font-semibold;
   }
   .Button {
     @apply border dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white dark:hover:bg-color-darkHover hover:bg-color-grey2;
@@ -271,7 +271,7 @@
 }
 
 .loading {
-  @apply border-x-color-accent dark:border-x-color-secondary border-y-transparent w-[50px] aspect-square rounded-full border-[8px] animate-spin;
+  @apply border-x-color-dark dark:border-x-color-whiteDark border-y-transparent w-[50px] aspect-square rounded-full border-[8px] animate-spin;
 }
 /* @keyframes l1 {
   to {

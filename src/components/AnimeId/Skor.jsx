@@ -23,7 +23,7 @@ const Skor = ({ data }) => {
       )}
       <div
         className={`flex flex-nowrap justify-center md:justify-around md:flex-row w-full overflow-x-auto md:items-center no-scrollbar ${
-          data.score ? `flex-col` : `flex-row pl-4 gap-2`
+          data.score ? `flex-col` : `flex-row pl-2 gap-2`
         }`}
       >
         {data.rank ? (

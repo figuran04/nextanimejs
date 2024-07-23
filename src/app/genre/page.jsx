@@ -19,7 +19,7 @@ const GenrePage = async () => {
             }
             return (
               <Link href={`/genre/${genre}`} key={index} className="">
-                <p className="text-center transition-all cursor-pointer text-color-grey h4 line-clamp-2 hover:dark:text-color-whiteDark hover:text-color-dark">
+                <p className="text-center transition-all cursor-pointer text-color-grey line-clamp-2 hover:dark:text-color-whiteDark hover:text-color-dark">
                   {item.name}
                 </p>
               </Link>
