@@ -24,10 +24,10 @@ const Pagination = ({ page, lastPage, setPage }) => {
     // Tambahkan halaman pertama
     pageNumbers.push(
       <button
-        key={1}
+        key={`page-${1}`}
         className={`transition-all hover:text-color-accent hover:dark:text-color-secondary ${
           page === 1
-            ? "font-bold text-color-accent dark:text-color-secondary"
+            ? "font-bold text-color-dark dark:text-color-whiteDark"
             : ""
         }`}
         onClick={() => handlePageClick(1)}
@@ -36,33 +36,27 @@ const Pagination = ({ page, lastPage, setPage }) => {
       </button>
     )
 
-    const startPage = Math.max(2, page - 1)
-    const endPage = Math.min(lastPage, page + 1)
-
-    for (let i = startPage; i <= endPage; i++) {
+    // Tambahkan halaman saat ini
+    if (page !== 1 && page !== lastPage) {
       pageNumbers.push(
         <button
-          key={i}
-          className={`transition-all hover:text-color-accent hover:dark:text-color-secondary ${
-            i === page
-              ? "font-bold text-color-accent dark:text-color-secondary"
-              : ""
-          }`}
-          onClick={() => handlePageClick(i)}
+          key={`page-${page}`}
+          className={`transition-all font-bold text-color-dark dark:text-color-whiteDark`}
+          onClick={() => handlePageClick(page)}
         >
-          {i}
+          {page}
         </button>
       )
     }
 
-    // Tambahkan halaman terakhir jika tidak termasuk dalam rentang
-    if (endPage < lastPage) {
+    // Tambahkan halaman terakhir
+    if (lastPage !== 1) {
       pageNumbers.push(
         <button
-          key={lastPage}
+          key={`page-${lastPage}`}
           className={`transition-all hover:text-color-accent hover:dark:text-color-secondary ${
             lastPage === page
-              ? "font-bold text-color-accent dark:text-color-secondary"
+              ? "font-bold text-color-dark dark:text-color-whiteDark"
               : ""
           }`}
           onClick={() => handlePageClick(lastPage)}
@@ -76,10 +70,10 @@ const Pagination = ({ page, lastPage, setPage }) => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 flex justify-center items-center py-4 px-2 gap-4 dark:text-color-primary text-color-dark text-xl font-bold dark:bg-color-dark bg-color-primary shadow-md">
+    <div className="z-50 fixed flex items-center justify-center gap-4 px-4 py-3 -translate-x-1/2 border rounded-xl bottom-1 left-1/2 bg-color-white dark:bg-color-darkDark dark:border-color-grey border-color-grey2 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm text-color-grey">
       {page > 1 && (
         <button
-          className="transition-all hover:text-color-accent hover:dark:text-color-secondary"
+          className="transition-all hover:text-color-dark dark:hover:text-color-whiteDark"
           onClick={handlePrevPage}
         >
           Prev
@@ -88,7 +82,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
       {renderPageNumbers()}
       {page < lastPage && (
         <button
-          className="transition-all hover:text-color-accent hover:dark:text-color-secondary"
+          className="transition-all hover:text-color-dark dark:hover:text-color-whiteDark"
           onClick={handleNextPage}
         >
           Next

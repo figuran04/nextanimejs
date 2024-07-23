@@ -1,5 +1,5 @@
 import Navbar from "@/components/AnimeId/Navbar"
-import AnimeList from "@/components/AnimeList"
+import AnimeSide from "@/components/AnimeSide"
 import { getAnimeResponse } from "@/libs/api-libs"
 
 const RekomendasiPage = ({ params: { id } }) => {
@@ -9,17 +9,19 @@ const RekomendasiPage = ({ params: { id } }) => {
       data: data.map((item) => ({
         mal_id: item.entry.mal_id,
         title: item.entry.title,
-        url: item.entry.url,
+        type: item.votes + " suara",
         images: item.entry.images,
       })),
     }
-    return <AnimeList api={api} />
+    return <AnimeSide api={api} />
   }
   return (
     <div>
       <Navbar id={id} rekomendasi={true} />
-      <p className="text-justify text-2xl font-bold">Rekomendasi</p>
-      <Rekomendasi animeId={id} />
+      <p className="text-justify h3">Rekomendasi</p>
+      <div className="mt-4 md:w-5/6">
+        <Rekomendasi animeId={id} />
+      </div>
     </div>
   )
 }

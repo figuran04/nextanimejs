@@ -1,58 +1,29 @@
 import Link from "next/link"
 
 const Navbar = ({ id, detail, gambar, karakter, rekomendasi, ulasan }) => {
+  const links = [
+    { href: ``, label: "Detail", active: detail },
+    { href: `gambar`, label: "Gambar", active: gambar },
+    { href: `karakter`, label: "Karakter", active: karakter },
+    { href: `ulasan`, label: "Ulasan", active: ulasan },
+    { href: `rekomendasi`, label: "Rekomendasi", active: rekomendasi },
+  ]
+
   return (
-    <nav className="flex flex-nowrap gap-3 overflow-x-auto flex-row text-color-dark dark:text-color-primary text-lg font-semibold no-scrollbar mb-2">
-      <Link
-        href={`/anime/${id}`}
-        className={`rounded px-3 py-1 ${
-          detail
-            ? "bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
-            : "hover:text-color-accent hover:dark:text-color-secondary"
-        }`}
-      >
-        Detail
-      </Link>
-      <Link
-        href={`/anime/${id}/gambar`}
-        className={`rounded px-3 py-1 ${
-          gambar
-            ? "bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
-            : "hover:text-color-accent hover:dark:text-color-secondary"
-        }`}
-      >
-        Gambar
-      </Link>
-      <Link
-        href={`/anime/${id}/karakter`}
-        className={`rounded px-3 py-1 ${
-          karakter
-            ? "bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
-            : "hover:text-color-accent hover:dark:text-color-secondary"
-        }`}
-      >
-        Karakter
-      </Link>
-      <Link
-        href={`/anime/${id}/ulasan`}
-        className={`rounded px-2 py-1 ${
-          ulasan
-            ? "bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
-            : "hover:text-color-accent hover:dark:text-color-secondary"
-        }`}
-      >
-        Ulasan
-      </Link>
-      <Link
-        href={`/anime/${id}/rekomendasi`}
-        className={`rounded px-2 py-1 ${
-          rekomendasi
-            ? "bg-color-accent dark:bg-color-secondary shadow-md text-color-primary dark:text-color-dark"
-            : "hover:text-color-accent hover:dark:text-color-secondary"
-        }`}
-      >
-        Rekomendasi
-      </Link>
+    <nav className="flex flex-row gap-3 mb-2 overflow-x-auto text-lg font-semibold flex-nowrap text-color-dark dark:text-color-primary no-scrollbar">
+      {links.map(({ href, label, active }) => (
+        <Link
+          key={href}
+          href={`/anime/${id}/${href}`}
+          className={`rounded-md px-3 py-1 ${
+            active
+              ? "dark:text-color-darkDark text-color-white dark:bg-color-white bg-color-dark hover:bg-color-darkHover dark:hover:bg-color-grey2"
+              : "border dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white dark:hover:bg-color-darkHover hover:bg-color-grey2"
+          }`}
+        >
+          {label}
+        </Link>
+      ))}
     </nav>
   )
 }

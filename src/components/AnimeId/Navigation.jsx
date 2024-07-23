@@ -2,7 +2,7 @@ import Nav from "./Nav"
 
 const Navigation = ({ nav }) => {
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 dark:text-color-primary text-color-dark mb-4">
+    <div className="grid grid-cols-1 gap-3 mb-4 sm:flex sm:flex-wrap">
       {nav.map((item, index) => {
         return (
           <div key={index}>

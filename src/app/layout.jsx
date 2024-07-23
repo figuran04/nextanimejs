@@ -2,97 +2,49 @@ import localFont from "next/font/local"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import { Providers } from "./providers"
+import Footer from "@/components/Footer"
 const sfProDisplay = localFont({
   src: [
     {
-      path: "../assets/SFProDisplay-Medium.ttf",
-      weight: "500",
-      style: "normal",
+      path: "../assets/standerd-standerd-black-800.ttf",
+      weight: "800",
+      style: "black",
     },
     {
-      path: "../assets/SFProDisplay-Heavy.ttf",
-      weight: "900",
-      style: "normal",
+      path: "../assets/standerd-standerd-bold-700.ttf",
+      weight: "700",
+      style: "bold",
     },
     {
-      path: "../assets/SFProDisplay-UltralightItalic.ttf",
-      weight: "200",
-      style: "italic",
+      path: "../assets/standerd-standerd-extrabold-800.ttf",
+      weight: "800",
+      style: "extrabold",
     },
     {
-      path: "../assets/SFProDisplay-RegularItalic.ttf",
-      weight: "normal",
-      style: "italic",
-    },
-    {
-      path: "../assets/SFProDisplay-Thin.ttf",
+      path: "../assets/standerd-standerd-extra-light-100.ttf",
       weight: "100",
-      style: "normal",
+      style: "extralight",
     },
     {
-      path: "../assets/SFProDisplay-Light.ttf",
+      path: "../assets/standerd-standerd-light-200.ttf",
       weight: "200",
-      style: "normal",
+      style: "light",
     },
     {
-      path: "../assets/SFProDisplay-BlackItalic.ttf",
-      weight: "900",
-      style: "italic",
-    },
-    {
-      path: "../assets/SFProDisplay-Bold.ttf",
-      weight: "bold",
-      style: "normal",
-    },
-    {
-      path: "../assets/SFProDisplay-Black.ttf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../assets/SFProDisplay-SemiboldItalic.ttf",
-      weight: "600",
-      style: "italic",
-    },
-    {
-      path: "../assets/SFProDisplay-Ultralight.ttf",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../assets/SFProDisplay-LightItalic.ttf",
-      weight: "200",
-      style: "italic",
-    },
-    {
-      path: "../assets/SFProDisplay-ThinItalic.ttf",
-      weight: "100",
-      style: "italic",
-    },
-    {
-      path: "../assets/SFProDisplay-MediumItalic.ttf",
+      path: "../assets/standerd-standerd-medium-500.ttf",
       weight: "500",
-      style: "italic",
+      style: "medium",
     },
     {
-      path: "../assets/SFProDisplay-Semibold.ttf",
+      // path: "../assets/standerd-standerd-regular-400.ttf",
+      path: "../assets/standerd-standerd-medium-500.ttf",
+      weight: "400",
+      style: "regular",
+    },
+    {
+      path: "../assets/standerd-standerd-semibold-600.ttf",
       weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../assets/SFProDisplay-HeavyItalic.ttf",
-      weight: "900",
-      style: "italic",
-    },
-    {
-      path: "../assets/SFProDisplay-Regular.ttf",
-      weight: "normal",
-      style: "normal",
-    },
-    {
-      path: "../assets/SFProDisplay-BoldItalic.ttf",
-      weight: "bold",
-      style: "italic",
+      style: "semibold",
     },
   ],
 })
@@ -102,7 +54,7 @@ export const metadata = {
   description: "Website Animelist Generate Next JS Framework",
   authors: [
     {
-      name: "myname",
+      name: "figuran04",
       url: "https://nextanimejs.vercel.app",
     },
   ],
@@ -145,11 +97,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${sfProDisplay.className} dark:bg-color-dark bg-color-primary pb-16`}
+        className={`${sfProDisplay.className} dark:bg-color-darkDark bg-color-white mt-28 md:mt-16`}
       >
         <Providers>
           <Navbar />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

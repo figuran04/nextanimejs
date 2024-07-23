@@ -12,8 +12,8 @@ const AnimeIdPage = async ({ params: { id } }) => {
       <Skor data={data} />
       <Genre data={data} />
       <div className="flex flex-col gap-2 my-2">
-        <p className="text-justify text-2xl font-bold">Sinopsis</p>
-        <p className="text-justify text-lg">{data.synopsis}</p>
+        <p className="text-justify h3">Sinopsis</p>
+        <p className="text-base text-justify md:text-lg">{data.synopsis}</p>
       </div>
     </div>
   )

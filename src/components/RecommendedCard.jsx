@@ -66,6 +66,7 @@ const RecommendedCard = ({ item }) => {
         </p>
         <div className="flex justify-between items-center">
           <FormattedDate dateString={item.date} styles="font-bold opacity-50" />
+
           <button
             className="hover:underline opacity-50 mx-2 my-1"
             onClick={toggleFullText}

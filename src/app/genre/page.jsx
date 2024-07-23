@@ -7,23 +7,19 @@ const GenrePage = async () => {
 
   return (
     <div className="w-full">
-      <div className="mx-auto lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
+      <div className="w-11/12 mx-auto lg:w-8/12 md:w-9/12 sm:w-10/12">
         <HeaderMenu title="Genre" />
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-3 dark:text-color-primary text-color-dark">
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 md:grid-cols-3">
           {data.map((item, index) => {
             const genre = item.name.toLowerCase()
             if (!item) {
-              return <p className="font-medium text-lg">Memuat...</p>
+              return <p className="text-lg font-medium">Memuat...</p>
             } else if (item == []) {
-              return <p className="font-medium text-lg">Tidak ditemukan</p>
+              return <p className="text-lg font-medium">Tidak ditemukan</p>
             }
             return (
-              <Link
-                href={`/genre/${genre}`}
-                key={index}
-                className="group shadow p-2 hover:scale-105 transition-all dark:hover:bg-color-secondary hover:bg-color-accent rounded-lg"
-              >
-                <p className="cursor-pointer text-lg md:text-xl font-semibold line-clamp-2 text-center group-hover:dark:text-color-dark group-hover:text-color-primary">
+              <Link href={`/genre/${genre}`} key={index} className="">
+                <p className="text-center transition-all cursor-pointer text-color-grey h4 line-clamp-2 hover:dark:text-color-whiteDark hover:text-color-dark">
                   {item.name}
                 </p>
               </Link>

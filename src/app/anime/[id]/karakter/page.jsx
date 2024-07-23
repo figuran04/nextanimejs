@@ -29,7 +29,7 @@ const KarakterPage = async ({ params: { id } }) => {
               animate="visible"
               transition={transition}
               viewport={{ amount: 0 }}
-              className="group cursor-pointer text-white transition-all relative rounded-lg overflow-hidden hover:scale-105 shadow hover:shadow-md"
+              className="group cursor-pointer text-white transition-all relative rounded-lg overflow-hidden shadow hover:shadow-md"
             >
               <CharacterCard item={item} voiceActor={voiceActor} />
             </MotionDiv>

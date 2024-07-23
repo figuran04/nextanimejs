@@ -17,7 +17,7 @@ const AnimeSide = ({ api }) => {
             animate="visible"
             transition={transition}
             viewport={{ amount: 0 }}
-            className="group cursor-pointer dark:text-color-primary text-color-dark transition-all relative rounded overflow-hidden hover:scale-105 shadow hover:shadow-md"
+            className="relative overflow-hidden transition-all rounded shadow cursor-pointer group dark:text-color-primary text-color-dark hover:shadow-md"
             key={index}
           >
             <AnimeSideCard anime={anime} />

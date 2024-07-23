@@ -8,7 +8,7 @@ const AnimeList = ({ api }) => {
   }
 
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 md:grid-cols-3">
       {api.data?.map((anime, index) => {
         return (
           <MotionDiv
@@ -18,7 +18,7 @@ const AnimeList = ({ api }) => {
             animate="visible"
             transition={transition}
             viewport={{ amount: 0 }}
-            className="group cursor-pointer text-white transition-all relative rounded-lg overflow-hidden hover:scale-105 shadow hover:shadow-md"
+            className="relative overflow-hidden text-white transition-all rounded-lg shadow cursor-pointer group hover:shadow-md"
           >
             <AnimeCard api={anime} />
           </MotionDiv>

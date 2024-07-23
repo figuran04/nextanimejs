@@ -13,43 +13,41 @@ const HomePage = () => {
   const [topAnimeView, inTopAnimeView] = useInView({
     triggerOnce: true,
   })
-  const [recommendedView, inRecommendedView] = useInView({
-    triggerOnce: true,
-  })
   const [topAnime, setTopAnime] = useState([])
-  const [recommendedAnime, setRecomendedAnime] = useState([])
+  // const [recommendedView, inRecommendedView] = useInView({
+  //   triggerOnce: true,
+  // })
+  // const [recommendedAnime, setRecomendedAnime] = useState([])
   const [seasonNowAnime, setSeasonNowAnime] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       const seasonNowAnimeRes = await getAnimeResponse("seasons/now", "limit=8")
       setSeasonNowAnime(seasonNowAnimeRes)
-
-      const topAnimeRes = await getAnimeResponse("top/anime", "limit=5")
-      const recommendedAnimeRes = await getAnimeResponse(
-        "recommendations/anime"
-      )
+      const topAnimeRes = await getAnimeResponse("top/anime", "limit=4")
+      // const recommendedAnimeRes = await getAnimeResponse(
+      //   "recommendations/anime"
+      // )
+      // if (inRecommendedView) {
+      //   setRecomendedAnime(recommendedAnimeRes)
+      // } else {
+      //   setRecomendedAnime([])
+      // }
 
       if (inTopAnimeView) {
         setTopAnime(topAnimeRes)
       } else {
         setTopAnime([])
       }
-
-      if (inRecommendedView) {
-        setRecomendedAnime(recommendedAnimeRes)
-      } else {
-        setRecomendedAnime([])
-      }
     }
 
     fetchData()
-  }, [inTopAnimeView, inRecommendedView])
+  }, [inTopAnimeView])
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <div className="w-11/12 flex md:flex-row flex-col gap-6">
-        <div className="lg:w-8/12 md:w-7/12 w-full flex flex-col gap-4">
+    <div className="flex flex-col items-center w-full">
+      <div className="container flex flex-col gap-6 px-4 md:flex-row">
+        <div className="flex flex-col w-full gap-4 lg:w-8/12 md:w-7/12">
           <section>
             <Header
               title="Musim Sekarang"
@@ -58,7 +56,7 @@ const HomePage = () => {
             />
             <AnimeList api={seasonNowAnime} />
           </section>
-          <section ref={recommendedView}>
+          {/* <section ref={recommendedView}>
             <Header
               title="Anime Rekomendasi"
               linkHref="/rekomendasi"
@@ -69,9 +67,9 @@ const HomePage = () => {
             ) : (
               <SkeletonAnimeRecommend />
             )}
-          </section>
+          </section> */}
         </div>
-        <div className="lg:w-4/12 md:w-5/12 w-full flex flex-col gap-6">
+        <div className="flex flex-col w-full gap-6 lg:w-4/12 md:w-5/12">
           <section ref={topAnimeView}>
             <Header
               title="Anime Teratas"
