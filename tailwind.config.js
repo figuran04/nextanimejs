@@ -8,14 +8,33 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
         color: {
-          primary: "#eeeeee",
-          accent: "#9944FF",
-          secondary: "#14F194",
+          primary: "#EDEDED",
+          secondary: "#EDEDED",
+          accent: "#000000",
+          blue: "#0064D9",
+          whiteGradient: "linear-gradient(to bottom, #FFFFFF 40%, #FAFAFA 40%)",
+          dark: "#111111",
+          darkHover: "#383838",
+          white: "#FFFFFF",
+          grey3: "#FAFAFA",
+          grey2: "#F2F2F2",
+          grey: "#666666",
+          darkGrey: "#1A1A1A",
+          darkDark: "#000000",
+          whiteDark: "#EDEDED",
+          greyDark: "#888888",
           // dark: "#222831",
-          dark: "#1f1f1f",
+          // primary: "#eeeeee",
+          // dark: "#1f1f1f",
+          // accent: "#9944FF",
+          // secondary: "#14F194",
+          // dark: "#222831",
         },
       },
       backgroundImage: {

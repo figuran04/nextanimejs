@@ -9,14 +9,14 @@ const AnimeIdPage = async ({ children, params: { id } }) => {
   return (
     <div>
       <Title data={data} />
-      <div className="pt-4 px-4 flex md:flex-row flex-col gap-4 dark:text-color-primary text-color-dark">
+      <div className="flex flex-col gap-4 px-4 pt-4 md:flex-row">
         <div className="md:w-1/4">
           <Image
             src={data.images.webp.image_url}
             alt={data.title}
             width={250}
             height={250}
-            className="w-full rounded-lg object-cover"
+            className="object-cover w-full rounded-lg"
           />
         </div>
         <div className="flex flex-col gap-4 md:w-3/4">{children}</div>

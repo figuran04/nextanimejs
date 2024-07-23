@@ -1,8 +1,8 @@
 "use client"
 import { getAnimeResponse } from "@/libs/api-libs"
 import AnimeList from "@/components/AnimeList"
-import Header from "@/components/Header"
-import SkeletonAnimeCard from "@/components/SkeletonAnimeCard"
+import Header from "@/components/Utilities/Header"
+import SkeletonAnimeCard from "@/components/Utilities/SkeletonAnimeCard"
 import { useEffect, useState } from "react"
 
 const SearchPage = ({ params }) => {

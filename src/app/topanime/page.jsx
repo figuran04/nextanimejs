@@ -1,10 +1,11 @@
 "use client"
 import AnimeList from "@/components/AnimeList"
-import HeaderMenu from "@/components/Utilities/HeaderMenu"
+import HeaderMenu from "@/components/Utilities/HeaderCenter"
 import Pagination from "@/components/Utilities/Pagination"
 import { useEffect, useState } from "react"
 import { getAnimeResponse } from "../../libs/api-libs"
-import Navigation from "@/components/Navigation"
+import Navigation from "@/components/AnimeId/Navigation"
+import SkeletonAnimeCard from "@/components/Utilities/SkeletonAnimeCard"
 
 const nav = [
   {
@@ -42,7 +43,7 @@ const TopAnimePage = () => {
       <section className="lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
         <HeaderMenu title={`ANIME TERATAS #${page}`} />
         <Navigation nav={nav} />
-        <AnimeList api={topAnime} />
+        {loading ? <SkeletonAnimeCard /> : <AnimeList api={topAnime} />}
         <Pagination
           page={page}
           lastPage={topAnime.pagination?.last_visible_page}

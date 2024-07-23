@@ -1,11 +1,11 @@
 "use client"
 import AnimeList from "@/components/AnimeList"
-import HeaderMenu from "@/components/Utilities/HeaderMenu"
+import HeaderMenu from "@/components/Utilities/HeaderCenter"
 import Pagination from "@/components/Utilities/Pagination"
 import { useEffect, useState } from "react"
 import { getAnimeResponse } from "@/libs/api-libs"
-import Navigation from "@/components/Navigation"
-import SkeletonAnimeCard from "@/components/SkeletonAnimeCard"
+import Navigation from "@/components/AnimeId/Navigation"
+import SkeletonAnimeCard from "@/components/Utilities/SkeletonAnimeCard"
 
 const nav = [
   {

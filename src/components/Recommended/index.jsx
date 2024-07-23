@@ -1,10 +1,5 @@
-import { MotionDiv } from "../MotionDiv"
-import RecommendedCard from "./RecommendedCard"
-
-const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-}
+import { MotionDiv, transition, variants } from "../Utilities/MotionDiv"
+import RecommendedCard from "../RecommendedCard"
 
 const Recommended = ({ api }) => {
   return (
@@ -15,11 +10,7 @@ const Recommended = ({ api }) => {
             variants={variants}
             initial="hidden"
             animate="visible"
-            transition={{
-              delay: index * 0.25,
-              ease: "easeInOut",
-              duration: 0.5,
-            }}
+            transition={transition}
             viewport={{ amount: 0 }}
             key={index}
             className="rounded-md shadow p-2"

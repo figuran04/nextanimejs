@@ -8,13 +8,13 @@ const NotFoundPage = () => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="flex justify-center items-center gap-4 flex-col min-h-screen">
         <div className="flex flex-col justify-center items-center mb-64 text-color-accent dark:text-color-secondary gap-2">
-          <p className="text-5xl font-black">404</p>
-          <p className=" text-xl font-bold">TIDAK DITEMUKAN</p>
+          <h1 className="h1">404</h1>
+          <h3 className="h3">TIDAK DITEMUKAN</h3>
           <button
             onClick={() => {
               router.back()
             }}
-            className="dark:text-color-primary text-color-dark underline cursor-pointer hover:text-color-accent dark:hover:text-color-secondary"
+            className="cursor-pointer text-color-grey hover:text-color-white"
           >
             Kembali
           </button>

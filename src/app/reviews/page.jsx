@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { getAnimeResponse } from "@/libs/api-libs"
-import HeaderMenu from "@/components/Utilities/HeaderMenu"
+import HeaderMenu from "@/components/Utilities/HeaderCenter"
 import ReviewCard from "@/components/ReviewCard"
 
 const ReviewsPage = () => {

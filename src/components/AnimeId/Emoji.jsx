@@ -1,5 +1,4 @@
 "use client"
-import React from "react"
 import { useEffect, useState } from "react"
 
 export const reactionEmojis = {
@@ -16,11 +15,10 @@ const Emoji = ({ item }) => {
   const [topReactions, setTopReactions] = useState([])
 
   useEffect(() => {
-    // Mengonversi JSON menjadi array dan mengurutkan berdasarkan nilai
     const sortedReactions = Object.entries(item.reactions)
-      .filter(([key]) => key !== "overall") // Mengabaikan "overall"
+      .filter(([key]) => key !== "overall")
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 3) // Mendapatkan top 3
+      .slice(0, 3)
 
     setTopReactions(sortedReactions)
   }, [])

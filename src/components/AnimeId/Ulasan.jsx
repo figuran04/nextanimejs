@@ -1,5 +1,5 @@
 "use client"
-import FormattedDate from "@/components/FormattedDate"
+import FormattedDate from "@/components/Utilities/FormattedDate"
 import Image from "next/image"
 import { useState } from "react"
 import Emoji from "./Emoji"

@@ -12,9 +12,27 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  .h1 {
+    @apply text-4xl font-black md:text-6xl;
+  }
+  .h2 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+  .h3 {
+    @apply text-xl font-bold md:text-2xl;
+  }
+  .h4 {
+    @apply text-base;
+  }
+  .textActive {
+    @apply text-color-dark dark:text-color-whiteDark font-semibold;
+  }
+  .Button {
+    @apply border dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white dark:hover:bg-color-darkHover hover:bg-color-grey2;
+  }
 }
 
-@font-face {
+/* @font-face {
   font-family: "SF Pro Display";
   src: url("../assets/SFProDisplay-Medium.eot");
   src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"),
@@ -242,7 +260,7 @@
     url("../assets/SFProDisplay-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
-}
+} */
 
 *,
 *:before,
@@ -253,7 +271,7 @@
 }
 
 .loading {
-  @apply border-x-color-accent dark:border-x-color-secondary border-y-transparent w-[50px] aspect-square rounded-full border-[8px] animate-spin;
+  @apply border-x-color-dark dark:border-x-color-whiteDark border-y-transparent w-[50px] aspect-square rounded-full border-[8px] animate-spin;
 }
 /* @keyframes l1 {
   to {
@@ -273,4 +291,16 @@
   to {
     background-position: 315px 0, 0 0, 0 190px, 50px 195px;
   }
+}
+
+.header {
+  transition: transform 0.3s ease-in-out;
+}
+
+.header--hidden {
+  transform: translateY(-100%);
+}
+
+.header--visible {
+  transform: translateY(0);
 }

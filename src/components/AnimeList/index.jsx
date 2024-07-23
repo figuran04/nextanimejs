@@ -1,19 +1,14 @@
-import { MotionDiv } from "../MotionDiv"
-import SkeletonAnimeList from "../SkeletonAnimeCard"
+import { MotionDiv, transition, variants } from "../Utilities/MotionDiv"
 import AnimeCard from "../AnimeCard"
-
-const variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-}
+import SkeletonAnimeCard from "../Utilities/SkeletonAnimeCard"
 
 const AnimeList = ({ api }) => {
   if (!api.data) {
-    return <SkeletonAnimeList />
+    return <SkeletonAnimeCard />
   }
 
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 md:grid-cols-3">
       {api.data?.map((anime, index) => {
         return (
           <MotionDiv
@@ -21,13 +16,9 @@ const AnimeList = ({ api }) => {
             variants={variants}
             initial="hidden"
             animate="visible"
-            transition={{
-              delay: index * 0.25,
-              ease: "easeInOut",
-              duration: 0.5,
-            }}
+            transition={transition}
             viewport={{ amount: 0 }}
-            className="group cursor-pointer text-white transition-all relative rounded-lg overflow-hidden hover:scale-105 shadow hover:shadow-md"
+            className="relative overflow-hidden text-white transition-all rounded-lg shadow cursor-pointer group hover:shadow-md"
           >
             <AnimeCard api={anime} />
           </MotionDiv>
