@@ -27,12 +27,12 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-10 lg:w-1/2 justify-start lg:justify-between">
             <div>
-              <h3 className="mb-2 textActive h4">Navigasi</h3>
+              <h3 className="mb-2 textActive">Navigasi</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Beranda
                   </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/anime"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Anime
                   </Link>
@@ -48,7 +48,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/genre"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Genre
                   </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/reviews"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Review
                   </Link>
@@ -64,12 +64,12 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="mb-2 textActive h4">Anime</h3>
+              <h3 className="mb-2 textActive">Anime</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/topanime"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Teratas
                   </Link>
@@ -77,7 +77,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/rekomendasi"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Rekomendasi
                   </Link>
@@ -85,12 +85,12 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="mb-2 textActive h4">Musim</h3>
+              <h3 className="mb-2 textActive">Musim</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/musim/sekarang"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Sekarang
                   </Link>
@@ -98,7 +98,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/musim/mendatang"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Mendatang
                   </Link>
@@ -106,31 +106,33 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h3 className="mb-2 textActive h4">Tentang Kami</h3>
+              <h3 className="mb-2 textActive">Tentang Kami</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="http://github.com/figuran04/nextanimejs"
-                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark h4"
+                    className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Kode Sumber
+                    Kode
+                    <br />
+                    Sumber
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="lg:w-1/3">
-            <h3 className="mb-2 h4 textActive">Cari Anime</h3>
-            <p className="mb-2 h4">
+          <div className="lg:w-1/3 my-4 md:my-0">
+            <h3 className="mb-2 textActive">Cari anime</h3>
+            <p className="mb-2">
               Gunakan fitur pencarian di bawah ini untuk menemukan anime yang
               Anda inginkan.
             </p>
             <InputSearch />
           </div>
         </div>
-        <div className="px-6 lg:px-4 mt-4 h4">
+        <div className="px-6 lg:px-4 mt-4">
           <p>@ {new Date().getFullYear()} Figuran04.</p>
           <Link
             href="https://github.com/figuran04"
