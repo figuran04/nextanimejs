@@ -6,18 +6,11 @@ const Title = ({ data }) => {
   }
   return (
     <div className="pt-4 px-4">
-      {data.year ? (
-        <h3 className="dark:text-color-primary text-color-dark text-2xl font-bold">
-          {data.title} - {data.year}
-        </h3>
-      ) : (
-        <h3 className="dark:text-color-primary text-color-dark text-2xl font-bold">
-          {data.title}
-        </h3>
-      )}
-      <h4 className="font-bold dark:text-color-primary text-color-dark text-lg opacity-70">
-        {data?.title_english}
-      </h4>
+      <h3 className="h3">
+        {data.title}
+        {data.year ? ` - ${data.year}` : null}
+      </h3>
+      <h5 className="h5 text-color-grey">{data?.title_english}</h5>
     </div>
   )
 }

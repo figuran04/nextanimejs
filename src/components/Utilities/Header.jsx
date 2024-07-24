@@ -5,10 +5,7 @@ const Header = ({ title, linkHref, linkTitle }) => {
     <div className="flex justify-between items-center py-4">
       <h3 className="h3 capitalize">{title}</h3>
       {linkHref && linkTitle ? (
-        <Link
-          href={linkHref}
-          className="hover:text-color-darkDark dark:hover:text-color-white text-color-grey transition-all"
-        >
+        <Link href={linkHref} className="Color transition-all">
           {linkTitle}
         </Link>
       ) : null}

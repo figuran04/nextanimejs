@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="w-full py-10 mt-10 border-t text-color-grey dark:border-color-grey border-color-grey2">
       <div className="lg:container">
         <div className="flex flex-col justify-between w-full gap-6 px-6 lg:px-4 lg:flex-row">
-          <div className="flex justify-between">
+          <div className="flex justify-between items-center lg:items-start">
             <div>
               <div className="relative textActive mr-4">
                 <span className="font-bold text-color-whiteGradient h3">
@@ -21,6 +21,7 @@ const Footer = () => {
             <Link
               href="https://github.com/figuran04"
               className="block lg:hidden"
+              aria-label="github"
             >
               <GithubIcon />
             </Link>
@@ -137,7 +138,7 @@ const Footer = () => {
           <Link
             href="https://github.com/figuran04"
             aria-label="github"
-            className="hidden lg:block mt-4 p-1"
+            className="hidden mt-4 p-1 lg:inline-block"
           >
             <GithubIcon />
           </Link>

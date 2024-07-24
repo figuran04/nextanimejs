@@ -10,15 +10,13 @@ const Navbar = ({ id, detail, gambar, karakter, rekomendasi, ulasan }) => {
   ]
 
   return (
-    <nav className="flex flex-row gap-3 mb-2 overflow-x-auto text-lg font-semibold flex-nowrap text-color-dark dark:text-color-primary no-scrollbar">
+    <nav className="flex flex-row gap-3 mb-4 overflow-x-auto flex-nowrap no-scrollbar">
       {links.map(({ href, label, active }) => (
         <Link
           key={href}
           href={`/anime/${id}/${href}`}
           className={`rounded-md px-3 py-1 ${
-            active
-              ? "dark:text-color-darkDark text-color-white dark:bg-color-white bg-color-dark hover:bg-color-darkHover dark:hover:bg-color-grey2"
-              : "border dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white dark:hover:bg-color-darkHover hover:bg-color-grey2"
+            active ? "ButtonActive" : "Button"
           }`}
         >
           {label}

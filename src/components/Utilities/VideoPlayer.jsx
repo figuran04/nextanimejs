@@ -18,16 +18,16 @@ const VideoPlayer = ({ youtubeId }) => {
     return (
       <div className="fixed z-50 bottom-2 right-2">
         <button
-          className="float-right px-4 py-2 mb-1 transition-all border dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white dark:hover:bg-color-darkHover hover:bg-color-grey2"
+          className="float-right px-4 py-2 mb-1 transition-all Button rounded-lg"
           onClick={handleVideoPlayer}
         >
           ✖
         </button>
         {!youtubeId ? (
           <>
-            <p className="text-lg font-medium">Memuat...</p>
+            <p>Memuat...</p>
             {youtubeId == [] ? (
-              <p className="text-lg font-medium">Tidak ditemukan</p>
+              <p>Tidak ditemukan</p>
             ) : (
               <YouTube
                 videoId={youtubeId}
@@ -50,7 +50,7 @@ const VideoPlayer = ({ youtubeId }) => {
   const ButtonOpenPlayer = () => {
     return (
       <button
-        className="fixed z-50 px-4 py-2 font-bold border rounded bottom-1 right-1 dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white dark:hover:bg-color-darkHover hover:bg-color-grey2"
+        className="fixed z-50 px-4 py-2 font-bold rounded-lg bottom-1 right-1 Button"
         onClick={handleVideoPlayer}
       >
         Tonton Trailer

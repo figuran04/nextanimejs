@@ -8,7 +8,7 @@ const AnimeSide = ({ api }) => {
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       {api.data?.map((anime, index) => {
         return (
           <MotionDiv
@@ -17,7 +17,7 @@ const AnimeSide = ({ api }) => {
             animate="visible"
             transition={transition}
             viewport={{ amount: 0 }}
-            className="relative overflow-hidden transition-all rounded shadow cursor-pointer group dark:text-color-primary text-color-dark hover:shadow-md"
+            className="relative overflow-hidden transition-all rounded hover:shadow shadow-sm cursor-pointer group Text"
             key={index}
           >
             <AnimeSideCard anime={anime} />

@@ -30,7 +30,7 @@ const Emoji = ({ item }) => {
             {value == "0" ? null : (
               <div className="flex gap-1">
                 <span>{reactionEmojis[key]}</span>
-                <span className="opacity-50">{value}</span>
+                <span className="text-color-grey">{value}</span>
               </div>
             )}
           </div>

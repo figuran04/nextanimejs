@@ -27,6 +27,7 @@ const ThemeSwitcher = () => {
       <button
         onClick={handleTheme}
         className="px-3 pt-3 pb-2 flex items-center"
+        aria-label="theme"
       >
         {theme === "light" ? <SunIcon /> : <MoonIcon />}
       </button>

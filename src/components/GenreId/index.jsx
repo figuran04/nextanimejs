@@ -19,7 +19,7 @@ const GenreId = ({ api, keyword }) => {
             animate="visible"
             transition={transition}
             viewport={{ amount: 0 }}
-            className="group cursor-pointer text-white transition-all relative rounded-lg overflow-hidden hover:scale-105 shadow hover:shadow-md"
+            className="group cursor-pointer transition-all relative rounded-lg overflow-hidden shadow hover:shadow-md"
           >
             <AnimeCard api={anime} />
           </MotionDiv>

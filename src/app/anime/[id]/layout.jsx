@@ -14,8 +14,8 @@ const AnimeIdPage = async ({ children, params: { id } }) => {
           <Image
             src={data.images.webp.image_url}
             alt={data.title}
-            width={250}
-            height={250}
+            width={300}
+            height={300}
             className="object-cover w-full rounded-lg"
           />
         </div>
