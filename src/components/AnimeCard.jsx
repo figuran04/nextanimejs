@@ -6,7 +6,7 @@ const AnimeCard = ({ api }) => {
   return (
     <Link href={`/anime/${api.mal_id}`}>
       {api.score ? (
-        <div className="absolute top-0 right-0 dark:bg-color-secondary bg-color-accent dark:text-color-dark text-color-white rounded-s font-bold px-2 py-1 mt-2 flex items-center gap-1 bg-opacity-70 dark:bg-opacity-70 backdrop-blur">
+        <div className="absolute top-0 right-0 Card px-2 py-1 mt-2 flex items-center gap-1 bg-opacity-70 dark:bg-opacity-70 backdrop-blur">
           <StarIcon />
           <p>{api.score}</p>
         </div>
@@ -18,8 +18,8 @@ const AnimeCard = ({ api }) => {
         height={400}
         className="w-full max-h-64 object-cover transition-all"
       />
-      <div className="px-4 bg-gradient-to-t dark:from-color-darkDark from-color-white from-35% to-transparent text-color-darkDark dark:text-color-white 100% w-full md:h-20 sm:h-16 h-14 flex absolute bottom-0 items-center transition-all pt-4">
-        <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
+      <div className="px-3 bg-gradient-to-t dark:from-color-darkDark from-color-white to-transparent w-full md:h-22 sm:h-20 h-16 flex absolute bottom-0 items-center transition-all py-2">
+        <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2 Text">
           {api.title}
         </p>
       </div>

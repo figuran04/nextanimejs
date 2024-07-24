@@ -19,7 +19,7 @@ const FormattedDate = ({ dateString, styles }) => {
     formattedDate = format(date, "dd MMMM yyyy", { locale: id })
   }
 
-  return <p className={styles}>{formattedDate}</p>
+  return <p className={`text-color-grey ${styles}`}>{formattedDate}</p>
 }
 
 export default FormattedDate

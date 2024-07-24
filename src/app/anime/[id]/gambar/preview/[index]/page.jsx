@@ -9,7 +9,7 @@ const GambarPreview = async ({ params: { id, index } }) => {
       <Navbar id={id} gambar={true} />
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <p className="text-justify h3">Detail Gambar</p>
+          <h3 className="h3">Detail Gambar</h3>
         </div>
         <Image
           src={data[index].webp.image_url}

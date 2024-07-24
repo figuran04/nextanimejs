@@ -22,13 +22,31 @@
     @apply text-xl font-bold md:text-2xl;
   }
   .h4 {
-    @apply text-base;
+    @apply text-lg font-bold md:text-xl;
+  }
+  .h5 {
+    @apply text-base font-bold md:text-lg;
   }
   .textActive {
     @apply text-color-dark dark:text-color-whiteDark font-semibold;
   }
+  .Card {
+    @apply dark:bg-color-secondary bg-color-accent dark:text-color-dark text-color-white rounded-s font-bold;
+  }
+  .Text {
+    @apply text-color-dark dark:text-color-whiteDark;
+  }
   .Button {
     @apply border dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white dark:hover:bg-color-darkHover hover:bg-color-grey2;
+  }
+  .ButtonActive {
+    @apply dark:text-color-darkDark text-color-white dark:bg-color-white bg-color-dark hover:bg-color-darkHover dark:hover:bg-color-grey2;
+  }
+  .Border {
+    @apply border dark:border-color-grey border-color-grey2 dark:bg-color-darkDark bg-color-white;
+  }
+  .Color {
+    @apply text-color-grey hover:text-color-dark hover:dark:text-color-whiteDark;
   }
 }
 

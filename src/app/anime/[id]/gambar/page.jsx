@@ -46,18 +46,17 @@ const GambarPage = ({ params: { id } }) => {
       <Navbar id={id} gambar={true} />
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <p className="text-justify h3">Gambar</p>
+          <h3 className="h3">Gambar</h3>
 
           {data.length > 3 && ( // Menambahkan kondisi untuk menampilkan tombol
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="text-color-grey hover:text-color-dark hover:dark:text-color-whiteDark"
-            >
+            <button onClick={() => setShowAll(!showAll)} className="Color">
               {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Gambar"}
             </button>
           )}
         </div>
-        <Gambar gambar={data} />
+        <div className="mt-3">
+          <Gambar gambar={data} />
+        </div>
       </div>
     </div>
   )

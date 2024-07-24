@@ -27,20 +27,16 @@ const Ulasan = ({ item }) => {
             alt={item.user.username}
           />
           <div>
-            <h2 className="text-lg md:text-2xl sm:text-xl font-bold line-clamp-2">
-              {item.user.username}
-            </h2>
+            <h3 className="h3 line-clamp-2">{item.user.username}</h3>
             <div className="flex gap-1">
               <span>tag: </span>
-              <span className="text-color-accent dark:text-color-secondary">
-                {item.tags.join(", ")}
-              </span>
+              <span className="text-color-blue">{item.tags.join(", ")}</span>
             </div>
           </div>
         </div>
       </div>
       <p
-        className={`text-lg lg:text-xl transition-all text-justify ${
+        className={`transition-all text-justify ${
           showFullText ? "" : "line-clamp-5"
         }`}
       >
@@ -48,10 +44,10 @@ const Ulasan = ({ item }) => {
       </p>
       <Emoji item={item} />
       <div className="flex justify-between items-center">
-        <FormattedDate dateString={item.date} styles="opacity-50 w-full" />
+        <FormattedDate dateString={item.date} styles="w-full" />
         <div className="w-full text-right">
           <button
-            className="hover:underline opacity-50 mx-2 my-1"
+            className="Color mx-2 my-1"
             aria-label="more"
             onClick={toggleFullText}
           >

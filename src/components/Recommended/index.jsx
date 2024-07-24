@@ -3,7 +3,7 @@ import RecommendedCard from "../RecommendedCard"
 
 const Recommended = ({ api }) => {
   return (
-    <div className="dark:text-color-primary text-color-dark">
+    <div className="">
       <div className="flex flex-col gap-4">
         {api.data?.map((item, index) => (
           <MotionDiv

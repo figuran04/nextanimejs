@@ -21,16 +21,11 @@ const ReviewsPage = () => {
       <section className="lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
         <HeaderMenu title={`Review`} />
         {reviews.data?.map((review, index) => (
-          <div
-            key={index}
-            className="dark:text-color-primary text-color-dark p-2 rounded-md shadow-md mb-4"
-          >
+          <div key={index} className="p-2 rounded-md shadow mb-4">
             {loading ? (
               <div className="w-full flex flex-col items-center">
                 <section className="lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
-                  <p className="font-medium text-lg text-color-primary">
-                    Memuat...
-                  </p>
+                  <p>Memuat...</p>
                 </section>
               </div>
             ) : (
