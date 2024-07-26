@@ -5,56 +5,56 @@ import { Providers } from "./providers"
 import Footer from "@/components/Footer"
 const sfProDisplay = localFont({
   src: [
-    // {
-    //   path: "../assets/standerd-standerd-black-800.ttf",
-    //   weight: "900",
-    //   style: "normal",
-    // },
-    // {
-    //   path: "../assets/standerd-standerd-extrabold-800.ttf",
-    //   weight: "800",
-    //   style: "normal",
-    // },
-    // {
-    //   path: "../assets/standerd-standerd-bold-700.ttf",
-    //   weight: "700",
-    //   style: "normal",
-    // },
-    // {
-    //   path: "../assets/standerd-standerd-semibold-600.ttf",
-    //   weight: "600",
-    //   style: "normal",
-    // },
-    // {
-    //   path: "../assets/standerd-standerd-medium-500.ttf",
-    //   weight: "500",
-    //   style: "normal",
-    // },
     {
-      path: "../assets/standerd-standerd-regular-400.ttf",
+      path: "../assets/standerd-standerd-black-800.ttf",
       weight: "900",
       style: "normal",
     },
     {
-      path: "../assets/standerd-standerd-regular-400.ttf",
+      path: "../assets/standerd-standerd-extrabold-800.ttf",
       weight: "800",
       style: "normal",
     },
     {
-      path: "../assets/standerd-standerd-regular-400.ttf",
+      path: "../assets/standerd-standerd-bold-700.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../assets/standerd-standerd-regular-400.ttf",
+      path: "../assets/standerd-standerd-semibold-600.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../assets/standerd-standerd-regular-400.ttf",
+      path: "../assets/standerd-standerd-medium-500.ttf",
       weight: "500",
       style: "normal",
     },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "900",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "800",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "700",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "600",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "500",
+    //   style: "normal",
+    // },
     {
       path: "../assets/standerd-standerd-regular-400.ttf",
       weight: "400",
