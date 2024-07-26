@@ -7,6 +7,11 @@ const sfProDisplay = localFont({
   src: [
     {
       path: "../assets/standerd-standerd-black-800.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../assets/standerd-standerd-extrabold-800.ttf",
       weight: "800",
       style: "normal",
     },
@@ -16,18 +21,8 @@ const sfProDisplay = localFont({
       style: "normal",
     },
     {
-      path: "../assets/standerd-standerd-extrabold-800.ttf",
-      weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../assets/standerd-standerd-extra-light-100.ttf",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "../assets/standerd-standerd-light-200.ttf",
-      weight: "200",
+      path: "../assets/standerd-standerd-semibold-600.ttf",
+      weight: "600",
       style: "normal",
     },
     {
@@ -36,14 +31,23 @@ const sfProDisplay = localFont({
       style: "normal",
     },
     {
-      // path: "../assets/standerd-standerd-medium-500.ttf",
       path: "../assets/standerd-standerd-regular-400.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../assets/standerd-standerd-semibold-600.ttf",
-      weight: "600",
+      path: "../assets/standerd-standerd-regular-400.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../assets/standerd-standerd-light-200.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../assets/standerd-standerd-extra-light-100.ttf",
+      weight: "100",
       style: "normal",
     },
   ],
