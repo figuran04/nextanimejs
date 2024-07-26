@@ -51,7 +51,7 @@ const HomePage = () => {
           <section>
             <Header
               title="Musim Sekarang"
-              linkHref="/musim/sekarang"
+              linkHref="/musim/sekarang/page/1"
               linkTitle="Lihat Semua"
             />
             <AnimeList api={seasonNowAnime} />
@@ -73,7 +73,7 @@ const HomePage = () => {
           <section ref={topAnimeView}>
             <Header
               title="Anime Teratas"
-              linkHref="/topanime"
+              linkHref="/topanime/page/1"
               linkTitle="Lihat Semua"
             />
             {inTopAnimeView ? (

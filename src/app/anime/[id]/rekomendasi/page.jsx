@@ -27,7 +27,11 @@ const RekomendasiPage = ({ params: { id } }) => {
         images: item.entry.images,
       })),
     }
-    return <AnimeSide api={api} />
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
+        <AnimeSide api={api} />
+      </div>
+    )
   }
 
   return (
@@ -35,14 +39,16 @@ const RekomendasiPage = ({ params: { id } }) => {
       <Navbar id={id} rekomendasi={true} />
       <div className="flex justify-between">
         <h3 className="h3">Rekomendasi</h3>
-        {data.length > 3 && (
-          <button onClick={() => setShowAll(!showAll)} className="Color">
-            {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Rekomendasi"}
-          </button>
-        )}
       </div>
-      <div className="mt-3 md:w-2/3">
+      <div className="mt-3">
         <Rekomendasi animeId={id} />
+        <div className="flex justify-center mt-3">
+          {data.length > 3 && (
+            <button onClick={() => setShowAll(!showAll)} className="Color">
+              {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Rekomendasi"}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )

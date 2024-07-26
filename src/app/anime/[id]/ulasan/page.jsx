@@ -23,17 +23,21 @@ const UlasanPage = ({ params: { id } }) => {
       <Navbar id={id} ulasan={true} />
       <div className="flex justify-between">
         <h3 className="h3">Ulasan</h3>
-        {data?.length > 3 && (
-          <button onClick={() => setShowAll(!showAll)} className="Color">
-            {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Ulasan"}
-          </button>
-        )}
       </div>
-      {displayedReviews?.map((item, index) => (
-        <div className="p-2 rounded-md shadow mt-3" key={index}>
-          <Ulasan item={item} />
+      <div className="mt-3">
+        {displayedReviews?.map((item, index) => (
+          <div className="p-2 rounded-md shadow" key={index}>
+            <Ulasan item={item} />
+          </div>
+        ))}
+        <div className="flex justify-center mt-3">
+          {data?.length > 3 && (
+            <button onClick={() => setShowAll(!showAll)} className="Color">
+              {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Ulasan"}
+            </button>
+          )}
         </div>
-      ))}
+      </div>
     </div>
   )
 }

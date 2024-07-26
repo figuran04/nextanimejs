@@ -47,15 +47,16 @@ const GambarPage = ({ params: { id } }) => {
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
           <h3 className="h3">Gambar</h3>
-
-          {data.length > 3 && ( // Menambahkan kondisi untuk menampilkan tombol
-            <button onClick={() => setShowAll(!showAll)} className="Color">
-              {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Gambar"}
-            </button>
-          )}
         </div>
         <div className="mt-3">
           <Gambar gambar={data} />
+          <div className="flex justify-center mt-3">
+            {data.length > 3 && ( // Menambahkan kondisi untuk menampilkan tombol
+              <button onClick={() => setShowAll(!showAll)} className="Color">
+                {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Gambar"}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

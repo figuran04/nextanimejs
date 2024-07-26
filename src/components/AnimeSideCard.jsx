@@ -34,10 +34,10 @@ const AnimeSideCard = ({ anime }) => {
         className="object-cover w-24 h-24 transition-all rounded-lg lg:h-28 lg:w-28"
       />
       <div className="flex flex-col w-full px-2 transition-all">
-        <p className="text-base font-bold md:text-xl sm:text-lg line-clamp-2">
+        <p className="text-lg font-bold md:text-xl line-clamp-2">
           {anime.title}
         </p>
-        <div className="flex flex-wrap gap-2">{desc()}</div>
+        <div className="flex flex-wrap gap-2 text-color-grey">{desc()}</div>
       </div>
     </Link>
   )

@@ -40,7 +40,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/anime"
+                    href="/anime/page/1"
                     className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Anime
@@ -69,7 +69,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/topanime"
+                    href="/topanime/page/1"
                     className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Teratas
@@ -77,7 +77,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/rekomendasi"
+                    href="/rekomendasi/page/1"
                     className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Rekomendasi
@@ -90,7 +90,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/musim/sekarang"
+                    href="/musim/sekarang/page/1"
                     className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Sekarang
@@ -98,7 +98,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/musim/mendatang"
+                    href="/musim/mendatang/page/1"
                     className="transition-all text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
                   >
                     Mendatang

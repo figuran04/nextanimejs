@@ -17,7 +17,7 @@ const RecommendedCard = ({ item }) => {
           <Link
             key={entry.mal_id}
             href={`/anime/${entry.mal_id}`}
-            className="w-1/2 flex gap-1 group transition-all relative rounded-lg overflow-hidden cursor-pointer Button"
+            className="w-1/2 flex gap-1 group transition-all relative rounded-lg overflow-hidden cursor-pointer"
           >
             <Image
               src={entry.images.webp.image_url}

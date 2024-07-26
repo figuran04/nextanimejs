@@ -53,14 +53,16 @@ const KarakterPage = ({ params: { id } }) => {
       <Navbar id={id} karakter={true} />
       <div className="flex justify-between">
         <h3 className="h3">Karakter</h3>
+      </div>
+      <div className="w-full flex justify-center mt-3">
+        <Karakter karakter={data} />
+      </div>
+      <div className="flex justify-center mt-3">
         {data.length > 3 && (
           <button onClick={() => setShowAll(!showAll)} className="Color">
             {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Karakter"}
           </button>
         )}
-      </div>
-      <div className="w-full flex justify-center mt-3">
-        <Karakter karakter={data} />
       </div>
     </div>
   )

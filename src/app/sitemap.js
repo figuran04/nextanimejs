@@ -1,11 +1,11 @@
 export default function sitemap() {
   const pages = [
     "/",
-    "/anime",
-    "/topanime",
-    "/rekomendasi",
-    "/musim/sekarang",
-    "/musim/mendatang",
+    "/anime/page/1",
+    "/topanime/page/1",
+    "/rekomendasi/page/1",
+    "/musim/sekarang/page/1",
+    "/musim/mendatang/page/1",
     "/genre",
     "/reviews",
     "/search",

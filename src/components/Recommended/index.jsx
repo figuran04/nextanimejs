@@ -13,7 +13,7 @@ const Recommended = ({ api }) => {
             transition={transition}
             viewport={{ amount: 0 }}
             key={index}
-            className="rounded-md shadow p-2"
+            className="rounded-md shadow-sm hover:shadow p-2"
           >
             <RecommendedCard item={item} />
           </MotionDiv>

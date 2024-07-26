@@ -103,9 +103,9 @@ const Navbar = () => {
             >
               <div className="flex flex-col gap-3 font-medium md:gap-2 md:p-0 md:px-2 md:flex-row">
                 <ButtonNav title="Beranda" link="" active="true" />
-                <ButtonNav title="Anime" link="anime" />
+                <ButtonNav title="Anime" link="anime/page/1" />
                 <ButtonNav title="Genre" link="genre" />
-                <ButtonNav title="Musim" link="musim/sekarang" />
+                <ButtonNav title="Musim" link="musim/sekarang/page/1" />
                 <ButtonNav title="Review" link="reviews" />
               </div>
             </div>

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const CharacterCard = ({ item, voiceActor }) => {
   return (
-    <div className="flex justify-between gap-2 shadow px-2 py-1 rounded-lg Button">
+    <div className="flex justify-between gap-2 shadow-sm hover:shadow px-2 py-1 rounded-lg">
       <div>
         <Image
           src={item.character.images.webp.image_url}

@@ -8,43 +8,43 @@ const sfProDisplay = localFont({
     {
       path: "../assets/standerd-standerd-black-800.ttf",
       weight: "800",
-      style: "black",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-bold-700.ttf",
       weight: "700",
-      style: "bold",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-extrabold-800.ttf",
       weight: "800",
-      style: "extrabold",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-extra-light-100.ttf",
       weight: "100",
-      style: "extralight",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-light-200.ttf",
       weight: "200",
-      style: "light",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-medium-500.ttf",
       weight: "500",
-      style: "medium",
+      style: "normal",
     },
     {
-      // path: "../assets/standerd-standerd-regular-400.ttf",
-      path: "../assets/standerd-standerd-medium-500.ttf",
+      // path: "../assets/standerd-standerd-medium-500.ttf",
+      path: "../assets/standerd-standerd-regular-400.ttf",
       weight: "400",
-      style: "regular",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-semibold-600.ttf",
       weight: "600",
-      style: "semibold",
+      style: "normal",
     },
   ],
 })
