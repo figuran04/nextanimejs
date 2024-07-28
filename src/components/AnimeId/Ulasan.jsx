@@ -3,6 +3,7 @@ import FormattedDate from "@/components/Utilities/FormattedDate"
 import Image from "next/image"
 import { useState } from "react"
 import Emoji from "./Emoji"
+import { StarIcon } from "../Icons/StarIcon"
 
 const Ulasan = ({ item }) => {
   const [showFullText, setShowFullText] = useState(false)
@@ -11,9 +12,9 @@ const Ulasan = ({ item }) => {
     setShowFullText(!showFullText)
   }
   if (!item) {
-    return <p className="font-medium text-lg">Memuat...</p>
+    return <span className="font-medium text-lg">Memuat...</span>
   } else if (item == []) {
-    return <p className="font-medium text-lg">Tidak ditemukan</p>
+    return <span className="font-medium text-lg">Tidak ditemukan</span>
   }
   return (
     <>
@@ -27,10 +28,15 @@ const Ulasan = ({ item }) => {
             alt={item.user.username}
           />
           <div>
-            <h3 className="h3 line-clamp-2">{item.user.username}</h3>
+            <span className="text-lg md:text-xl font-bold line-clamp-2">
+              {item.user.username}
+            </span>
             <div className="flex gap-1">
               <span>tag: </span>
               <span className="text-color-blue">{item.tags.join(", ")}</span>
+              <span>{item.is_spoiler === true && "Spoiler"}</span>
+              <span>{item.is_preliminary === true && "Awal"}</span>
+              <span>{item.episodes_watched}</span>
             </div>
           </div>
         </div>
@@ -42,6 +48,9 @@ const Ulasan = ({ item }) => {
       >
         {item.review}
       </p>
+      <span className="flex items-center text-color-grey">
+        {showFullText ? `Penilaian Pengulas: ${item.score}` : ""}
+      </span>
       <Emoji item={item} />
       <div className="flex justify-between items-center">
         <FormattedDate dateString={item.date} styles="w-full" />

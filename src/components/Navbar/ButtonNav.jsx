@@ -5,10 +5,8 @@ const ButtonNav = ({ title, link, active }) => {
   return (
     <Link
       href={`/${link}`}
-      className={`py-2 px-2 rounded transition-all ${
-        active === "true"
-          ? "text-color-blue"
-          : "text-color-grey hover:text-color-dark dark:hover:text-color-whiteDark"
+      className={`my-2 mx-2 rounded transition-all ${
+        active === "true" ? "text-color-blue" : "Color"
       }`}
     >
       {title}

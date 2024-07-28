@@ -52,7 +52,7 @@ const KarakterPage = ({ params: { id } }) => {
     <div>
       <Navbar id={id} karakter={true} />
       <div className="flex justify-between">
-        <h3 className="h3">Karakter</h3>
+        <span className="font-bold text-xl">Karakter</span>
       </div>
       <div className="w-full flex justify-center mt-3">
         <Karakter karakter={data} />

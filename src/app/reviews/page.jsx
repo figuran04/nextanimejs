@@ -25,7 +25,7 @@ const ReviewsPage = () => {
             {loading ? (
               <div className="w-full flex flex-col items-center">
                 <section className="lg:w-8/12 md:w-9/12 sm:w-10/12 w-11/12">
-                  <p>Memuat...</p>
+                  <span>Memuat...</span>
                 </section>
               </div>
             ) : (

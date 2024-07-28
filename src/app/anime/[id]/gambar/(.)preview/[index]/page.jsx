@@ -2,7 +2,7 @@ import Modal from "@/components/Modal"
 import { getAnimeResponse } from "@/libs/api-libs"
 import Image from "next/image"
 
-const GambarPage = async ({ params: { id, index } }) => {
+const GambarPreviewPage = async ({ params: { id, index } }) => {
   const { data } = await getAnimeResponse(`anime/${id}/pictures`)
 
   return (
@@ -18,4 +18,4 @@ const GambarPage = async ({ params: { id, index } }) => {
   )
 }
 
-export default GambarPage
+export default GambarPreviewPage

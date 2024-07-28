@@ -6,20 +6,20 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 
 const GambarPage = ({ params: { id } }) => {
-  const [data, setData] = useState([]) // Menyimpan data gambar
+  const [data, setData] = useState([])
   const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await getAnimeResponse(`anime/${id}/pictures`)
-        setData(response.data) // Menyimpan data ke state
+        setData(response.data)
       } catch (error) {
-        console.error("Error fetching data:", error) // Menangani kesalahan
+        console.error("Error fetching data:", error)
       }
     }
     fetchData()
-  }, [id]) // Mengambil data saat id berubah
+  }, [id])
 
   const Gambar = ({ gambar }) => {
     const displayedImages = showAll ? gambar : gambar.slice(0, 3)
@@ -46,12 +46,12 @@ const GambarPage = ({ params: { id } }) => {
       <Navbar id={id} gambar={true} />
       <div className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <h3 className="h3">Gambar</h3>
+          <span className="text-xl font-bold">Gambar</span>
         </div>
         <div className="mt-3">
           <Gambar gambar={data} />
           <div className="flex justify-center mt-3">
-            {data.length > 3 && ( // Menambahkan kondisi untuk menampilkan tombol
+            {data.length > 3 && (
               <button onClick={() => setShowAll(!showAll)} className="Color">
                 {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Gambar"}
               </button>

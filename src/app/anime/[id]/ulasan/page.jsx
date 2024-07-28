@@ -22,7 +22,7 @@ const UlasanPage = ({ params: { id } }) => {
     <div>
       <Navbar id={id} ulasan={true} />
       <div className="flex justify-between">
-        <h3 className="h3">Ulasan</h3>
+        <span className="font-bold text-xl">Ulasan</span>
       </div>
       <div className="mt-3">
         {displayedReviews?.map((item, index) => (

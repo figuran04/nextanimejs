@@ -1,16 +1,18 @@
 const Title = ({ data }) => {
   if (!data) {
-    return <p className="font-medium text-lg">Memuat...</p>
+    return <span className="font-medium text-lg">Memuat...</span>
   } else if (data == []) {
-    return <p className="font-medium text-lg">Tidak ditemukan</p>
+    return <span className="font-medium text-lg">Tidak ditemukan</span>
   }
   return (
     <div className="pt-4 px-4">
-      <h3 className="h3">
+      <p className="text-lg md:text-xl font-bold">
         {data.title}
-        {data.year ? ` - ${data.year}` : null}
-      </h3>
-      <h5 className="h5 text-color-grey">{data?.title_english}</h5>
+        {data.year && ` - ${data.year}`}
+      </p>
+      <p className="text-base md:text-lg font-bold text-color-grey">
+        {data?.title_english}
+      </p>
     </div>
   )
 }

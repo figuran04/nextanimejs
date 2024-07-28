@@ -4,11 +4,11 @@ const Nav = ({ condition, link, title }) => {
   return (
     <Link
       href={`/${link}`}
-      className={`group p-2 transition-all rounded-lg flex justify-center sm:px-4 ${
+      className={`rounded-md px-3 py-1 font-semibold flex cursor-pointer line-clamp-2 justify-center ${
         condition ? "ButtonActive" : "Button"
       }`}
     >
-      <p className="cursor-pointer line-clamp-2 text-center">{title}</p>
+      {title}
     </Link>
   )
 }

@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
+import { StarIcon } from "../Icons/StarIcon"
 
 export const reactionEmojis = {
   nice: "👍",

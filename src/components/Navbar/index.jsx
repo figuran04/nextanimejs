@@ -70,17 +70,10 @@ const Navbar = () => {
         <div className="flex flex-row items-center justify-between w-full md:w-1/2">
           <div className="flex flex-col w-full md:flex-row">
             <div className="flex justify-between w-full">
-              <Link
-                href="/"
-                className="flex flex-row items-center gap-1 text-2xl font-bold"
-              >
-                <div className="relative ml-2 mr-6">
-                  <span className="font-bold text-color-whiteGradient">
-                    NEXTANIME
-                  </span>
-                  <span className="absolute -right-5 md:bottom-1 bottom-0 text-sm">
-                    JS
-                  </span>
+              <Link href="/" className="flex flex-row items-center gap-1">
+                <div className="relative ml-2 mr-6 font-bold text-color-whiteGradient ">
+                  <span className="text-xl">NEXTANIME</span>
+                  <span className="absolute -right-5 bottom-0 text-sm">JS</span>
                 </div>
               </Link>
               <div className="flex">
@@ -88,7 +81,7 @@ const Navbar = () => {
                 <button
                   id="toggle-button"
                   onClick={toggleNav}
-                  className="inline-flex items-center justify-center w-10 h-10 p-2 text-sm rounded-lg md:hidden"
+                  className="inline-flex items-center justify-center w-10 h-10 p-2 rounded-lg md:hidden"
                   aria-label="menu"
                 >
                   <MenuIcon />
@@ -97,11 +90,11 @@ const Navbar = () => {
             </div>
             <div
               id="navbar"
-              className={`w-full md:block md:w-auto md:bg-transparent dark:md:bg-transparent bg-color-white dark:bg-color-darkDark mt-6 md:mt-0 rounded-lg md:rounded-none p-4 md:p-0 md:shadow-none shadow-inner ${
+              className={`w-full md:block md:w-auto md:bg-transparent dark:md:bg-transparent Bg mt-6 md:mt-0 rounded-lg md:rounded-none p-4 md:p-0 ${
                 isNavOpen ? "" : "hidden"
               }`}
             >
-              <div className="flex flex-col gap-3 font-medium md:gap-2 md:p-0 md:px-2 md:flex-row">
+              <div className="flex flex-col gap-3 md:gap-2 md:p-0 md:px-2 md:flex-row">
                 <ButtonNav title="Beranda" link="" active="true" />
                 <ButtonNav title="Anime" link="anime/page/1" />
                 <ButtonNav title="Genre" link="genre" />

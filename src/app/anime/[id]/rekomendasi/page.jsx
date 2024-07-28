@@ -38,7 +38,7 @@ const RekomendasiPage = ({ params: { id } }) => {
     <div>
       <Navbar id={id} rekomendasi={true} />
       <div className="flex justify-between">
-        <h3 className="h3">Rekomendasi</h3>
+        <span className="font-bold text-xl">Rekomendasi</span>
       </div>
       <div className="mt-3">
         <Rekomendasi animeId={id} />

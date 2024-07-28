@@ -1,9 +1,7 @@
 const HeaderCenter = ({ title }) => {
   return (
-    <div>
-      <div className="p-4">
-        <h3 className="text-center h3 uppercase">{title}</h3>
-      </div>
+    <div className="w-full flex justify-center p-4">
+      <span className="uppercase font-bold text-xl mt-3">{title}</span>
     </div>
   )
 }

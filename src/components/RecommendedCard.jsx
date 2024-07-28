@@ -26,14 +26,10 @@ const RecommendedCard = ({ item }) => {
               height={100}
               className="lg:h-full h-full lg:w-16 w-14 object-cover transition-all rounded-lg p-1"
             />
-            <div className="text-sm">
-              {index == 0 ? (
-                <p className="line-clamp-1 text-color-blue">Jika suka</p>
-              ) : (
-                <p className="line-clamp-1 text-color-blue">
-                  maka mungkin suka
-                </p>
-              )}
+            <div>
+              <p className="line-clamp-1 text-color-blue text-sm">
+                {index == 0 ? "Jika suka" : "maka mungkin suka"}
+              </p>
               <p className="text-base md:text-xl sm:text-lg font-bold line-clamp-2">
                 {entry.title}
               </p>
@@ -42,12 +38,11 @@ const RecommendedCard = ({ item }) => {
         ))}
       </div>
       <div className="mt-2">
-        <p className={`text-justify ${showFullText ? "" : "line-clamp-5"}`}>
+        <span className={`text-justify ${showFullText ? "" : "line-clamp-5"}`}>
           {item.content}
-        </p>
+        </span>
         <div className="flex justify-between items-center">
-          <FormattedDate dateString={item.date} styles="font-bold" />
-
+          <FormattedDate dateString={item.date} styles="" />
           <button className="Color mx-2 my-1" onClick={toggleFullText}>
             {showFullText ? "Kembali semula" : "Baca selengkapnya"}
           </button>
