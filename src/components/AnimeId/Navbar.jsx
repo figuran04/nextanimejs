@@ -26,7 +26,7 @@ const Navbar = ({
         <Link
           key={href}
           href={`/anime/${id}/${href}`}
-          className={`rounded-md px-3 py-1 font-semibold ${
+          className={`rounded-md px-3 py-1 font-semibold text-base ${
             active ? "ButtonActive" : "Button"
           }`}
         >

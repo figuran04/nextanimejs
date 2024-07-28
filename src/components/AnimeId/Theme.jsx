@@ -5,11 +5,11 @@ const Theme = ({ data }) => {
       <table>
         <tbody>
           <tr>
-            <td>Opening</td>
+            <td className="text-base">Opening</td>
             <td>
               {data.theme.openings?.map((item, index) => {
                 return (
-                  <p key={index} className="text-color-grey">
+                  <p key={index} className="text-color-grey text-base">
                     {item}
                   </p>
                 )
@@ -17,11 +17,11 @@ const Theme = ({ data }) => {
             </td>
           </tr>
           <tr>
-            <td>Ending</td>
+            <td className="text-base">Ending</td>
             <td>
               {data.theme.endings?.map((item, index) => {
                 return (
-                  <p key={index} className="text-color-grey">
+                  <p key={index} className="text-color-grey text-base">
                     {item}
                   </p>
                 )

@@ -26,12 +26,14 @@ const StatistikPage = ({ params: { id } }) => {
     return (
       <div>
         <p className="font-bold text-lg">Statistik Ringkasan</p>
-        <p>Sedang Menonton: {summary.watching}</p>
-        <p>Selesai: {summary.completed}</p>
-        <p>Ditunda: {summary.on_hold}</p>
-        <p>Berhenti: {summary.dropped}</p>
-        <p>Rencana untuk Menonton: {summary.plan_to_watch}</p>
-        <p>Total: {summary.total}</p>
+        <p className="text-base">Sedang Menonton: {summary.watching}</p>
+        <p className="text-base">Selesai: {summary.completed}</p>
+        <p className="text-base">Ditunda: {summary.on_hold}</p>
+        <p className="text-base">Berhenti: {summary.dropped}</p>
+        <p className="text-base">
+          Rencana untuk Menonton: {summary.plan_to_watch}
+        </p>
+        <p className="text-base">Total: {summary.total}</p>
       </div>
     )
   }
@@ -43,12 +45,12 @@ const StatistikPage = ({ params: { id } }) => {
         <div className="flex flex-col-reverse">
           {scores.map((score) => (
             <div key={score.score} className="flex gap-2 items-center">
-              <span className="w-4">{score.score}</span>
+              <span className="w-4 text-base">{score.score}</span>
               <div
-                className="bg-color-blue h-4"
+                className="bg-color-blue h-4 text-base"
                 style={{ width: `${score.percentage}%` }}
               ></div>
-              <span className="truncate">
+              <span className="truncate text-base">
                 {score.percentage.toFixed(1)}% ({score.votes} suara)
               </span>
             </div>

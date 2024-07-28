@@ -3,7 +3,7 @@ const Background = ({ data }) => {
     <div className="my-2">
       <span className="text-xl font-bold">Latar Belakang</span>
       <div className="flex gap-2 overflow-x-auto">
-        <p className="text-justify">{data.background}</p>
+        <p className="text-justify text-base">{data.background}</p>
       </div>
     </div>
   )

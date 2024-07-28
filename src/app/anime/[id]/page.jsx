@@ -19,7 +19,7 @@ const AnimeIdPage = async ({ params: { id } }) => {
       <Relations data={data} />
       <div className="flex flex-col gap-2 my-2">
         <span className="text-xl font-bold">Sinopsis</span>
-        <p className="text-justify">{data.synopsis}</p>
+        <p className="text-justify text-base">{data.synopsis}</p>
       </div>
       {data.background != "" && <Background data={data} />}
       {data.theme.openings && data.theme.endings != "" && <Theme data={data} />}

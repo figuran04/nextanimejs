@@ -8,26 +8,26 @@ const Genre = ({ data }) => {
         {data.demographics?.map((item) => {
           const demo = item.name.toLowerCase()
           if (!item) {
-            return <span>Memuat...</span>
+            return <span className="text-base">Memuat...</span>
           } else if (item == []) {
-            return <span>Tidak ditemukan</span>
+            return <span className="text-base">Tidak ditemukan</span>
           }
           return (
             <Link key={item.mal_id} href={`/genre/${demo}`}>
-              <p className="Color">{item.name}</p>
+              <p className="Color text-base">{item.name}</p>
             </Link>
           )
         })}
         {data.genres?.map((item) => {
           const genre = item.name.toLowerCase()
           if (!item) {
-            return <span>Memuat...</span>
+            return <span className="text-base">Memuat...</span>
           } else if (item == []) {
-            return <span>Tidak ditemukan</span>
+            return <span className="text-base">Tidak ditemukan</span>
           }
           return (
             <Link key={item.mal_id} href={`/genre/${genre}`}>
-              <p className="Color">{item.name}</p>
+              <p className="Color text-base">{item.name}</p>
             </Link>
           )
         })}

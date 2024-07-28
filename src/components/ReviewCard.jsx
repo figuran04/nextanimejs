@@ -36,23 +36,26 @@ const ReviewCard = ({ review }) => {
               >
                 {entry.title}
               </Link>
-              <div className="flex gap-1">
-                tags: <span className="text-color-blue">{tags.join(", ")}</span>
+              <div className="flex gap-1 text-base">
+                tags:{" "}
+                <span className="text-color-blue text-base">
+                  {tags.join(", ")}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
       <p
-        className={`transition-all text-justify ${
+        className={`transition-all text-justify text-base ${
           showFullText ? "" : "line-clamp-5"
         }`}
       >
         {reviewText}
       </p>
       <div className="w-full flex flex-wrap items-center">
-        <div className="flex gap-2 items-center md:w-1/2">
-          <FormattedDate dateString={date} styles="" />
+        <div className="flex gap-2 items-center md:w-1/2 text-base">
+          <FormattedDate dateString={date} styles="text-base" />
           oleh <span className="text-color-blue">{user.username}</span>
           <Image
             className="w-6 h-6 object-cover rounded-full"
@@ -64,7 +67,7 @@ const ReviewCard = ({ review }) => {
         </div>
         <div className="md:w-1/2 w-full">
           <button
-            className="Color mx-2 my-1 float-right"
+            className="Color mx-2 my-1 float-right text-base"
             onClick={toggleFullText}
           >
             {showFullText ? "Kembali semula" : "Baca selengkapnya"}

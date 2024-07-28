@@ -15,15 +15,15 @@ const Skor = ({ data }) => {
   return (
     <div>
       <div className="flex gap-3 capitalize">
-        <div className="flex gap-1">
+        <div className="flex gap-1 text-base">
           {data.season != "" && <span>{data.season}</span>}
           {data.year != "" && <span>{data.year}</span>}
         </div>
-        <span>{data.type}</span>
+        <span className="text-base">{data.type}</span>
         {data.studios.map((item, index) => {
           return (
             <div key={index} className="flex gap-1">
-              <span>{item.name}</span>
+              <span className="text-base">{item.name}</span>
             </div>
           )
         })}
@@ -31,7 +31,7 @@ const Skor = ({ data }) => {
       <div className="flex flex-row w-full gap-4 my-2 flex-nowrap">
         {data.score ? (
           <div className="flex flex-col items-center px-3 py-1 rounded-lg Border">
-            <p className="font-bold">SKOR</p>
+            <p className="font-bold text-base">SKOR</p>
             <p className="text-2xl font-bold">{data.score}</p>
             <Fav data={data} />
           </div>
@@ -45,20 +45,20 @@ const Skor = ({ data }) => {
         >
           {data.rank ? (
             <div className="flex gap-2 flex-nowrap">
-              <span className="text-color-grey">Peringkat</span>
-              <p>{`#${data.rank}`}</p>
+              <span className="text-color-grey text-base">Peringkat</span>
+              <p className="text-base">{`#${data.rank}`}</p>
             </div>
           ) : null}
           {data.popularity ? (
             <div className="flex gap-2 flex-nowrap">
-              <span className="text-color-grey">Penggemar</span>
-              <p>{`#${data.popularity}`}</p>
+              <span className="text-color-grey text-base">Penggemar</span>
+              <p className="text-base">{`#${data.popularity}`}</p>
             </div>
           ) : null}
           {data.members ? (
             <div className="flex gap-2">
-              <span className="text-color-grey">Anggota</span>
-              <span>{`${data.members}`}</span>
+              <span className="text-color-grey text-base">Anggota</span>
+              <p className="text-base">{`${data.members}`}</p>
             </div>
           ) : null}
         </div>

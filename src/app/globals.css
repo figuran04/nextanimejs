@@ -4,7 +4,7 @@
 
 @layer utilities {
   body {
-    @apply font-medium;
+    @apply font-medium text-base;
   }
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

@@ -1,14 +1,13 @@
 "use client"
 import HeaderMenu from "@/components/Utilities/HeaderCenter"
-import Pagination from "@/components/Utilities/Pagination"
 import SkeletonAnimeCard from "@/components/Utilities/SkeletonAnimeCard"
 import { getAnimeResponse } from "@/libs/api-libs"
 import { useEffect, useState } from "react"
 import GenreId from "@/components/GenreId"
+import Paginasi from "@/components/Utilities/Paginasi"
 
 const GenreIdPage = ({ params: { id } }) => {
   const keyword = decodeURI(id)
-  const [page, setPage] = useState(1)
   const [genreAnime, setGenreAnime] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -31,10 +30,10 @@ const GenreIdPage = ({ params: { id } }) => {
         ) : (
           <GenreId api={genreAnime} keyword={keyword} />
         )}
-        <Pagination
+        <Paginasi
+          halaman={`genre/${id}`}
           page={page}
           lastPage={genreAnime.pagination?.last_visible_page}
-          setPage={setPage}
         />
       </section>
     </div>

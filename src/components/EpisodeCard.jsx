@@ -5,9 +5,9 @@ const EpisodeCard = ({ data }) => {
     <table className="">
       <thead>
         <tr>
-          <td>No</td>
-          <td>Judul Episode</td>
-          <td>Ditayangkan</td>
+          <td className="text-base">No</td>
+          <td className="text-base">Judul Episode</td>
+          <td className="text-base">Ditayangkan</td>
         </tr>
       </thead>
       <tbody>
@@ -20,13 +20,13 @@ const EpisodeCard = ({ data }) => {
                 </p>
               </td>
               <td className="w-full">
-                <p className="line-clamp-1">{item.title}</p>
-                <p className="text-color-grey line-clamp-1">
+                <p className="line-clamp-1 text-base">{item.title}</p>
+                <p className="text-color-grey line-clamp-1 text-base">
                   {item.title_romanji}
                 </p>
               </td>
               <td className="whitespace-nowrap text-center">
-                <FormattedDate dateString={item.aired} styles="" />
+                <FormattedDate dateString={item.aired} styles="text-base" />
               </td>
             </tr>
           )

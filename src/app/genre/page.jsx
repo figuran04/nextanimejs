@@ -13,16 +13,16 @@ const GenrePage = async () => {
           {data.map((item, index) => {
             const genre = item.name.toLowerCase()
             if (!item) {
-              return <span>Memuat...</span>
+              return <span className="text-base">Memuat...</span>
             } else if (item == []) {
-              return <span>Tidak ditemukan</span>
+              return <span className="text-base">Tidak ditemukan</span>
             }
             return (
               <div className="flex justify-center">
                 <Link
                   href={`/genre/${genre}`}
                   key={index}
-                  className="text-center transition-all cursor-pointer Color line-clamp-2"
+                  className="text-center transition-all cursor-pointer Color line-clamp-2 text-base"
                 >
                   {item.name}
                 </Link>

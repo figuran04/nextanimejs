@@ -12,9 +12,9 @@ const CharacterCard = ({ item, voiceActor }) => {
           className="min-w-16 h-24 rounded-lg p-1"
         />
         <div className="flex flex-col justify-between">
-          <p className="line-clamp-2">{item.character.name}</p>
-          <p className="text-color-blue">{item.role}</p>
-          <p className="text-color-grey">{`${item.favorites} Favorit`}</p>
+          <p className="line-clamp-2 text-base">{item.character.name}</p>
+          <p className="text-color-blue text-base">{item.role}</p>
+          <p className="text-color-grey text-base">{`${item.favorites} Favorit`}</p>
         </div>
       </div>
       {voiceActor && (
@@ -26,7 +26,7 @@ const CharacterCard = ({ item, voiceActor }) => {
             width={60}
             className="min-w-16 h-24 rounded-lg p-1"
           />
-          <p className="line-clamp-2">{voiceActor.person.name}</p>
+          <p className="line-clamp-2 text-base">{voiceActor.person.name}</p>
         </div>
       )}
     </div>

@@ -62,7 +62,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 bg-color-white dark:bg-color-darkDark border-b dark:border-color-grey border-color-grey2 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm transition-transform duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 Bg border-b dark:border-color-grey border-color-grey2 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-sm transition-transform duration-300 ${
         show ? "translate-y-0" : "-translate-y-full"
       }`}
     >

@@ -9,7 +9,7 @@ const Relations = ({ data }) => {
           {data.relations?.map((item, index) => {
             return (
               <tr key={index}>
-                <td>{item.relation}</td>
+                <td className="text-base">{item.relation}</td>
                 <td>
                   {item.entry?.map((item) => {
                     return (
@@ -19,10 +19,10 @@ const Relations = ({ data }) => {
                             key={item.mal_id}
                             href={`/anime/${item.mal_id}`}
                           >
-                            <p className="Color">{`${item.name} (${item.type})`}</p>
+                            <p className="Color text-base">{`${item.name} (${item.type})`}</p>
                           </Link>
                         ) : (
-                          <p className="Color">{`${item.name} (${item.type})`}</p>
+                          <p className="Color text-base">{`${item.name} (${item.type})`}</p>
                         )}
                       </>
                     )

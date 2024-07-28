@@ -11,7 +11,7 @@ const External = ({ data }) => {
               <Link
                 href={item.url}
                 target="_blank"
-                className="Color whitespace-nowrap mr-3"
+                className="Color whitespace-nowrap mr-3 text-base"
               >
                 {item.name}
               </Link>

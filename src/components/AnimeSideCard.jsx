@@ -5,11 +5,24 @@ import { StarIcon } from "./Icons/StarIcon"
 const AnimeSideCard = ({ anime }) => {
   const desc = () => {
     const descriptions = []
-    if (anime.type) descriptions.push(<span key="type">{anime.type}</span>)
+    if (anime.type)
+      descriptions.push(
+        <span key="type" className="text-base">
+          {anime.type}
+        </span>
+      )
     if (anime.episodes)
-      descriptions.push(<span key="episodes">{anime.episodes} eps</span>)
+      descriptions.push(
+        <span key="episodes" className="text-base">
+          {anime.episodes} eps
+        </span>
+      )
     if (anime.members)
-      descriptions.push(<span key="members">{anime.members} anggota</span>)
+      descriptions.push(
+        <span key="members" className="text-base">
+          {anime.members} anggota
+        </span>
+      )
     return descriptions
   }
 
@@ -17,13 +30,13 @@ const AnimeSideCard = ({ anime }) => {
     <Link href={`/anime/${anime.mal_id}`} className="flex flex-row">
       {anime.rank ? (
         <div className="absolute top-2 left-0 dark:bg-color-whiteDark bg-color-dark Textdark rounded-e font-bold px-2 py-0.5 flex items-center gap-1 bg-opacity-70 dark:bg-opacity-70 backdrop-blur">
-          <p>{anime.rank}</p>
+          <p className="text-base">{anime.rank}</p>
         </div>
       ) : null}
       {anime.score ? (
-        <div className="absolute bottom-1 right-0 flex items-center gap-1 px-2 py-0.5 mt-2 text-base font-bold Textdark dark:bg-color-whiteDark bg-color-dark rounded-s bg-opacity-70 dark:bg-opacity-70 backdrop-blur">
+        <div className="absolute bottom-1 right-0 flex items-center gap-1 px-2 py-0.5 mt-2 Textdark dark:bg-color-whiteDark bg-color-dark rounded-s bg-opacity-70 dark:bg-opacity-70 backdrop-blur">
           <StarIcon />
-          <p>{anime.score}</p>
+          <p className="text-base font-bold">{anime.score}</p>
         </div>
       ) : null}
       <Image

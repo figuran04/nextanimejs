@@ -38,12 +38,19 @@ const RecommendedCard = ({ item }) => {
         ))}
       </div>
       <div className="mt-2">
-        <span className={`text-justify ${showFullText ? "" : "line-clamp-5"}`}>
+        <span
+          className={`text-justify text-base ${
+            showFullText ? "" : "line-clamp-5"
+          }`}
+        >
           {item.content}
         </span>
         <div className="flex justify-between items-center">
-          <FormattedDate dateString={item.date} styles="" />
-          <button className="Color mx-2 my-1" onClick={toggleFullText}>
+          <FormattedDate dateString={item.date} styles="text-base" />
+          <button
+            className="Color mx-2 my-1 text-base"
+            onClick={toggleFullText}
+          >
             {showFullText ? "Kembali semula" : "Baca selengkapnya"}
           </button>
         </div>

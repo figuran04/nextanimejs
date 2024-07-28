@@ -32,7 +32,10 @@ const UlasanPage = ({ params: { id } }) => {
         ))}
         <div className="flex justify-center mt-3">
           {data?.length > 3 && (
-            <button onClick={() => setShowAll(!showAll)} className="Color">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="Color text-base"
+            >
               {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Ulasan"}
             </button>
           )}

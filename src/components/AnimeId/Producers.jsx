@@ -5,12 +5,12 @@ const Producers = ({ data }) => {
       <div className="flex flex-wrap gap-1 overflow-x-auto">
         {data.producers?.map((item) => {
           if (!item) {
-            return <span>Memuat...</span>
+            return <span className="text-base">Memuat...</span>
           } else if (item == []) {
-            return <span>Tidak ditemukan</span>
+            return <span className="text-base">Tidak ditemukan</span>
           }
           return (
-            <span className="flex flex-nowrap p-1 Border rounded">
+            <span className="flex flex-nowrap p-1 Border rounded text-base">
               {item.name}
             </span>
           )

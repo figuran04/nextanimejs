@@ -26,37 +26,46 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-10 lg:w-1/2 justify-start lg:justify-between">
             <div>
-              <p className="mb-2 textActive">Navigasi</p>
+              <p className="mb-2 textActive text-base">Navigasi</p>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="transition-all Color">
+                  <Link href="/" className="transition-all Color text-base">
                     Beranda
                   </Link>
                 </li>
                 <li>
-                  <Link href="/anime/page/1" className="transition-all Color">
+                  <Link
+                    href="/anime/page/1"
+                    className="transition-all Color text-base"
+                  >
                     Anime
                   </Link>
                 </li>
                 <li>
-                  <Link href="/genre" className="transition-all Color">
+                  <Link
+                    href="/genre"
+                    className="transition-all Color text-base"
+                  >
                     Genre
                   </Link>
                 </li>
                 <li>
-                  <Link href="/reviews" className="transition-all Color">
+                  <Link
+                    href="/reviews"
+                    className="transition-all Color text-base"
+                  >
                     Review
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <p className="mb-2 textActive">Anime</p>
+              <p className="mb-2 textActive text-base">Anime</p>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/topanime/page/1"
-                    className="transition-all Color"
+                    className="transition-all Color text-base"
                   >
                     Teratas
                   </Link>
@@ -64,7 +73,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/rekomendasi/page/1"
-                    className="transition-all Color"
+                    className="transition-all Color text-base"
                   >
                     Rekomendasi
                   </Link>
@@ -72,12 +81,12 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="mb-2 textActive">Musim</p>
+              <p className="mb-2 textActive text-base">Musim</p>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/musim/sekarang/page/1"
-                    className="transition-all Color"
+                    className="transition-all Color text-base"
                   >
                     Sekarang
                   </Link>
@@ -85,7 +94,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/musim/mendatang/page/1"
-                    className="transition-all Color"
+                    className="transition-all Color text-base"
                   >
                     Mendatang
                   </Link>
@@ -93,12 +102,12 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <p className="mb-2 textActive">Tentang Kami</p>
+              <p className="mb-2 textActive text-base">Tentang Kami</p>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="http://github.com/figuran04/nextanimejs"
-                    className="transition-all Color"
+                    className="transition-all Color text-base"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -111,8 +120,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="lg:w-1/3 my-4 md:my-0">
-            <p className="mb-2 textActive">Cari anime</p>
-            <p className="mb-2">
+            <p className="mb-2 textActive text-base">Cari anime</p>
+            <p className="mb-2 text-base">
               Gunakan fitur pencarian di bawah ini untuk menemukan anime yang
               Anda inginkan.
             </p>
@@ -120,7 +129,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="px-6 lg:px-4 mt-4">
-          <span>@ {new Date().getFullYear()} Figuran04.</span>
+          <span className="text-base">
+            @ {new Date().getFullYear()} Figuran04.
+          </span>
         </div>
         <div className="px-6 lg:px-4 mt-4">
           <Link
