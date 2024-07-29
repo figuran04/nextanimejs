@@ -19,7 +19,13 @@ const FormattedDate = ({ dateString, styles }) => {
     formattedDate = format(date, "dd MMM yyyy", { locale: id })
   }
 
-  return <p className={`text-color-grey ${styles}`}>{formattedDate}</p>
+  return (
+    <div className="flex">
+      <p className={`text-color-grey whitespace-nowrap ${styles}`}>
+        {formattedDate}
+      </p>
+    </div>
+  )
 }
 
 export default FormattedDate

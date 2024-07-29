@@ -19,7 +19,7 @@ const AnimeCard = ({ api }) => {
         className="w-full max-h-64 object-cover transition-all"
       />
       <div className="px-3 bg-gradient-to-t dark:from-color-darkDark from-color-white to-transparent w-full md:h-22 sm:h-20 h-16 flex absolute bottom-0 items-center transition-all py-2">
-        <p className="text-lg md:text-xl font-bold line-clamp-2 Text">
+        <p className="Textlg md:Textxl font-bold line-clamp-2 Text">
           {api.title}
         </p>
       </div>

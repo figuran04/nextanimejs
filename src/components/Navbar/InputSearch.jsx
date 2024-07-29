@@ -20,7 +20,7 @@ const InputSearch = () => {
       <input
         type="text"
         placeholder="Cari anime..."
-        className="py-2 px-3 rounded-lg w-full Text placeholder:text-color-grey bg-color-grey2 dark:bg-color-darkGrey outline-color-blue text-base placeholder:text-base"
+        className="py-2 px-3 rounded-lg w-full Text placeholder:text-color-grey bg-color-grey2 dark:bg-color-darkGrey outline-color-blue"
         ref={searchRef}
         onKeyDown={handleSearch}
       />

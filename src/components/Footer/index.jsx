@@ -10,10 +10,10 @@ const Footer = () => {
           <div className="flex justify-between items-center lg:items-start">
             <div>
               <div className="relative Text mr-4 font-bold">
-                <span className="text-color-whiteGradient text-xl">
+                <span className="text-color-whiteGradient Textxl">
                   NEXTANIME
                 </span>
-                <span className="absolute -right-5 bottom-0 text-sm">JS</span>
+                <span className="absolute -right-5 bottom-0 Textsm">JS</span>
               </div>
             </div>
             <Link
@@ -25,47 +25,38 @@ const Footer = () => {
             </Link>
           </div>
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-10 lg:w-1/2 justify-start lg:justify-between">
-            <div>
-              <p className="mb-2 textActive text-base">Navigasi</p>
+            <div className="flex flex-col">
+              <p className="mb-2 textActive ">Navigasi</p>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="transition-all Color text-base">
+                  <Link href="/" className="transition-all Color ">
                     Beranda
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/anime/page/1"
-                    className="transition-all Color text-base"
-                  >
+                  <Link href="/anime/page/1" className="transition-all Color ">
                     Anime
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/genre"
-                    className="transition-all Color text-base"
-                  >
+                  <Link href="/genre" className="transition-all Color ">
                     Genre
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/reviews"
-                    className="transition-all Color text-base"
-                  >
+                  <Link href="/reviews" className="transition-all Color ">
                     Review
                   </Link>
                 </li>
               </ul>
             </div>
-            <div>
-              <p className="mb-2 textActive text-base">Anime</p>
+            <div className="flex flex-col">
+              <p className="mb-2 textActive ">Anime</p>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/topanime/page/1"
-                    className="transition-all Color text-base"
+                    className="transition-all Color "
                   >
                     Teratas
                   </Link>
@@ -73,20 +64,20 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/rekomendasi/page/1"
-                    className="transition-all Color text-base"
+                    className="transition-all Color "
                   >
                     Rekomendasi
                   </Link>
                 </li>
               </ul>
             </div>
-            <div>
-              <p className="mb-2 textActive text-base">Musim</p>
+            <div className="flex flex-col">
+              <p className="mb-2 textActive ">Musim</p>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/musim/sekarang/page/1"
-                    className="transition-all Color text-base"
+                    className="transition-all Color "
                   >
                     Sekarang
                   </Link>
@@ -94,20 +85,20 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/musim/mendatang/page/1"
-                    className="transition-all Color text-base"
+                    className="transition-all Color "
                   >
                     Mendatang
                   </Link>
                 </li>
               </ul>
             </div>
-            <div>
-              <p className="mb-2 textActive text-base">Tentang Kami</p>
+            <div className="flex flex-col">
+              <p className="mb-2 textActive ">Tentang Kami</p>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="http://github.com/figuran04/nextanimejs"
-                    className="transition-all Color text-base"
+                    className="transition-all Color "
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -119,19 +110,17 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="lg:w-1/3 my-4 md:my-0">
-            <p className="mb-2 textActive text-base">Cari anime</p>
-            <p className="mb-2 text-base">
+          <div className="lg:w-1/3 my-4 md:my-0 flex flex-col">
+            <p className="mb-2 textActive ">Cari anime</p>
+            <p className="mb-2 ">
               Gunakan fitur pencarian di bawah ini untuk menemukan anime yang
               Anda inginkan.
             </p>
             <InputSearch />
           </div>
         </div>
-        <div className="px-6 lg:px-4 mt-4">
-          <span className="text-base">
-            @ {new Date().getFullYear()} Figuran04.
-          </span>
+        <div className="px-6 lg:px-4 mt-4 flex flex-col">
+          <span className="">@ {new Date().getFullYear()} Figuran04.</span>
         </div>
         <div className="px-6 lg:px-4 mt-4">
           <Link

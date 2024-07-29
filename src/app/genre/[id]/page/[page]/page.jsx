@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import GenreId from "@/components/GenreId"
 import Paginasi from "@/components/Utilities/Paginasi"
 
-const GenreIdPage = ({ params: { id } }) => {
+const GenreIdPage = ({ params: { id, page } }) => {
   const keyword = decodeURI(id)
   const [genreAnime, setGenreAnime] = useState([])
   const [loading, setLoading] = useState(true)

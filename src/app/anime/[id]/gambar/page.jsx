@@ -1,4 +1,7 @@
 "use client"
+import Handle from "@/components/AnimeId/Handle"
+import HeaderAnime from "@/components/AnimeId/HeaderAnime"
+import More from "@/components/AnimeId/More"
 import Navbar from "@/components/AnimeId/Navbar"
 import { getAnimeResponse } from "@/libs/api-libs"
 import Image from "next/image"
@@ -6,27 +9,22 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 
 const GambarPage = ({ params: { id } }) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
   const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await getAnimeResponse(`anime/${id}/pictures`)
-        setData(response.data)
-      } catch (error) {
-        console.error("Error fetching data:", error)
-      }
+      const response = await getAnimeResponse(`anime/${id}/pictures`)
+      setData(response.data)
     }
     fetchData()
   }, [id])
 
   const Gambar = ({ gambar }) => {
     const displayedImages = showAll ? gambar : gambar.slice(0, 3)
-
     return (
       <div className="flex flex-wrap gap-2">
-        {displayedImages?.map((item, index) => (
+        {displayedImages.map((item, index) => (
           <Link href={`/anime/${id}/gambar/preview/${index}`} key={index}>
             <Image
               src={item.webp.image_url}
@@ -42,23 +40,11 @@ const GambarPage = ({ params: { id } }) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       <Navbar id={id} gambar={true} />
-      <div className="flex flex-col gap-2">
-        <div className="flex justify-between">
-          <span className="text-xl font-bold">Gambar</span>
-        </div>
-        <div className="mt-3">
-          <Gambar gambar={data} />
-          <div className="flex justify-center mt-3">
-            {data.length > 3 && (
-              <button onClick={() => setShowAll(!showAll)} className="Color">
-                {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Gambar"}
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
+      <HeaderAnime title="Gambar" />
+      <Handle data={data} render={(data) => <Gambar gambar={data} />} />
+      <More data={data} fungsi={() => setShowAll(!showAll)} showAll={showAll} />
     </div>
   )
 }

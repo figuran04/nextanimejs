@@ -32,30 +32,28 @@ const ReviewCard = ({ review }) => {
             <div className="w-full mx-2">
               <Link
                 href={`/anime/${entry.mal_id}`}
-                className="cursor-pointer text-lg md:text-xl font-bold line-clamp-2"
+                className="cursor-pointer Textlg md:Textxl font-bold line-clamp-2"
               >
                 {entry.title}
               </Link>
-              <div className="flex gap-1 text-base">
+              <div className="flex gap-1 ">
                 tags:{" "}
-                <span className="text-color-blue text-base">
-                  {tags.join(", ")}
-                </span>
+                <span className="text-color-blue ">{tags.join(", ")}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
       <p
-        className={`transition-all text-justify text-base ${
+        className={`transition-all text-justify text-[14px] leading-[21px] md:text-base md:leading-6  ${
           showFullText ? "" : "line-clamp-5"
         }`}
       >
         {reviewText}
       </p>
       <div className="w-full flex flex-wrap items-center">
-        <div className="flex gap-2 items-center md:w-1/2 text-base">
-          <FormattedDate dateString={date} styles="text-base" />
+        <div className="flex gap-2 items-center md:w-1/2 ">
+          <FormattedDate dateString={date} styles="" />
           oleh <span className="text-color-blue">{user.username}</span>
           <Image
             className="w-6 h-6 object-cover rounded-full"
@@ -67,7 +65,7 @@ const ReviewCard = ({ review }) => {
         </div>
         <div className="md:w-1/2 w-full">
           <button
-            className="Color mx-2 my-1 float-right text-base"
+            className="Color mx-2 my-1 float-right "
             onClick={toggleFullText}
           >
             {showFullText ? "Kembali semula" : "Baca selengkapnya"}

@@ -11,13 +11,9 @@ const Ulasan = ({ item }) => {
   const toggleFullText = () => {
     setShowFullText(!showFullText)
   }
-  if (!item) {
-    return <span className="font-medium text-lg">Memuat...</span>
-  } else if (item == []) {
-    return <span className="font-medium text-lg">Tidak ditemukan</span>
-  }
+
   return (
-    <>
+    <div className="flex flex-col">
       <div className="w-full flex flex-col gap-3">
         <div className="flex items-center mb-2">
           <Image
@@ -28,41 +24,37 @@ const Ulasan = ({ item }) => {
             alt={item.user.username}
           />
           <div>
-            <span className="text-lg md:text-xl font-bold line-clamp-2">
+            <span className="Textlg md:Textxl font-bold line-clamp-2">
               {item.user.username}
             </span>
             <div className="flex gap-1">
-              <span className="text-base">tag: </span>
-              <span className="text-color-blue text-base">
-                {item.tags.join(", ")}
-              </span>
-              <span className="text-base">
-                {item.is_spoiler === true && "Spoiler"}
-              </span>
-              <span className="text-base">
-                {item.is_preliminary === true && "Awal"}
-              </span>
-              <span className="text-base">{item.episodes_watched}</span>
+              <span>tag: </span>
+              <span className="text-color-blue ">{item.tags.join(", ")}</span>
+              <span>{item.is_spoiler === true && "Spoiler"}</span>
+              <span>{item.is_preliminary === true && "Awal"}</span>
+              <span>{item.episodes_watched}</span>
             </div>
           </div>
         </div>
       </div>
+
       <p
-        className={`transition-all text-justify text-base ${
+        className={`text-justify transition-all text-[14px] leading-[21px] md:text-base md:leading-6 ${
           showFullText ? "" : "line-clamp-5"
         }`}
       >
         {item.review}
       </p>
-      <span className="flex items-center text-color-grey text-base">
+
+      <span className="flex items-center text-color-grey ">
         {showFullText ? `Penilaian Pengulas: ${item.score}` : ""}
       </span>
       <Emoji item={item} />
       <div className="flex justify-between items-center">
-        <FormattedDate dateString={item.date} styles="w-full text-base" />
+        <FormattedDate dateString={item.date} styles="w-full" />
         <div className="w-full text-right">
           <button
-            className="Color mx-2 my-1 text-base"
+            className="Color mx-2 my-1 "
             aria-label="more"
             onClick={toggleFullText}
           >
@@ -70,7 +62,7 @@ const Ulasan = ({ item }) => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

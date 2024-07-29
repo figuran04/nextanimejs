@@ -8,9 +8,12 @@ import {
   variants,
 } from "@/components/Utilities/MotionDiv"
 import { getAnimeResponse } from "@/libs/api-libs"
+import Handle from "@/components/AnimeId/Handle"
+import More from "@/components/AnimeId/More"
+import HeaderAnime from "@/components/AnimeId/HeaderAnime"
 
 const KarakterPage = ({ params: { id } }) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
   const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
@@ -26,7 +29,7 @@ const KarakterPage = ({ params: { id } }) => {
 
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">
-        {displayedCharacters?.map((item, index) => {
+        {displayedCharacters.map((item, index) => {
           const voiceActor = item.voice_actors?.find(
             (actor) => actor.language === "Japanese"
           )
@@ -49,24 +52,11 @@ const KarakterPage = ({ params: { id } }) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       <Navbar id={id} karakter={true} />
-      <div className="flex justify-between">
-        <span className="font-bold text-xl">Karakter</span>
-      </div>
-      <div className="w-full flex justify-center mt-3">
-        <Karakter karakter={data} />
-      </div>
-      <div className="flex justify-center mt-3">
-        {data.length > 3 && (
-          <button
-            onClick={() => setShowAll(!showAll)}
-            className="Color text-base"
-          >
-            {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Karakter"}
-          </button>
-        )}
-      </div>
+      <HeaderAnime title="Karakter" />
+      <Handle data={data} render={(data) => <Karakter karakter={data} />} />
+      <More data={data} fungsi={() => setShowAll(!showAll)} showAll={showAll} />
     </div>
   )
 }

@@ -31,7 +31,7 @@ const Emoji = ({ item }) => {
             {value == "0" ? null : (
               <div className="flex gap-1">
                 <span>{reactionEmojis[key]}</span>
-                <span className="text-color-grey text-base">{value}</span>
+                <span className="text-color-grey">{value}</span>
               </div>
             )}
           </div>

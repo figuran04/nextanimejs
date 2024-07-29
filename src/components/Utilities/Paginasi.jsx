@@ -6,29 +6,26 @@ const Paginasi = ({ halaman, page, lastPage }) => {
     <div className="z-50 fixed flex items-center justify-center gap-4 px-4 py-3 -translate-x-1/2 rounded-xl bottom-1 left-1/2 Border bg-opacity-80 dark:bg-opacity-80 backdrop-blur">
       {pages > 1 && (
         <Link
-          className="transition-all Color text-base"
+          className="transition-all Color "
           href={`/${halaman}/page/${pages - 1}`}
         >
           Prev
         </Link>
       )}
       {pages === 1 ? null : (
-        <Link
-          className="transition-all Color text-base"
-          href={`/${halaman}/page/1`}
-        >
+        <Link className="transition-all Color " href={`/${halaman}/page/1`}>
           1
         </Link>
       )}
       <Link
-        className="transition-all textActive text-base"
+        className="transition-all textActive "
         href={`/${halaman}/page/${pages}`}
       >
         {pages}
       </Link>
       {pages === lastPage ? null : (
         <Link
-          className="transition-all Color text-base"
+          className="transition-all Color "
           href={`/${halaman}/page/${lastPage}`}
         >
           {lastPage}
@@ -36,7 +33,7 @@ const Paginasi = ({ halaman, page, lastPage }) => {
       )}
       {pages < lastPage && (
         <Link
-          className="transition-all Color text-base"
+          className="transition-all Color "
           href={`/${halaman}/page/${pages + 1}`}
         >
           Next

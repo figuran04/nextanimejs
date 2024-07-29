@@ -1,11 +1,14 @@
 "use client"
+import Handle from "@/components/AnimeId/Handle"
+import HeaderAnime from "@/components/AnimeId/HeaderAnime"
+import More from "@/components/AnimeId/More"
 import Navbar from "@/components/AnimeId/Navbar"
 import AnimeSide from "@/components/AnimeSide"
 import { getAnimeResponse } from "@/libs/api-libs"
 import { useEffect, useState } from "react"
 
 const RekomendasiPage = ({ params: { id } }) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
   const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
@@ -35,24 +38,11 @@ const RekomendasiPage = ({ params: { id } }) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       <Navbar id={id} rekomendasi={true} />
-      <div className="flex justify-between">
-        <span className="font-bold text-xl">Rekomendasi</span>
-      </div>
-      <div className="mt-3">
-        <Rekomendasi animeId={id} />
-        <div className="flex justify-center mt-3">
-          {data.length > 3 && (
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="Color text-base"
-            >
-              {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Rekomendasi"}
-            </button>
-          )}
-        </div>
-      </div>
+      <HeaderAnime title="Rekomendasi" />
+      <Handle data={data} render={(data) => <Rekomendasi animeId={data} />} />
+      <More data={data} fungsi={() => setShowAll(!showAll)} showAll={showAll} />
     </div>
   )
 }

@@ -1,4 +1,6 @@
 "use client"
+import Handle from "@/components/AnimeId/Handle"
+import HeaderAnime from "@/components/AnimeId/HeaderAnime"
 import Navbar from "@/components/AnimeId/Navbar"
 import { getAnimeResponse } from "@/libs/api-libs"
 import { useEffect, useState } from "react"
@@ -14,43 +16,56 @@ const StatistikPage = ({ params: { id } }) => {
     fetchData()
   }, [id])
 
-  if (!data)
-    return (
-      <div>
-        <Navbar id={id} statistik={true} />
-        Memuat...
-      </div>
-    )
-
   const SummaryStats = ({ summary }) => {
     return (
-      <div>
-        <p className="font-bold text-lg">Statistik Ringkasan</p>
-        <p className="text-base">Sedang Menonton: {summary.watching}</p>
-        <p className="text-base">Selesai: {summary.completed}</p>
-        <p className="text-base">Ditunda: {summary.on_hold}</p>
-        <p className="text-base">Berhenti: {summary.dropped}</p>
-        <p className="text-base">
-          Rencana untuk Menonton: {summary.plan_to_watch}
-        </p>
-        <p className="text-base">Total: {summary.total}</p>
-      </div>
+      <table className="border-none w-min">
+        <tbody>
+          <tr>
+            <td className="border-none whitespace-nowrap p-0">
+              Sedang Menonton
+            </td>
+            <td className="border-none whitespace-nowrap p-0">{`: ${summary.watching}`}</td>
+          </tr>
+          <tr>
+            <td className="border-none whitespace-nowrap p-0">Selesai</td>
+            <td className="border-none whitespace-nowrap p-0">{`: ${summary.completed}`}</td>
+          </tr>
+          <tr>
+            <td className="border-none whitespace-nowrap p-0">Ditunda</td>
+            <td className="border-none whitespace-nowrap p-0">{`: ${summary.on_hold}`}</td>
+          </tr>
+          <tr>
+            <td className="border-none whitespace-nowrap p-0">Berhenti</td>
+            <td className="border-none whitespace-nowrap p-0">{`: ${summary.dropped}`}</td>
+          </tr>
+          <tr>
+            <td className="border-none whitespace-nowrap p-0">
+              Rencana untuk Menonton
+            </td>
+            <td className="border-none whitespace-nowrap p-0">{`: ${summary.plan_to_watch}`}</td>
+          </tr>
+          <tr>
+            <td className="border-none whitespace-nowrap p-0">Total</td>
+            <td className="border-none whitespace-nowrap p-0">{`: ${summary.total}`}</td>
+          </tr>
+        </tbody>
+      </table>
     )
   }
 
   const ScoreStats = ({ scores }) => {
     return (
-      <div>
-        <p className="font-bold text-lg">Statistik Skor</p>
+      <div className="flex flex-col gap-1">
+        <HeaderAnime title="Statistik Skor" />
         <div className="flex flex-col-reverse">
           {scores.map((score) => (
             <div key={score.score} className="flex gap-2 items-center">
-              <span className="w-4 text-base">{score.score}</span>
+              <span className="w-4">{score.score}</span>
               <div
-                className="bg-color-blue h-4 text-base"
+                className="bg-color-blue h-4"
                 style={{ width: `${score.percentage}%` }}
               ></div>
-              <span className="truncate text-base">
+              <span className="truncate">
                 {score.percentage.toFixed(1)}% ({score.votes} suara)
               </span>
             </div>
@@ -61,15 +76,14 @@ const StatistikPage = ({ params: { id } }) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       <Navbar id={id} statistik={true} />
-      <div className="flex justify-between">
-        <span className="font-bold text-xl">Statistik</span>
-      </div>
-      <div className="mt-3 flex flex-col gap-3">
-        <SummaryStats summary={data} />
-        {data.scores && <ScoreStats scores={data.scores} />}
-      </div>
+      <HeaderAnime title="Statistik" />
+      <Handle data={data} render={(data) => <SummaryStats summary={data} />} />
+      <Handle
+        data={data}
+        render={(data) => <ScoreStats scores={data.scores} />}
+      />
     </div>
   )
 }

@@ -21,12 +21,12 @@ const Navbar = ({
   ]
 
   return (
-    <nav className="flex flex-row gap-3 mb-4 overflow-x-auto flex-nowrap no-scrollbar">
+    <nav className="flex flex-row gap-3 mb-3 overflow-x-auto flex-nowrap no-scrollbar">
       {links.map(({ href, label, active }) => (
         <Link
           key={href}
           href={`/anime/${id}/${href}`}
-          className={`rounded-md px-3 py-1 font-semibold text-base ${
+          className={`rounded-md px-3 py-1 font-semibold ${
             active ? "ButtonActive" : "Button"
           }`}
         >
