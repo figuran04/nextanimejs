@@ -4,7 +4,7 @@ import VideoPlayer from "@/components/Utilities/VideoPlayer"
 import Title from "@/components/AnimeId/Title"
 
 const AnimeIdPage = async ({ children, params: { id } }) => {
-  const { data } = await getAnimeResponse(`anime/${id}`)
+  const { data } = await getAnimeResponse(`anime/${id}/full`)
 
   return (
     <div>

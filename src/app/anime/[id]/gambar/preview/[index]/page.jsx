@@ -2,7 +2,7 @@ import Navbar from "@/components/AnimeId/Navbar"
 import { getAnimeResponse } from "@/libs/api-libs"
 import Image from "next/image"
 
-const GambarPreview = async ({ params: { id, index } }) => {
+const GambarDetailPage = async ({ params: { id, index } }) => {
   const { data } = await getAnimeResponse(`anime/${id}/pictures`)
   return (
     <div>
@@ -23,4 +23,4 @@ const GambarPreview = async ({ params: { id, index } }) => {
   )
 }
 
-export default GambarPreview
+export default GambarDetailPage

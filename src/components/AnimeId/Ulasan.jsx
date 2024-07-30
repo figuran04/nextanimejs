@@ -3,6 +3,7 @@ import FormattedDate from "@/components/Utilities/FormattedDate"
 import Image from "next/image"
 import { useState } from "react"
 import Emoji from "./Emoji"
+import { StarIcon } from "../Icons/StarIcon"
 
 const Ulasan = ({ item }) => {
   const [showFullText, setShowFullText] = useState(false)
@@ -10,13 +11,9 @@ const Ulasan = ({ item }) => {
   const toggleFullText = () => {
     setShowFullText(!showFullText)
   }
-  if (!item) {
-    return <p className="font-medium text-lg">Memuat...</p>
-  } else if (item == []) {
-    return <p className="font-medium text-lg">Tidak ditemukan</p>
-  }
+
   return (
-    <>
+    <div className="flex flex-col">
       <div className="w-full flex flex-col gap-3">
         <div className="flex items-center mb-2">
           <Image
@@ -27,27 +24,37 @@ const Ulasan = ({ item }) => {
             alt={item.user.username}
           />
           <div>
-            <h3 className="h3 line-clamp-2">{item.user.username}</h3>
+            <span className="Textlg md:Textxl font-bold line-clamp-2">
+              {item.user.username}
+            </span>
             <div className="flex gap-1">
               <span>tag: </span>
-              <span className="text-color-blue">{item.tags.join(", ")}</span>
+              <span className="text-color-blue ">{item.tags.join(", ")}</span>
+              <span>{item.is_spoiler === true && "Spoiler"}</span>
+              <span>{item.is_preliminary === true && "Awal"}</span>
+              <span>{item.episodes_watched}</span>
             </div>
           </div>
         </div>
       </div>
+
       <p
-        className={`transition-all text-justify ${
+        className={`text-justify transition-all text-[14px] leading-[21px] md:text-base md:leading-6 ${
           showFullText ? "" : "line-clamp-5"
         }`}
       >
         {item.review}
       </p>
+
+      <span className="flex items-center text-color-grey ">
+        {showFullText ? `Penilaian Pengulas: ${item.score}` : ""}
+      </span>
       <Emoji item={item} />
       <div className="flex justify-between items-center">
         <FormattedDate dateString={item.date} styles="w-full" />
         <div className="w-full text-right">
           <button
-            className="Color mx-2 my-1"
+            className="Color mx-2 my-1 "
             aria-label="more"
             onClick={toggleFullText}
           >
@@ -55,7 +62,7 @@ const Ulasan = ({ item }) => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

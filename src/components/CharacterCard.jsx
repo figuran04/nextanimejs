@@ -2,31 +2,33 @@ import Image from "next/image"
 
 const CharacterCard = ({ item, voiceActor }) => {
   return (
-    <div className="flex justify-between gap-2 shadow px-2 py-1 rounded-lg Button">
-      <div>
+    <div className="flex justify-between gap-2 shadow-sm hover:shadow rounded-lg Border">
+      <div className="flex w-full">
         <Image
           src={item.character.images.webp.image_url}
           alt={item.character.images.jpg.image_url}
           height={60}
           width={60}
-          className="min-w-16 h-24 rounded-lg"
+          className="min-w-16 h-24 rounded-lg p-1"
         />
-        <p>{item.character.name}</p>
+        <div className="flex flex-col justify-between">
+          <p className="line-clamp-2">{item.character.name}</p>
+          <p className="text-color-blue">{item.role}</p>
+          <p className="text-color-grey">{`${item.favorites} Favorit`}</p>
+        </div>
       </div>
-      <div>
-        {voiceActor && (
-          <div className="flex flex-col items-end">
-            <Image
-              src={voiceActor.person.images.jpg.image_url}
-              alt={voiceActor.language}
-              height={60}
-              width={60}
-              className="min-w-16 h-24 rounded-lg"
-            />
-            <p>{voiceActor.person.name}</p>
-          </div>
-        )}
-      </div>
+      {voiceActor && (
+        <div className="flex w-full flex-row-reverse">
+          <Image
+            src={voiceActor.person.images.jpg.image_url}
+            alt={voiceActor.language}
+            height={60}
+            width={60}
+            className="min-w-16 h-24 rounded-lg p-1"
+          />
+          <p className="line-clamp-2">{voiceActor.person.name}</p>
+        </div>
+      )}
     </div>
   )
 }

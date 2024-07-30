@@ -50,7 +50,7 @@ const VideoPlayer = ({ youtubeId }) => {
   const ButtonOpenPlayer = () => {
     return (
       <button
-        className="fixed z-50 px-4 py-2 font-bold rounded-lg bottom-1 right-1 Button"
+        className="fixed z-50 px-4 py-2 font-semibold rounded-lg bottom-1 right-1 Button"
         onClick={handleVideoPlayer}
       >
         Tonton Trailer

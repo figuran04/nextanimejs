@@ -16,10 +16,16 @@ const FormattedDate = ({ dateString, styles }) => {
   } else if (distanceToNow.includes("1 day")) {
     formattedDate = "Kemarin"
   } else {
-    formattedDate = format(date, "dd MMMM yyyy", { locale: id })
+    formattedDate = format(date, "dd MMM yyyy", { locale: id })
   }
 
-  return <p className={`text-color-grey ${styles}`}>{formattedDate}</p>
+  return (
+    <div className="flex">
+      <p className={`text-color-grey whitespace-nowrap ${styles}`}>
+        {formattedDate}
+      </p>
+    </div>
+  )
 }
 
 export default FormattedDate

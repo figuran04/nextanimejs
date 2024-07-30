@@ -7,45 +7,84 @@ const sfProDisplay = localFont({
   src: [
     {
       path: "../assets/standerd-standerd-black-800.ttf",
-      weight: "800",
-      style: "black",
-    },
-    {
-      path: "../assets/standerd-standerd-bold-700.ttf",
-      weight: "700",
-      style: "bold",
+      weight: "900",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-extrabold-800.ttf",
       weight: "800",
-      style: "extrabold",
+      style: "normal",
     },
     {
-      path: "../assets/standerd-standerd-extra-light-100.ttf",
-      weight: "100",
-      style: "extralight",
-    },
-    {
-      path: "../assets/standerd-standerd-light-200.ttf",
-      weight: "200",
-      style: "light",
-    },
-    {
-      path: "../assets/standerd-standerd-medium-500.ttf",
-      weight: "500",
-      style: "medium",
-    },
-    {
-      // path: "../assets/standerd-standerd-regular-400.ttf",
-      path: "../assets/standerd-standerd-medium-500.ttf",
-      weight: "400",
-      style: "regular",
+      path: "../assets/standerd-standerd-bold-700.ttf",
+      weight: "700",
+      style: "normal",
     },
     {
       path: "../assets/standerd-standerd-semibold-600.ttf",
       weight: "600",
-      style: "semibold",
+      style: "normal",
     },
+    {
+      path: "../assets/standerd-standerd-medium-500.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "900",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "800",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "700",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "600",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-regular-400.ttf",
+    //   weight: "500",
+    //   style: "normal",
+    // },
+    {
+      path: "../assets/standerd-standerd-regular-400.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/standerd-standerd-regular-400.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../assets/standerd-standerd-regular-400.ttf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../assets/standerd-standerd-regular-400.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    // {
+    //   path: "../assets/standerd-standerd-light-200.ttf",
+    //   weight: "200",
+    //   style: "normal",
+    // },
+    // {
+    //   path: "../assets/standerd-standerd-extra-light-100.ttf",
+    //   weight: "100",
+    //   style: "normal",
+    // },
   ],
 })
 

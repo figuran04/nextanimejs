@@ -1,11 +1,14 @@
 "use client"
+import Handle from "@/components/AnimeId/Handle"
+import HeaderAnime from "@/components/AnimeId/HeaderAnime"
+import More from "@/components/AnimeId/More"
 import Navbar from "@/components/AnimeId/Navbar"
 import Ulasan from "@/components/AnimeId/Ulasan"
 import { getAnimeResponse } from "@/libs/api-libs"
 import { useEffect, useState } from "react"
 
 const UlasanPage = ({ params: { id } }) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
   const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
@@ -16,24 +19,28 @@ const UlasanPage = ({ params: { id } }) => {
     fetchData()
   }, [id])
 
-  const displayedReviews = showAll ? data : data?.slice(0, 3)
+  const UlasanMap = ({ data, showAll }) => {
+    const displayedReviews = showAll ? data : data?.slice(0, 3)
+    return (
+      <>
+        {displayedReviews?.map((item, index) => (
+          <div className="p-2 rounded-md shadow" key={index}>
+            <Ulasan item={item} />
+          </div>
+        ))}
+      </>
+    )
+  }
 
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       <Navbar id={id} ulasan={true} />
-      <div className="flex justify-between">
-        <h3 className="h3">Ulasan</h3>
-        {data?.length > 3 && (
-          <button onClick={() => setShowAll(!showAll)} className="Color">
-            {showAll ? "Tampilkan Lebih Sedikit" : "Lihat Semua Ulasan"}
-          </button>
-        )}
-      </div>
-      {displayedReviews?.map((item, index) => (
-        <div className="p-2 rounded-md shadow mt-3" key={index}>
-          <Ulasan item={item} />
-        </div>
-      ))}
+      <HeaderAnime title="Ulasan" />
+      <Handle
+        data={data}
+        render={(data) => <UlasanMap data={data} showAll={showAll} />}
+      />
+      <More data={data} fungsi={() => setShowAll(!showAll)} showAll={showAll} />
     </div>
   )
 }
